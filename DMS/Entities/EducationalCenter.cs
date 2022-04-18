@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DMS.Entities
 {
     public class EducationalCenter
     {
+
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "شناسه")]
@@ -15,5 +18,8 @@ namespace DMS.Entities
         public string EducationalName { get; set; }
         [Display(AutoGenerateField = false)]
         public bool IsActive { get; set; }
+
+
+
     }
 }

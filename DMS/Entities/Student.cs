@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,6 +7,12 @@ namespace DMS.Entities
 {
     public class Student
     {
+
+        public Student()
+        {
+            RegisterRooms = new HashSet<RegisterRoom>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "شناسه")]
@@ -58,5 +65,9 @@ namespace DMS.Entities
         public int EducationalID_FK { get; set; }
         [ForeignKey("EducationalID_FK")]
         public EducationalCenter EducationalCenter { get; set; }
+
+
+        public virtual ICollection<RegisterRoom> RegisterRooms { get; set; }
+
     }
 }

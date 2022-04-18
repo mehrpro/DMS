@@ -26,6 +26,7 @@ namespace DMS.Entities
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<Tagrecive> Tagrecives { get; set; }
         public virtual DbSet<TrafficType> TrafficTypes { get; set; }
+        public virtual DbSet<RegisterRoom> RegisterRooms { get; set; }
 
 
     }

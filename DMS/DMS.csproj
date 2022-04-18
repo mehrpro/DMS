@@ -76,6 +76,7 @@
     <Compile Include="Entities\Dormitory.cs" />
     <Compile Include="Entities\EducationalCenter.cs" />
     <Compile Include="Entities\PanelInfo.cs" />
+    <Compile Include="Entities\RegisterRoom.cs" />
     <Compile Include="Entities\RegisterTag.cs" />
     <Compile Include="Entities\Room.cs" />
     <Compile Include="Entities\Student.cs" />
@@ -93,6 +94,10 @@
     <Compile Include="Migrations\202204181523288_CreateDB.designer.cs">
       <DependentUpon>202204181523288_CreateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204181835024_UpdateDB1.cs" />
+    <Compile Include="Migrations\202204181835024_UpdateDB1.designer.cs">
+      <DependentUpon>202204181835024_UpdateDB1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +112,12 @@
     </Compile>
     <Compile Include="UI\Dormitory\DormitoryForm.Designer.cs">
       <DependentUpon>DormitoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dormitory\RegisterRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dormitory\RegisterRoomForm.Designer.cs">
+      <DependentUpon>RegisterRoomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\TagCard\RegisterTagForm.cs">
       <SubType>Form</SubType>
@@ -165,6 +176,9 @@
     <EmbeddedResource Include="Migrations\202204181523288_CreateDB.resx">
       <DependentUpon>202204181523288_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204181835024_UpdateDB1.resx">
+      <DependentUpon>202204181835024_UpdateDB1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -179,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dormitory\DormitoryForm.resx">
       <DependentUpon>DormitoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dormitory\RegisterRoomForm.resx">
+      <DependentUpon>RegisterRoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TagCard\RegisterTagForm.resx">
       <DependentUpon>RegisterTagForm.cs</DependentUpon>

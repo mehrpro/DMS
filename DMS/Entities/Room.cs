@@ -1,10 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DMS.Entities
 {
     public class Room
     {
+
+        public Room()
+        {
+            RegisterRooms = new HashSet<RegisterRoom>();
+        }
+
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "شناسه")]
@@ -23,5 +31,10 @@ namespace DMS.Entities
         public int DormitoryID_FK { get; set; }
         [ForeignKey("DormitoryID_FK")]
         public Dormitory Dormitory { get; set; }
+
+
+
+        public virtual ICollection<RegisterRoom> RegisterRooms { get; set; }
+
     }
 }

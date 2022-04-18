@@ -10,6 +10,7 @@ namespace DMS.Entities
         public Dormitory()
         {
             Rooms = new HashSet<Room>();
+            //RegisterRooms = new HashSet<RegisterRoom>();
         }
 
         [Key]
@@ -27,8 +28,10 @@ namespace DMS.Entities
         [Display(Name = "ظرفیت کل")]
         public int Valence { get; set; }
 
-      
+
         public virtual ICollection<Room> Rooms { get; set; }
+        //public virtual ICollection<RegisterRoom> RegisterRooms { get; set; }
+
 
     }
 }
