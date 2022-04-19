@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -71,6 +73,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ApplicationUserConfigure.cs" />
+    <Compile Include="Configuration\DormitoryConfigure.cs" />
+    <Compile Include="Configuration\EducationalCenterConfigure.cs" />
+    <Compile Include="Configuration\PanelInfoConfigure.cs" />
+    <Compile Include="Configuration\RegisterRoomConfigure.cs" />
+    <Compile Include="Configuration\RegisterTagConfigure.cs" />
+    <Compile Include="Configuration\RoomConfigure.cs" />
+    <Compile Include="Configuration\StudentConfigure.cs" />
+    <Compile Include="Configuration\StudyConfigure.cs" />
+    <Compile Include="Configuration\TagConfigure.cs" />
+    <Compile Include="Configuration\TagReciveConfigure.cs" />
+    <Compile Include="Configuration\TrafficTypeConfigure.cs" />
     <Compile Include="Entities\ApplicationDbContext.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Dormitory.cs" />
@@ -90,17 +104,29 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204181523288_CreateDB.cs" />
-    <Compile Include="Migrations\202204181523288_CreateDB.designer.cs">
-      <DependentUpon>202204181523288_CreateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204181835024_UpdateDB1.cs" />
-    <Compile Include="Migrations\202204181835024_UpdateDB1.designer.cs">
-      <DependentUpon>202204181835024_UpdateDB1.cs</DependentUpon>
+    <Compile Include="Migrations\202204191653027_CreateDB.cs" />
+    <Compile Include="Migrations\202204191653027_CreateDB.designer.cs">
+      <DependentUpon>202204191653027_CreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicValues.cs" />
+    <Compile Include="Repositories\IApplicationUserRep.cs" />
+    <Compile Include="Repositories\IDormitoryRep.cs" />
+    <Compile Include="Repositories\IEducationalCenterRep.cs" />
+    <Compile Include="Repositories\IPanelInfoRep.cs" />
+    <Compile Include="Repositories\IRegisterRoomRep.cs" />
+    <Compile Include="Repositories\IRegisterTagRep.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IRoomRep.cs" />
+    <Compile Include="Repositories\IStudentRep.cs" />
+    <Compile Include="Repositories\IStudyRep.cs" />
+    <Compile Include="Repositories\ITagreciveRep.cs" />
+    <Compile Include="Repositories\ITagRep.cs" />
+    <Compile Include="Repositories\ITrafficTypeRep.cs" />
+    <Compile Include="Repositories\IUnitOfWork.cs" />
+    <Compile Include="TypeRegister.cs" />
     <Compile Include="UI\Administrator\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,11 +199,11 @@
     <Compile Include="UI\Users\StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202204181523288_CreateDB.resx">
-      <DependentUpon>202204181523288_CreateDB.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204181835024_UpdateDB1.resx">
-      <DependentUpon>202204181835024_UpdateDB1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204191653027_CreateDB.resx">
+      <DependentUpon>202204191653027_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -238,6 +264,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

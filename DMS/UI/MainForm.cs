@@ -8,14 +8,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DMS.UI.Dormitory;
+using Container = StructureMap.Container;
 
 namespace DMS.UI
 {
-    public partial class MainForm : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
+        private Container _mainContainer;
+
+        public StructureMap.Container MainContainer
+        {
+            get => _mainContainer;
+            set => _mainContainer = value;
+        }
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void mnuDormitoryForm_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren)
+            {
+                x.Close();
+            }
+            var frm = _mainContainer.GetInstance<DormitoryForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

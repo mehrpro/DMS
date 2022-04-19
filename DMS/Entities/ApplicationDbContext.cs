@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using DMS.Configuration;
 
 namespace DMS.Entities
 {
@@ -13,6 +14,18 @@ namespace DMS.Entities
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new ApplicationUserConfigure());
+            modelBuilder.Configurations.Add(new DormitoryConfigure());
+            modelBuilder.Configurations.Add(new EducationalCenterConfigure());
+            modelBuilder.Configurations.Add(new PanelInfoConfigure());
+            modelBuilder.Configurations.Add(new RegisterRoomConfigure());
+            modelBuilder.Configurations.Add(new RegisterTagConfigure());
+            modelBuilder.Configurations.Add(new RoomConfigure());
+            modelBuilder.Configurations.Add(new StudentConfigure());
+            modelBuilder.Configurations.Add(new StudyConfigure());
+            modelBuilder.Configurations.Add(new TagConfigure());
+            modelBuilder.Configurations.Add(new TagReciveConfigure());
+            modelBuilder.Configurations.Add(new TrafficTypeConfigure());
         }
 
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }

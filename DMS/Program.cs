@@ -1,8 +1,5 @@
 ﻿using DMS.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DMS
@@ -17,7 +14,17 @@ namespace DMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var container = new StructureMap.Container(new TypeRegister());
+            var frm = container.GetInstance<LoginForm>();
+            Application.Run(frm);
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                var mainForm = container.GetInstance<MainForm>();
+                mainForm.MainContainer = container;
+                mainForm.ShowDialog();
+            }
+            else
+                Environment.Exit(0);
         }
     }
 }

@@ -1,20 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
 
 namespace DMS.Entities
 {
     public class Study
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Display(Name = "شناسه")]
+        public Study()
+        {
+            Students = new HashSet<Student>();
+        }
         public int ID { get; set; }
-        [Required]
-        [MaxLength(50)]
-        [Display(Name = "رشته تحصیلی")]
         public string StudyTitle { get; set; }
-        [Display(AutoGenerateField = false)]
         public bool IsActive { get; set; }
-
+        public virtual ICollection<Student> Students { get; set; }
     }
 }
