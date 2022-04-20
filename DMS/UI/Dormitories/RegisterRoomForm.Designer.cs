@@ -1,5 +1,5 @@
 ﻿
-namespace DMS.UI.Dormitory
+namespace DMS.UI.Dormitories
 {
     partial class RegisterRoomForm
     {

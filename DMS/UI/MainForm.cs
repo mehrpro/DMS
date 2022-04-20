@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DMS.UI.Dormitory;
+using DMS.UI.Dormitories;
 using Container = StructureMap.Container;
 
 namespace DMS.UI
@@ -30,11 +30,20 @@ namespace DMS.UI
 
         private void mnuDormitoryForm_Click(object sender, EventArgs e)
         {
-            foreach (var x in this.MdiChildren)
-            {
-                x.Close();
-            }
+            foreach (var x in this.MdiChildren) x.Close();
             var frm = _mainContainer.GetInstance<DormitoryForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnRoom_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren) x.Close();
+            var frm = _mainContainer.GetInstance<RoomForm>();
             frm.ControlBox = false;
             frm.Dock = DockStyle.Fill;
             frm.WindowState = FormWindowState.Maximized;

@@ -35,7 +35,7 @@ namespace DMS.UI
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.mnuDormitoryForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -87,8 +87,9 @@ namespace DMS.UI
             // 
             this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.mnuDormitoryForm,
-            this.accordionControlElement9,
+            this.btnRoom,
             this.accordionControlElement10});
+            this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "خوابگاه";
             // 
@@ -99,11 +100,12 @@ namespace DMS.UI
             this.mnuDormitoryForm.Text = "خوابگاه";
             this.mnuDormitoryForm.Click += new System.EventHandler(this.mnuDormitoryForm_Click);
             // 
-            // accordionControlElement9
+            // btnRoom
             // 
-            this.accordionControlElement9.Name = "accordionControlElement9";
-            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement9.Text = "اتاق";
+            this.btnRoom.Name = "btnRoom";
+            this.btnRoom.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnRoom.Text = "اتاق";
+            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
             // accordionControlElement10
             // 
@@ -184,7 +186,7 @@ namespace DMS.UI
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement mnuDormitoryForm;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnRoom;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
         private DevExpress.XtraBars.FormAssistant formAssistant1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;

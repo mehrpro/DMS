@@ -1,9 +1,10 @@
-﻿using DMS.Entities;
+﻿using System.Threading.Tasks;
+using DMS.Entities;
 namespace DMS.Repositories
 {
     public interface IDormitoryRep : IRepository<Dormitory>
     {
-
+        
     }
 
     public class DormitoryRep : Repository<Dormitory>, IDormitoryRep

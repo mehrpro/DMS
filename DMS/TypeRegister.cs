@@ -1,4 +1,5 @@
 ﻿using DMS.Entities;
+using DMS.IServices;
 using DMS.Repositories;
 using StructureMap;
 namespace DMS
@@ -8,7 +9,8 @@ namespace DMS
         public TypeRegister()
         {
             For<IUnitOfWork>().Use<UnitOfWork>();
-
+            For<IDormitoryService>().Use<DormitoryService>();
+            For<IRoomService>().Use<RoomService>();
         }
     }
 }

@@ -98,6 +98,8 @@
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Tagrecive.cs" />
     <Compile Include="Entities\TrafficType.cs" />
+    <Compile Include="IServices\IDormitoryService.cs" />
+    <Compile Include="IServices\IRoomService.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,16 +135,16 @@
     <Compile Include="UI\Administrator\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dormitory\DormitoryForm.cs">
+    <Compile Include="UI\Dormitories\DormitoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dormitory\DormitoryForm.Designer.cs">
+    <Compile Include="UI\Dormitories\DormitoryForm.Designer.cs">
       <DependentUpon>DormitoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dormitory\RegisterRoomForm.cs">
+    <Compile Include="UI\Dormitories\RegisterRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dormitory\RegisterRoomForm.Designer.cs">
+    <Compile Include="UI\Dormitories\RegisterRoomForm.Designer.cs">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\TagCard\RegisterTagForm.cs">
@@ -163,10 +165,10 @@
     <Compile Include="UI\Users\EducationalCentersForm.Designer.cs">
       <DependentUpon>EducationalCentersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dormitory\RoomForm.cs">
+    <Compile Include="UI\Dormitories\RoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dormitory\RoomForm.Designer.cs">
+    <Compile Include="UI\Dormitories\RoomForm.Designer.cs">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Administrator\SMSForm.cs">
@@ -175,10 +177,10 @@
     <Compile Include="UI\Administrator\SMSForm.Designer.cs">
       <DependentUpon>SMSForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dormitory\TrafficTypeForm.cs">
+    <Compile Include="UI\Dormitories\TrafficTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dormitory\TrafficTypeForm.Designer.cs">
+    <Compile Include="UI\Dormitories\TrafficTypeForm.Designer.cs">
       <DependentUpon>TrafficTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\MainForm.cs">
@@ -217,10 +219,10 @@
     <EmbeddedResource Include="UI\Administrator\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dormitory\DormitoryForm.resx">
+    <EmbeddedResource Include="UI\Dormitories\DormitoryForm.resx">
       <DependentUpon>DormitoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dormitory\RegisterRoomForm.resx">
+    <EmbeddedResource Include="UI\Dormitories\RegisterRoomForm.resx">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TagCard\RegisterTagForm.resx">
@@ -232,13 +234,13 @@
     <EmbeddedResource Include="UI\Users\EducationalCentersForm.resx">
       <DependentUpon>EducationalCentersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dormitory\RoomForm.resx">
+    <EmbeddedResource Include="UI\Dormitories\RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Administrator\SMSForm.resx">
       <DependentUpon>SMSForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dormitory\TrafficTypeForm.resx">
+    <EmbeddedResource Include="UI\Dormitories\TrafficTypeForm.resx">
       <DependentUpon>TrafficTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">

@@ -19,7 +19,7 @@ namespace DMS.Repositories
         ITagRep Tag { get; }
         ITrafficTypeRep TrafficType { get; }
 
-        int CommitAsync();
+        int Commit();
     }
 
     public class UnitOfWork : IUnitOfWork
@@ -58,7 +58,7 @@ namespace DMS.Repositories
         public ITagreciveRep Tagrecive => _tagreciveRep ??= new TagreciveRep(_context);
         public ITrafficTypeRep TrafficType => _trafficTypeRep ??= new TrafficTypeRep(_context);
 
-        public int CommitAsync()
+        public int Commit()
         {
             return _context.SaveChanges();
         }
