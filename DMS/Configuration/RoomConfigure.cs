@@ -11,6 +11,7 @@ namespace DMS.Configuration
             HasKey(x => x.RoomID);
             Property(x => x.RoomID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Facilities).HasMaxLength(500);
+            Property(x => x.IntFacilities).HasMaxLength(100);
             Property(x => x.RoomNumber).IsRequired().HasMaxLength(50);
             Property(x => x.RoomCapacity).IsRequired();
             HasMany(x => x.RegisterRooms)

@@ -19,7 +19,7 @@ namespace DMS.Entities
         public int RoomCapacity { get; set; }
 
         public string Facilities { get; set; }
-
+        public string IntFacilities { get; set; }
         public int DormitoryID_FK { get; set; }
         public Dormitory Dormitory { get; set; }
 

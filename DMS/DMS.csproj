@@ -110,6 +110,10 @@
     <Compile Include="Migrations\202204191653027_CreateDB.designer.cs">
       <DependentUpon>202204191653027_CreateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204211230463_CreateDB1.cs" />
+    <Compile Include="Migrations\202204211230463_CreateDB1.designer.cs">
+      <DependentUpon>202204211230463_CreateDB1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -206,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204191653027_CreateDB.resx">
       <DependentUpon>202204191653027_CreateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204211230463_CreateDB1.resx">
+      <DependentUpon>202204211230463_CreateDB1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
