@@ -1,4 +1,7 @@
-﻿using DMS.Entities;
+﻿using System;
+using System.Linq;
+using AutoMapper;
+using DMS.Entities;
 using DMS.IServices;
 using DMS.Repositories;
 using StructureMap;
@@ -8,9 +11,26 @@ namespace DMS
     {
         public TypeRegister()
         {
+
+            var mapperConfiguration = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(typeof(AutoMapperProfile));
+            });
+            var mapper = mapperConfiguration.CreateMapper();
+            For<IMapper>().Use(mapper);
+            //For<IMapper>().Use<Mapper>();
+
+
             For<IUnitOfWork>().Use<UnitOfWork>();
             For<IDormitoryService>().Use<DormitoryService>();
             For<IRoomService>().Use<RoomService>();
+            For<ITrafficTypeService>().Use<TrafficTypeService>();
+            For<IEducationalCenterService>().Use<EducationalCenterService>();
+            For<IFieldOfStudyService>().Use<FieldOfStudyService>();
+            For<IStudentService>().Use<StudentService>();
+
+
+
         }
     }
 }

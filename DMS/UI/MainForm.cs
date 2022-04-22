@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DMS.Entities;
 using DMS.UI.Dormitories;
+using DMS.UI.Users;
 using Container = StructureMap.Container;
 
 namespace DMS.UI
@@ -44,6 +46,54 @@ namespace DMS.UI
         {
             foreach (var x in this.MdiChildren) x.Close();
             var frm = _mainContainer.GetInstance<RoomForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnTrafficType_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren) x.Close();
+            var frm = _mainContainer.GetInstance<TrafficTypeForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnEducationalCenter_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren) x.Close();
+            var frm = _mainContainer.GetInstance<EducationalCentersForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnStudentForm_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren) x.Close();
+            var frm = _mainContainer.GetInstance<StudentForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnStudyForm_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren) x.Close();
+            var frm = _mainContainer.GetInstance<FieldOfStudyForm>();
             frm.ControlBox = false;
             frm.Dock = DockStyle.Fill;
             frm.WindowState = FormWindowState.Maximized;

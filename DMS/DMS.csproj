@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperProfile.cs" />
     <Compile Include="Configuration\ApplicationUserConfigure.cs" />
     <Compile Include="Configuration\DormitoryConfigure.cs" />
     <Compile Include="Configuration\EducationalCenterConfigure.cs" />
@@ -99,7 +100,11 @@
     <Compile Include="Entities\Tagrecive.cs" />
     <Compile Include="Entities\TrafficType.cs" />
     <Compile Include="IServices\IDormitoryService.cs" />
+    <Compile Include="IServices\IEducationalCenterService.cs" />
+    <Compile Include="IServices\IFieldOfStudyService.cs" />
     <Compile Include="IServices\IRoomService.cs" />
+    <Compile Include="IServices\IStudentService.cs" />
+    <Compile Include="IServices\ITrafficTypeTitleService.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

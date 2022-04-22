@@ -36,14 +36,14 @@ namespace DMS.UI
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.mnuDormitoryForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnTrafficType = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnStudentForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnEducationalCenter = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnStudyForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.SuspendLayout();
@@ -88,8 +88,7 @@ namespace DMS.UI
             this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.mnuDormitoryForm,
             this.btnRoom,
-            this.accordionControlElement10});
-            this.accordionControlElement7.Expanded = true;
+            this.btnTrafficType});
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "خوابگاه";
             // 
@@ -107,11 +106,12 @@ namespace DMS.UI
             this.btnRoom.Text = "اتاق";
             this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
-            // accordionControlElement10
+            // btnTrafficType
             // 
-            this.accordionControlElement10.Name = "accordionControlElement10";
-            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement10.Text = "نوع تردد";
+            this.btnTrafficType.Name = "btnTrafficType";
+            this.btnTrafficType.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnTrafficType.Text = "نوع تردد";
+            this.btnTrafficType.Click += new System.EventHandler(this.btnTrafficType_Click);
             // 
             // accordionControlElement4
             // 
@@ -136,29 +136,33 @@ namespace DMS.UI
             // accordionControlElement5
             // 
             this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement12,
-            this.accordionControlElement13,
-            this.accordionControlElement14});
+            this.btnStudentForm,
+            this.btnEducationalCenter,
+            this.btnStudyForm});
+            this.accordionControlElement5.Expanded = true;
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Text = "دانشجو";
             // 
-            // accordionControlElement12
+            // btnStudentForm
             // 
-            this.accordionControlElement12.Name = "accordionControlElement12";
-            this.accordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement12.Text = "دانشجو";
+            this.btnStudentForm.Name = "btnStudentForm";
+            this.btnStudentForm.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnStudentForm.Text = "دانشجو";
+            this.btnStudentForm.Click += new System.EventHandler(this.btnStudentForm_Click);
             // 
-            // accordionControlElement13
+            // btnEducationalCenter
             // 
-            this.accordionControlElement13.Name = "accordionControlElement13";
-            this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement13.Text = "دانشگاه";
+            this.btnEducationalCenter.Name = "btnEducationalCenter";
+            this.btnEducationalCenter.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnEducationalCenter.Text = "دانشگاه";
+            this.btnEducationalCenter.Click += new System.EventHandler(this.btnEducationalCenter_Click);
             // 
-            // accordionControlElement14
+            // btnStudyForm
             // 
-            this.accordionControlElement14.Name = "accordionControlElement14";
-            this.accordionControlElement14.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement14.Text = "رشته تحصیلی";
+            this.btnStudyForm.Name = "btnStudyForm";
+            this.btnStudyForm.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnStudyForm.Text = "رشته تحصیلی";
+            this.btnStudyForm.Click += new System.EventHandler(this.btnStudyForm_Click);
             // 
             // MainForm
             // 
@@ -187,14 +191,14 @@ namespace DMS.UI
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement mnuDormitoryForm;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnRoom;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnTrafficType;
         private DevExpress.XtraBars.FormAssistant formAssistant1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement13;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement14;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnStudentForm;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnEducationalCenter;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnStudyForm;
     }
 }

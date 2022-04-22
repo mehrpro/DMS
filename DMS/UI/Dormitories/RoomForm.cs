@@ -51,10 +51,9 @@ namespace DMS.UI.Dormitories
             cbxDormitory.Enabled = false;
             txtShomareOtagh.EditValue = _room.RoomNumber;
             txtZarfitOtagh.EditValue = _room.RoomCapacity;
-
             cbxEmkanat.EditValue = _room.IntFacilities;
             cbxEmkanat.RefreshEditValue();
-            // cbxEmkanat.Text = _room.Facilities;
+        
 
         }
 
