@@ -38,6 +38,7 @@ namespace DMS.UI
             this.mnuDormitoryForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnTrafficType = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnRegisterRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -46,7 +47,6 @@ namespace DMS.UI
             this.btnEducationalCenter = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnStudyForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
-            this.btnRegisterRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,10 +58,10 @@ namespace DMS.UI
             this.accordionControlElement7,
             this.accordionControlElement4,
             this.accordionControlElement5});
-            this.accordionControl1.Location = new System.Drawing.Point(584, 0);
+            this.accordionControl1.Location = new System.Drawing.Point(578, 0);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(223, 472);
+            this.accordionControl1.Size = new System.Drawing.Size(223, 465);
             this.accordionControl1.TabIndex = 0;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -117,6 +117,14 @@ namespace DMS.UI
             this.btnTrafficType.Text = "نوع تردد";
             this.btnTrafficType.Click += new System.EventHandler(this.btnTrafficType_Click);
             // 
+            // btnRegisterRoom
+            // 
+            this.btnRegisterRoom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRegisterRoom.ImageOptions.Image")));
+            this.btnRegisterRoom.Name = "btnRegisterRoom";
+            this.btnRegisterRoom.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnRegisterRoom.Text = "مدیریت اتاق";
+            this.btnRegisterRoom.Click += new System.EventHandler(this.btnRegisterRoom_Click);
+            // 
             // accordionControlElement4
             // 
             this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -168,19 +176,11 @@ namespace DMS.UI
             this.btnStudyForm.Text = "رشته تحصیلی";
             this.btnStudyForm.Click += new System.EventHandler(this.btnStudyForm_Click);
             // 
-            // btnRegisterRoom
-            // 
-            this.btnRegisterRoom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRegisterRoom.ImageOptions.Image")));
-            this.btnRegisterRoom.Name = "btnRegisterRoom";
-            this.btnRegisterRoom.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnRegisterRoom.Text = "مدیریت اتاق";
-            this.btnRegisterRoom.Click += new System.EventHandler(this.btnRegisterRoom_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 472);
+            this.ClientSize = new System.Drawing.Size(801, 465);
             this.Controls.Add(this.accordionControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.IsMdiContainer = true;

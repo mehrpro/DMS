@@ -13,6 +13,10 @@ namespace DMS.UI.Dormitories
         private readonly IRoomService _roomService;
         private readonly IStudentService _studentService;
         private RegisterRoom _registerRoom;
+        private Room _selectRoom;
+        private Dormitory _selectDormitory;
+        private Student _selectStudent;
+        private RegisterRoom _resultFelii;
 
         public RegisterRoomForm(IRegisterRoomService registerRoomService, IDormitoryService dormitoryService,
             IRoomService roomService, IStudentService studentService)
@@ -54,8 +58,8 @@ namespace DMS.UI.Dormitories
 
         private void cbxDormitory_EditValueChanged(object sender, System.EventArgs e)
         {
-            var selectDormitory = (Dormitory)cbxDormitory.GetSelectedDataRow();
-            if (selectDormitory == null)
+            _selectDormitory = (Dormitory)cbxDormitory.GetSelectedDataRow();
+            if (_selectDormitory == null)
             {
                 cbxRooms.Properties.DataSource = null;
                 cbxStudent.Properties.DataSource = null;
@@ -65,26 +69,26 @@ namespace DMS.UI.Dormitories
                 txtZarfit.ResetText();
                 return;
             }
-            cbxRooms.Properties.DataSource = Task.Run(async () => await _roomService.GetRoomByDormitoryID(selectDormitory.ID)).Result;
-            txtOtagh.Text = selectDormitory.Room.ToString();
-            txtZarfit.Text = selectDormitory.Valence.ToString();
-            txtMandehKol.EditValue = Task.Run(async () => await _dormitoryService.MandehKol(selectDormitory.ID)).Result;
+            cbxRooms.Properties.DataSource = Task.Run(async () => await _roomService.GetRoomByDormitoryID(_selectDormitory.ID)).Result;
+            txtOtagh.Text = _selectDormitory.Room.ToString();
+            txtZarfit.Text = _selectDormitory.Valence.ToString();
+            txtMandehKol.EditValue = Task.Run(async () => await _dormitoryService.MandehKol(_selectDormitory.ID)).Result;
 
         }
 
         private void cbxRooms_EditValueChanged(object sender, System.EventArgs e)
         {
-            var selectRoom = (Room)cbxRooms.GetSelectedDataRow();
-            if (selectRoom == null)
+            _selectRoom = (Room)cbxRooms.GetSelectedDataRow();
+            if (_selectRoom == null)
             {
                 txtMandehOtagh.ResetText();
                 cbxStudent.Properties.DataSource = null;
                 return;
             }
             dgvRegisterRoom.DataSource =
-                Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(selectRoom.RoomID)).Result;
+                Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(_selectRoom.RoomID)).Result;
             txtMandehOtagh.EditValue =
-                Task.Run(async () => await _registerRoomService.MandehOtagh(selectRoom.RoomID)).Result;
+                Task.Run(async () => await _registerRoomService.MandehOtagh(_selectRoom.RoomID)).Result;
 
         }
 
@@ -104,7 +108,23 @@ namespace DMS.UI.Dormitories
         {
             if (dxValidationProvider1.Validate())
             {
-                
+                _registerRoom = new RegisterRoom();
+                _registerRoom.IsActive = true;
+                _registerRoom.RoomID_FK = _selectRoom.RoomID;
+                _registerRoom.StudentID_FK = _selectStudent.StudentID;
+                if (_resultFelii != null)
+                {
+                    if (_resultFelii.RoomID_FK == _selectRoom.RoomID)
+                    {
+                        XtraMessageBox.Show(@"بدون تغیرات ثبت شد!");
+                    }
+
+                    if (_resultFelii.RoomID_FK != _selectRoom.RoomID)
+                    {
+
+                    }
+                }
+
             }
             else
             {
@@ -114,22 +134,23 @@ namespace DMS.UI.Dormitories
 
         private void cbxStudent_EditValueChanged(object sender, System.EventArgs e)
         {
-            var selectStudent = (Student)cbxStudent.GetSelectedDataRow();
-            if (selectStudent == null)
+            _selectStudent = (Student)cbxStudent.GetSelectedDataRow();
+            if (_selectStudent == null)
             {
                 txtOtaghFelii.ResetText();
                 txtOtaghFelii.EditValue = null;
                 return;
             }
 
-            var resultFelii = Task.Run(async () => await _registerRoomService.GetRoomByStudentID(selectStudent.StudentID)).Result;
-            if (resultFelii == null)
+            _resultFelii = Task.Run(async () => await _registerRoomService.GetRoomByStudentID(_selectStudent.StudentID)).Result;
+            if (_resultFelii == null)
             {
-                txtOtaghFelii.Text = "";
+                txtOtaghFelii.Text = txtEmkanat.Text = "";
             }
             else
             {
-                txtOtaghFelii.Text = resultFelii.Room.RoomNumber;
+                txtOtaghFelii.Text = _resultFelii.Room.RoomNumber;
+                txtEmkanat.Text = _resultFelii.Room.Facilities;
             }
         }
     }
