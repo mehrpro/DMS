@@ -29,6 +29,12 @@ namespace DMS.UI.Dormitories
 
             cbxRooms.Properties.DisplayMember = "RoomNumber";
             cbxRooms.Properties.ValueMember = "RoomID";
+
+
+            cbxStudent.Properties.DisplayMember = "FullName";
+            cbxStudent.Properties.ValueMember = "StudentID";
+            cbxStudent.Properties.DataSource =
+                Task.Run(async () => await _studentService.StudentList()).Result;
         }
 
         private void CbxDormitoryList()
@@ -75,22 +81,20 @@ namespace DMS.UI.Dormitories
                 cbxStudent.Properties.DataSource = null;
                 return;
             }
-
             dgvRegisterRoom.DataSource =
                 Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(selectRoom.RoomID)).Result;
             txtMandehOtagh.EditValue =
                 Task.Run(async () => await _registerRoomService.MandehOtagh(selectRoom.RoomID)).Result;
-            cbxStudent.Properties.DataSource =
-                Task.Run(async () => await _studentService.StudentList()).Result;
+
         }
 
         private void btnClose_Click(object sender, System.EventArgs e)
         {
-            if (_registerRoom.ID > 0)
-            {
-                Clear();
-            }
-            else
+            //if (_registerRoom.ID > 0)
+            //{
+            //    Clear();
+            //}
+            //else
             {
                 Close();
             }
@@ -100,11 +104,32 @@ namespace DMS.UI.Dormitories
         {
             if (dxValidationProvider1.Validate())
             {
-                if
+                
             }
             else
             {
                 PublicValues.ErrorValidate(Text);
+            }
+        }
+
+        private void cbxStudent_EditValueChanged(object sender, System.EventArgs e)
+        {
+            var selectStudent = (Student)cbxStudent.GetSelectedDataRow();
+            if (selectStudent == null)
+            {
+                txtOtaghFelii.ResetText();
+                txtOtaghFelii.EditValue = null;
+                return;
+            }
+
+            var resultFelii = Task.Run(async () => await _registerRoomService.GetRoomByStudentID(selectStudent.StudentID)).Result;
+            if (resultFelii == null)
+            {
+                txtOtaghFelii.Text = "";
+            }
+            else
+            {
+                txtOtaghFelii.Text = resultFelii.Room.RoomNumber;
             }
         }
     }

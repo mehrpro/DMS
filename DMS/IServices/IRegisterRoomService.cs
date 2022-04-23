@@ -14,6 +14,8 @@ namespace DMS.IServices
         Task<IEnumerable<RegisterRoom>> GetAllList();
         Task<IEnumerable<RegisterRoom>> GetRegisterRoomByRoomID(int roomId);
         Task<int> MandehOtagh(int roomId);
+        Task<RegisterRoom> GetRoomByStudentID(int studentId);
+
 
     }
 
@@ -44,8 +46,8 @@ namespace DMS.IServices
         public async Task<IEnumerable<RegisterRoom>> GetRegisterRoomByRoomID(int roomId)
         {
             return await _unitOfWork.RegisterRoom.GetRegisterRoomByRoomId(roomId);
-          
-           
+
+
         }
 
         public async Task<int> MandehOtagh(int roomId)
@@ -56,6 +58,11 @@ namespace DMS.IServices
             return result;
 
 
+        }
+
+        public async Task<RegisterRoom> GetRoomByStudentID(int studentId)
+        {
+            return await _unitOfWork.RegisterRoom.GetRoomByStudentID(studentId);
         }
     }
 }
