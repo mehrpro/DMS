@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using DevExpress.Utils.Extensions;
 
 namespace DMS.Repositories
 {
@@ -20,6 +21,7 @@ namespace DMS.Repositories
         void Remove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
         Task<bool> AnyByCondition(Expression<Func<TEntity, bool>> predicate);
+        void Update(TEntity entity, int entityId);
     }
 
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
@@ -74,6 +76,17 @@ namespace DMS.Repositories
         public async Task<bool> AnyByCondition(Expression<Func<TEntity, bool>> predicate)
         {
             return await Context.Set<TEntity>().AnyAsync(predicate);
+        }
+
+        public void Update(TEntity entity, int entityId)
+        {
+            var local = Context.Set<TEntity>().Find(entityId);
+            if (local != null)
+            {
+                Context.Entry(local).State = EntityState.Detached;
+            }
+            Context.Entry(entity).State = EntityState.Modified;
+
         }
 
         public Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)

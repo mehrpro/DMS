@@ -22,7 +22,7 @@ namespace DMS.Repositories
         int Commit();
     }
 
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork ,IDisposable
     {
         private readonly ApplicationDbContext _context;
         private IApplicationUserRep _applicationUserRep;
@@ -37,6 +37,7 @@ namespace DMS.Repositories
         private IStudyRep _studyRep;
         private ITagreciveRep _tagreciveRep;
         private ITrafficTypeRep _trafficTypeRep;
+        private bool _disposed;
 
 
         public UnitOfWork(ApplicationDbContext context)
@@ -63,9 +64,22 @@ namespace DMS.Repositories
             return _context.SaveChanges();
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            _disposed = true;
+        }
+
         public void Dispose()
         {
-            _context.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

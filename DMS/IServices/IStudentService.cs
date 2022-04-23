@@ -1,9 +1,8 @@
-﻿using System;
+﻿using DMS.Entities;
+using DMS.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
-using DMS.Entities;
-using DMS.Repositories;
 
 namespace DMS.IServices
 {
@@ -17,12 +16,9 @@ namespace DMS.IServices
     public class StudentService : IStudentService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
-
-        public StudentService(IUnitOfWork unitOfWork, IMapper mapper)
+        public StudentService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _mapper = mapper;
         }
 
         public async Task<bool> Update(Student model)
@@ -30,9 +26,22 @@ namespace DMS.IServices
             try
             {
                 var find = await _unitOfWork.Student.FindByIdAsync(model.StudentID);
-                var resultMap = _mapper.Map<Student>(model);
-                _unitOfWork.
-
+                find.Birthday = model.Birthday;
+                find.EducationalID_FK = model.EducationalID_FK;
+                find.FatherName = model.FatherName;
+                find.FatherTel = model.FatherTel;
+                find.OtherName = model.OtherName;
+                find.OtherTel = model.OtherTel;
+                find.HomeTel = model.HomeTel;
+                find.StudyID_FK = model.StudyID_FK;
+                find.FullName = model.FullName;
+                find.NationalCode = model.NationalCode;
+                find.StudentCode = model.StudentCode;
+                find.StudentTel = model.StudentTel;
+                find.Img = model.Img;
+                //_unitOfWork.Student.Update(model, model.StudentID);
+                _unitOfWork.Commit();
+                return true;
             }
             catch (Exception e)
             {

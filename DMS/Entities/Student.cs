@@ -23,7 +23,7 @@ namespace DMS.Entities
         public string HomeTel { get; set; }
         public string OtherName { get; set; }
         public string OtherTel { get; set; }
-        public Nullable<byte>[] Img { get; set; }
+        public byte[] Img { get; set; }
 
         public int StudyID_FK { get; set; }
         public Study Study { get; set; }

@@ -1,5 +1,7 @@
 ﻿using DMS.UI;
 using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DMS
@@ -12,6 +14,8 @@ namespace DMS
         [STAThread]
         static void Main()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("fa-IR");
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var container = new StructureMap.Container(new TypeRegister());
