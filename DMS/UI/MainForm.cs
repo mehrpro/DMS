@@ -12,6 +12,7 @@ using DMS.Entities;
 using DMS.UI.Dormitories;
 using DMS.UI.Users;
 using Container = StructureMap.Container;
+using DMS.UI.TagCard;
 
 namespace DMS.UI
 {
@@ -106,6 +107,18 @@ namespace DMS.UI
         {
             foreach (var x in this.MdiChildren) x.Close();
             var frm = _mainContainer.GetInstance<RegisterRoomForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnRegisterTag_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren) x.Close();
+            var frm = _mainContainer.GetInstance<RegisterTagForm>();
             frm.ControlBox = false;
             frm.Dock = DockStyle.Fill;
             frm.WindowState = FormWindowState.Maximized;

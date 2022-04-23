@@ -29,7 +29,7 @@ namespace DMS
             For<IFieldOfStudyService>().Use<FieldOfStudyService>();
             For<IStudentService>().Use<StudentService>();
             For<IRegisterRoomService>().Use<RegisterRoomService>();
-
+            For<IRegisterTagService>().Use<RegisterTagService>();
 
 
         }

@@ -16,6 +16,7 @@ namespace DMS.IServices
         Task<int> MandehOtagh(int roomId);
         Task<RegisterRoom> GetRoomByStudentID(int studentId);
         Task<bool> RemoveStudentFromRoom(int registerRoomId);
+        RegisterRoom GetRegisterRoomByStudentId(int studentId);
 
 
     }
@@ -62,7 +63,7 @@ namespace DMS.IServices
 
         public async Task<int> MandehOtagh(int roomId)
         {
-            var sumOzv = await _unitOfWork.RegisterRoom.CountAsyncByCondition(x => x.RoomID_FK == roomId);
+            var sumOzv = await _unitOfWork.RegisterRoom.CountAsyncByCondition(x => x.RoomID_FK == roomId && x.IsActive);
             var zarfit = await _unitOfWork.Room.FindByIdAsync(roomId);
             var result = zarfit.RoomCapacity - sumOzv;
             return result;
@@ -79,8 +80,11 @@ namespace DMS.IServices
         {
             try
             {
-                var find = await _unitOfWork.RegisterRoom.FindByIdAsync(registerRoomId);
-                find.IsActive = false;
+                var find = await _unitOfWork.RegisterRoom.FindAllByCondition(x=>x.StudentID_FK == registerRoomId);
+                foreach (var item in find.ToList())
+                {
+                    item.IsActive = false;
+                } 
                 _unitOfWork.Commit();
                 return true;
             }
@@ -89,6 +93,11 @@ namespace DMS.IServices
                 return false;
             }
 
+        }
+
+        public RegisterRoom GetRegisterRoomByStudentId(int studentId)
+        {
+            return  _unitOfWork.RegisterRoom.GetRegisterRoomByStudentId(studentId);
         }
     }
 }

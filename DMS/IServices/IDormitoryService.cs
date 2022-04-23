@@ -64,7 +64,7 @@ namespace DMS.IServices
 
         public async Task<int> MandehKol(int dormitoryId)
         {
-            var sums = await _unitOfWork.RegisterRoom.CountAsyncByCondition(x => x.Room.DormitoryID_FK == dormitoryId);
+            var sums = await _unitOfWork.RegisterRoom.CountAsyncByCondition(x => x.Room.DormitoryID_FK == dormitoryId && x.IsActive);
             var zarfiat = await _unitOfWork.Dormitory.FindByIdAsync(dormitoryId);
             return zarfiat.Valence - sums;
         }

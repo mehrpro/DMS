@@ -41,7 +41,7 @@ namespace DMS.UI
             this.btnRegisterRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnRegisterTag = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnStudentForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnEducationalCenter = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -92,7 +92,6 @@ namespace DMS.UI
             this.btnRoom,
             this.btnTrafficType,
             this.btnRegisterRoom});
-            this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "خوابگاه";
             // 
@@ -129,7 +128,8 @@ namespace DMS.UI
             // 
             this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement6,
-            this.accordionControlElement11});
+            this.btnRegisterTag});
+            this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "تگ کارت";
             // 
@@ -139,11 +139,12 @@ namespace DMS.UI
             this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement6.Text = "تگ کارت";
             // 
-            // accordionControlElement11
+            // btnRegisterTag
             // 
-            this.accordionControlElement11.Name = "accordionControlElement11";
-            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement11.Text = "ثبت کارت";
+            this.btnRegisterTag.Name = "btnRegisterTag";
+            this.btnRegisterTag.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnRegisterTag.Text = "ثبت کارت";
+            this.btnRegisterTag.Click += new System.EventHandler(this.btnRegisterTag_Click);
             // 
             // accordionControlElement5
             // 
@@ -151,7 +152,6 @@ namespace DMS.UI
             this.btnStudentForm,
             this.btnEducationalCenter,
             this.btnStudyForm});
-            this.accordionControlElement5.Expanded = true;
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Text = "دانشجو";
             // 
@@ -207,7 +207,7 @@ namespace DMS.UI
         private DevExpress.XtraBars.FormAssistant formAssistant1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnRegisterTag;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnStudentForm;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnEducationalCenter;

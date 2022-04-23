@@ -103,6 +103,7 @@
     <Compile Include="IServices\IEducationalCenterService.cs" />
     <Compile Include="IServices\IFieldOfStudyService.cs" />
     <Compile Include="IServices\IRegisterRoomService.cs" />
+    <Compile Include="IServices\IRegisterTagService.cs" />
     <Compile Include="IServices\IRoomService.cs" />
     <Compile Include="IServices\IStudentService.cs" />
     <Compile Include="IServices\ITrafficTypeTitleService.cs" />

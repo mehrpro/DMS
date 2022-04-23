@@ -49,7 +49,7 @@ namespace DMS.UI.Dormitories
             var x = resultAll.ToList();
             var resultRemove = Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(_selectRoom.RoomID)).Result;
             var registers = resultRemove.ToList();
-            var removeIdList = registers.GroupBy(x => x.StudentID_FK).Select(x => x.First()).ToList().Select(x=>x.StudentID_FK);
+            var removeIdList = registers.GroupBy(x => x.StudentID_FK).Select(x => x.First()).ToList().Select(x => x.StudentID_FK);
             foreach (var item in removeIdList)
             {
                 var findRemove = resultAll.FirstOrDefault(x => x.StudentID == item);
@@ -63,13 +63,19 @@ namespace DMS.UI.Dormitories
 
         private void Clear()
         {
-           
+
             cbxStudentList();
             cbxStudent.EditValue = 0;
+            dgvRegisterRoomList();
+            MandeyOtagh();
 
         }
 
-
+        private void MandeyOtagh()
+        {
+            txtMandehOtagh.EditValue =
+    Task.Run(async () => await _registerRoomService.MandehOtagh(_selectRoom.RoomID)).Result;
+        }
 
         private void cbxDormitory_EditValueChanged(object sender, System.EventArgs e)
         {
@@ -108,8 +114,7 @@ namespace DMS.UI.Dormitories
             txtEmkanatOtagh.EditValue = _selectRoom.Facilities;
             cbxStudentList();
             dgvRegisterRoomList();
-            txtMandehOtagh.EditValue =
-                Task.Run(async () => await _registerRoomService.MandehOtagh(_selectRoom.RoomID)).Result;
+            MandeyOtagh();
 
 
 
@@ -138,23 +143,44 @@ namespace DMS.UI.Dormitories
                 {
                     XtraMessageBox.Show(@"ظرفیت اتاق تکمیل است", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                //else if (dgvRegisterRoom.)
-                //{
 
-                //}
                 else
                 {
-                    _registerRoom = new RegisterRoom();
-                    _registerRoom.IsActive = true;
-                    _registerRoom.RoomID_FK = _selectRoom.RoomID;
-                    _registerRoom.StudentID_FK = _selectStudent.StudentID;
-                    var resultAdd = _registerRoomService.Add(_registerRoom);
-                    PublicValues.Message(resultAdd);
-                    if(resultAdd)
+                    var resultFind = _registerRoomService.GetRegisterRoomByStudentId(_selectStudent.StudentID);
+                    if (resultFind == null)
                     {
-                        Clear();
-                        dgvRegisterRoomList();
+                        _registerRoom = new RegisterRoom();
+                        _registerRoom.IsActive = true;
+                        _registerRoom.RoomID_FK = _selectRoom.RoomID;
+                        _registerRoom.StudentID_FK = _selectStudent.StudentID;
+                        var resultAdd = _registerRoomService.Add(_registerRoom);
+                        PublicValues.Message(resultAdd);
+                        if (resultAdd)
+                        {
+                            Clear();
+                            dgvRegisterRoomList();
+                        }
                     }
+                    else
+                    {
+                        var dialog = XtraMessageBox.Show($"{resultFind.Student.FullName}  در اتاق  {resultFind.Room.RoomNumber} مستقر است آیا این شخص را به اتاق جدید منتقل میکنید ؟", "جابجایی دانشجو", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (dialog == DialogResult.Yes)
+                        {
+                            var result = _registerRoomService.RemoveStudentFromRoom(_selectStudent.StudentID);
+                            _registerRoom = new RegisterRoom();
+                            _registerRoom.IsActive = true;
+                            _registerRoom.RoomID_FK = _selectRoom.RoomID;
+                            _registerRoom.StudentID_FK = _selectStudent.StudentID;
+                            var resultAdd = _registerRoomService.Add(_registerRoom);
+                            PublicValues.Message(resultAdd);
+                            if (resultAdd)
+                            {
+                                Clear();
+                                dgvRegisterRoomList();
+                            }
+                        }
+                    }
+
                 }
             }
             else
@@ -189,11 +215,11 @@ namespace DMS.UI.Dormitories
         private void btnSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (layoutView1.GetFocusedRowCellValue("ID") == null) return;
-            var selected =(RegisterRoom)layoutView1.GetFocusedRow();
+            var selected = (RegisterRoom)layoutView1.GetFocusedRow();
             var dialog = XtraMessageBox.Show(@"آیا شما از حذف این مورد اطمینان دارید ؟", "خروج نفر از اتاق", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(dialog == DialogResult.Yes)
+            if (dialog == DialogResult.Yes)
             {
-                var resultRemove = Task.Run(async () => await _registerRoomService.RemoveStudentFromRoom(selected.ID)).Result;
+                var resultRemove = Task.Run(async () => await _registerRoomService.RemoveStudentFromRoom(selected.StudentID_FK)).Result;
                 if (!resultRemove)
                 {
                     PublicValues.ErrorSave(Text);
@@ -201,6 +227,7 @@ namespace DMS.UI.Dormitories
                 else
                 {
                     Clear();
+
                 }
             }
         }
