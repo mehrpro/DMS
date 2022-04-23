@@ -26,7 +26,7 @@ namespace DMS.Repositories
 
         public async Task<IEnumerable<RegisterRoom>> GetRegisterRoomByRoomId(int roomId)
         {
-            return await ApplicationDbContext.RegisterRooms.Include(x => x.Room).Include(x => x.Student).Where(x => x.RoomID_FK == roomId).ToListAsync();
+            return await ApplicationDbContext.RegisterRooms.Include(x => x.Room).Include(x => x.Student).Include(x=>x.Student.EducationalCenter).Include(x=>x.Student.Study).Where(x => x.RoomID_FK == roomId).ToListAsync();
         }
 
         public async Task<RegisterRoom> GetRoomByStudentID(int studentId)

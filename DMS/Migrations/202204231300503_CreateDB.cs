@@ -39,6 +39,7 @@
                         RoomNumber = c.String(nullable: false, maxLength: 50),
                         RoomCapacity = c.Int(nullable: false),
                         Facilities = c.String(maxLength: 500),
+                        IntFacilities = c.String(maxLength: 100),
                         DormitoryID_FK = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.RoomID)
@@ -75,6 +76,7 @@
                         HomeTel = c.String(maxLength: 11),
                         OtherName = c.String(maxLength: 150),
                         OtherTel = c.String(maxLength: 11),
+                        Img = c.Binary(),
                         StudyID_FK = c.Int(nullable: false),
                         EducationalID_FK = c.Int(nullable: false),
                     })

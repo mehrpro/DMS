@@ -61,7 +61,7 @@ namespace DMS.UI
             this.accordionControl1.Location = new System.Drawing.Point(578, 0);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(223, 465);
+            this.accordionControl1.Size = new System.Drawing.Size(223, 464);
             this.accordionControl1.TabIndex = 0;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -180,7 +180,7 @@ namespace DMS.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 465);
+            this.ClientSize = new System.Drawing.Size(801, 464);
             this.Controls.Add(this.accordionControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.IsMdiContainer = true;

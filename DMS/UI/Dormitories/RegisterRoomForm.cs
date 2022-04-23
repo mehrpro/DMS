@@ -1,8 +1,9 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DMS.Entities;
 using DMS.IServices;
+using System;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DMS.UI.Dormitories
 {
@@ -39,6 +40,7 @@ namespace DMS.UI.Dormitories
             cbxStudent.Properties.ValueMember = "StudentID";
             cbxStudent.Properties.DataSource =
                 Task.Run(async () => await _studentService.StudentList()).Result;
+
         }
 
         private void CbxDormitoryList()
@@ -48,7 +50,7 @@ namespace DMS.UI.Dormitories
 
         private void Clear()
         {
-
+            cbxStudent.EditValue = 0;
         }
 
         private void panelControl1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
@@ -75,7 +77,11 @@ namespace DMS.UI.Dormitories
             txtMandehKol.EditValue = Task.Run(async () => await _dormitoryService.MandehKol(_selectDormitory.ID)).Result;
 
         }
-
+        private void dgvRegisterRoomList()
+        {
+            dgvRegisterRoom.DataSource =
+                          Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(_selectRoom.RoomID)).Result;
+        }
         private void cbxRooms_EditValueChanged(object sender, System.EventArgs e)
         {
             _selectRoom = (Room)cbxRooms.GetSelectedDataRow();
@@ -85,10 +91,13 @@ namespace DMS.UI.Dormitories
                 cbxStudent.Properties.DataSource = null;
                 return;
             }
-            dgvRegisterRoom.DataSource =
-                Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(_selectRoom.RoomID)).Result;
+            txtZarfiatOtagh.EditValue = _selectRoom.RoomCapacity;
+            txtEmkanatOtagh.EditValue = _selectRoom.Facilities;
+            dgvRegisterRoomList();
             txtMandehOtagh.EditValue =
                 Task.Run(async () => await _registerRoomService.MandehOtagh(_selectRoom.RoomID)).Result;
+
+
 
         }
 
@@ -108,23 +117,31 @@ namespace DMS.UI.Dormitories
         {
             if (dxValidationProvider1.Validate())
             {
-                _registerRoom = new RegisterRoom();
-                _registerRoom.IsActive = true;
-                _registerRoom.RoomID_FK = _selectRoom.RoomID;
-                _registerRoom.StudentID_FK = _selectStudent.StudentID;
-                if (_resultFelii != null)
+                int mandeh = Convert.ToInt32(txtMandehOtagh.EditValue);
+                int zarfiatOtagh = Convert.ToInt32(txtZarfiatOtagh.EditValue);
+                //var listOtagh = 
+                if (mandeh < 1)
                 {
-                    if (_resultFelii.RoomID_FK == _selectRoom.RoomID)
-                    {
-                        XtraMessageBox.Show(@"بدون تغیرات ثبت شد!");
-                    }
+                    XtraMessageBox.Show(@"ظرفیت اتاق تکمیل است", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                //else if (dgvRegisterRoom.)
+                //{
 
-                    if (_resultFelii.RoomID_FK != _selectRoom.RoomID)
+                //}
+                else
+                {
+                    _registerRoom = new RegisterRoom();
+                    _registerRoom.IsActive = true;
+                    _registerRoom.RoomID_FK = _selectRoom.RoomID;
+                    _registerRoom.StudentID_FK = _selectStudent.StudentID;
+                    var resultAdd = _registerRoomService.Add(_registerRoom);
+                    PublicValues.Message(resultAdd);
+                    if(resultAdd)
                     {
-
+                        Clear();
+                        dgvRegisterRoomList();
                     }
                 }
-
             }
             else
             {
@@ -139,18 +156,19 @@ namespace DMS.UI.Dormitories
             {
                 txtOtaghFelii.ResetText();
                 txtOtaghFelii.EditValue = null;
+                txtEmkanatFelli.EditValue = null;
                 return;
             }
 
             _resultFelii = Task.Run(async () => await _registerRoomService.GetRoomByStudentID(_selectStudent.StudentID)).Result;
             if (_resultFelii == null)
             {
-                txtOtaghFelii.Text = txtEmkanat.Text = "";
+                txtOtaghFelii.Text = txtEmkanatFelli.Text = "";
             }
             else
             {
                 txtOtaghFelii.Text = _resultFelii.Room.RoomNumber;
-                txtEmkanat.Text = _resultFelii.Room.Facilities;
+                txtEmkanatFelli.Text = _resultFelii.Room.Facilities;
             }
         }
     }

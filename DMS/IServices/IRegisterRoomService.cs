@@ -30,7 +30,16 @@ namespace DMS.IServices
 
         public bool Add(RegisterRoom model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _unitOfWork.RegisterRoom.Add(model);
+                _unitOfWork.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public async Task<bool> Update(RegisterRoom model)
