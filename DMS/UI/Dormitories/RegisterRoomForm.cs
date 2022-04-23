@@ -2,6 +2,7 @@
 using DMS.Entities;
 using DMS.IServices;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,25 +39,37 @@ namespace DMS.UI.Dormitories
 
             cbxStudent.Properties.DisplayMember = "FullName";
             cbxStudent.Properties.ValueMember = "StudentID";
-            cbxStudent.Properties.DataSource =
-                Task.Run(async () => await _studentService.StudentList()).Result;
+
 
         }
 
-        private void CbxDormitoryList()
+        private void cbxStudentList()
         {
-
+            var resultAll = Task.Run(async () => await _studentService.StudentList()).Result;
+            var x = resultAll.ToList();
+            var resultRemove = Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(_selectRoom.RoomID)).Result;
+            var registers = resultRemove.ToList();
+            var removeIdList = registers.GroupBy(x => x.StudentID_FK).Select(x => x.First()).ToList().Select(x=>x.StudentID_FK);
+            foreach (var item in removeIdList)
+            {
+                var findRemove = resultAll.FirstOrDefault(x => x.StudentID == item);
+                if (findRemove != null)
+                {
+                    x.Remove(findRemove);
+                }
+            }
+            cbxStudent.Properties.DataSource = x;
         }
 
         private void Clear()
         {
+           
+            cbxStudentList();
             cbxStudent.EditValue = 0;
-        }
-
-        private void panelControl1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
 
         }
+
+
 
         private void cbxDormitory_EditValueChanged(object sender, System.EventArgs e)
         {
@@ -93,6 +106,7 @@ namespace DMS.UI.Dormitories
             }
             txtZarfiatOtagh.EditValue = _selectRoom.RoomCapacity;
             txtEmkanatOtagh.EditValue = _selectRoom.Facilities;
+            cbxStudentList();
             dgvRegisterRoomList();
             txtMandehOtagh.EditValue =
                 Task.Run(async () => await _registerRoomService.MandehOtagh(_selectRoom.RoomID)).Result;
@@ -169,6 +183,25 @@ namespace DMS.UI.Dormitories
             {
                 txtOtaghFelii.Text = _resultFelii.Room.RoomNumber;
                 txtEmkanatFelli.Text = _resultFelii.Room.Facilities;
+            }
+        }
+
+        private void btnSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (layoutView1.GetFocusedRowCellValue("ID") == null) return;
+            var selected =(RegisterRoom)layoutView1.GetFocusedRow();
+            var dialog = XtraMessageBox.Show(@"آیا شما از حذف این مورد اطمینان دارید ؟", "خروج نفر از اتاق", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dialog == DialogResult.Yes)
+            {
+                var resultRemove = Task.Run(async () => await _registerRoomService.RemoveStudentFromRoom(selected.ID)).Result;
+                if (!resultRemove)
+                {
+                    PublicValues.ErrorSave(Text);
+                }
+                else
+                {
+                    Clear();
+                }
             }
         }
     }

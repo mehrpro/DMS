@@ -141,6 +141,7 @@ namespace DMS.UI.Dormitories
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelect_ButtonClick);
             // 
             // btnRemove
             // 
@@ -158,7 +159,6 @@ namespace DMS.UI.Dormitories
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(880, 263);
             this.panelControl1.TabIndex = 0;
-            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // groupControl3
             // 
@@ -548,7 +548,7 @@ namespace DMS.UI.Dormitories
             // 
             this.layoutView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.layoutView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.layoutView1.CardMinSize = new System.Drawing.Size(279, 380);
+            this.layoutView1.CardMinSize = new System.Drawing.Size(130, 245);
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.SelectColumn,
             this.IDColumn,
@@ -563,12 +563,15 @@ namespace DMS.UI.Dormitories
             this.layoutViewField_IDColumn});
             this.layoutView1.Name = "layoutView1";
             this.layoutView1.OptionsBehavior.ScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
+            this.layoutView1.OptionsCustomization.AllowFilter = false;
+            this.layoutView1.OptionsCustomization.AllowSort = false;
             this.layoutView1.OptionsView.AllowHotTrackFields = false;
             this.layoutView1.OptionsView.ShowCardCaption = false;
             this.layoutView1.OptionsView.ShowCardExpandButton = false;
             this.layoutView1.OptionsView.ShowFieldHints = false;
+            this.layoutView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.layoutView1.OptionsView.ShowHeaderPanel = false;
-            this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiRow;
+            this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.Carousel;
             this.layoutView1.TemplateCard = this.layoutViewCard1;
             // 
             // SelectColumn
@@ -586,10 +589,10 @@ namespace DMS.UI.Dormitories
             // layoutViewField_SelectColumn
             // 
             this.layoutViewField_SelectColumn.AppearanceItemCaption.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.layoutViewField_SelectColumn.EditorPreferredWidth = 169;
-            this.layoutViewField_SelectColumn.Location = new System.Drawing.Point(0, 336);
+            this.layoutViewField_SelectColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_SelectColumn.Location = new System.Drawing.Point(0, 312);
             this.layoutViewField_SelectColumn.Name = "layoutViewField_SelectColumn";
-            this.layoutViewField_SelectColumn.Size = new System.Drawing.Size(259, 24);
+            this.layoutViewField_SelectColumn.Size = new System.Drawing.Size(201, 24);
             this.layoutViewField_SelectColumn.TextSize = new System.Drawing.Size(81, 20);
             // 
             // IDColumn
@@ -607,7 +610,7 @@ namespace DMS.UI.Dormitories
             this.layoutViewField_IDColumn.EditorPreferredWidth = 20;
             this.layoutViewField_IDColumn.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_IDColumn.Name = "layoutViewField_IDColumn";
-            this.layoutViewField_IDColumn.Size = new System.Drawing.Size(259, 360);
+            this.layoutViewField_IDColumn.Size = new System.Drawing.Size(201, 336);
             this.layoutViewField_IDColumn.TextSize = new System.Drawing.Size(81, 20);
             // 
             // FullNameColumn
@@ -622,10 +625,10 @@ namespace DMS.UI.Dormitories
             // 
             // layoutViewField_FullNameColumn
             // 
-            this.layoutViewField_FullNameColumn.EditorPreferredWidth = 169;
-            this.layoutViewField_FullNameColumn.Location = new System.Drawing.Point(0, 186);
+            this.layoutViewField_FullNameColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_FullNameColumn.Location = new System.Drawing.Point(0, 162);
             this.layoutViewField_FullNameColumn.Name = "layoutViewField_FullNameColumn";
-            this.layoutViewField_FullNameColumn.Size = new System.Drawing.Size(259, 30);
+            this.layoutViewField_FullNameColumn.Size = new System.Drawing.Size(201, 30);
             this.layoutViewField_FullNameColumn.TextSize = new System.Drawing.Size(81, 20);
             // 
             // StudentCodeColumn
@@ -640,10 +643,10 @@ namespace DMS.UI.Dormitories
             // 
             // layoutViewField_StudentCodeColumn
             // 
-            this.layoutViewField_StudentCodeColumn.EditorPreferredWidth = 169;
-            this.layoutViewField_StudentCodeColumn.Location = new System.Drawing.Point(0, 216);
+            this.layoutViewField_StudentCodeColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_StudentCodeColumn.Location = new System.Drawing.Point(0, 192);
             this.layoutViewField_StudentCodeColumn.Name = "layoutViewField_StudentCodeColumn";
-            this.layoutViewField_StudentCodeColumn.Size = new System.Drawing.Size(259, 30);
+            this.layoutViewField_StudentCodeColumn.Size = new System.Drawing.Size(201, 30);
             this.layoutViewField_StudentCodeColumn.TextSize = new System.Drawing.Size(81, 20);
             // 
             // NationalCodeColumn
@@ -658,10 +661,10 @@ namespace DMS.UI.Dormitories
             // 
             // layoutViewField_NationalCodeColumn
             // 
-            this.layoutViewField_NationalCodeColumn.EditorPreferredWidth = 169;
-            this.layoutViewField_NationalCodeColumn.Location = new System.Drawing.Point(0, 246);
+            this.layoutViewField_NationalCodeColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_NationalCodeColumn.Location = new System.Drawing.Point(0, 222);
             this.layoutViewField_NationalCodeColumn.Name = "layoutViewField_NationalCodeColumn";
-            this.layoutViewField_NationalCodeColumn.Size = new System.Drawing.Size(259, 30);
+            this.layoutViewField_NationalCodeColumn.Size = new System.Drawing.Size(201, 30);
             this.layoutViewField_NationalCodeColumn.TextSize = new System.Drawing.Size(81, 20);
             // 
             // PicColumn
@@ -678,10 +681,10 @@ namespace DMS.UI.Dormitories
             // layoutViewField_PicColumn
             // 
             this.layoutViewField_PicColumn.AppearanceItemCaption.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.layoutViewField_PicColumn.EditorPreferredWidth = 255;
+            this.layoutViewField_PicColumn.EditorPreferredWidth = 197;
             this.layoutViewField_PicColumn.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_PicColumn.Name = "layoutViewField_PicColumn";
-            this.layoutViewField_PicColumn.Size = new System.Drawing.Size(259, 186);
+            this.layoutViewField_PicColumn.Size = new System.Drawing.Size(201, 162);
             this.layoutViewField_PicColumn.StartNewLine = true;
             this.layoutViewField_PicColumn.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutViewField_PicColumn.TextSize = new System.Drawing.Size(81, 20);
@@ -697,10 +700,10 @@ namespace DMS.UI.Dormitories
             // 
             // layoutViewField_EducationColumn
             // 
-            this.layoutViewField_EducationColumn.EditorPreferredWidth = 169;
-            this.layoutViewField_EducationColumn.Location = new System.Drawing.Point(0, 276);
+            this.layoutViewField_EducationColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_EducationColumn.Location = new System.Drawing.Point(0, 252);
             this.layoutViewField_EducationColumn.Name = "layoutViewField_EducationColumn";
-            this.layoutViewField_EducationColumn.Size = new System.Drawing.Size(259, 30);
+            this.layoutViewField_EducationColumn.Size = new System.Drawing.Size(201, 30);
             this.layoutViewField_EducationColumn.TextSize = new System.Drawing.Size(81, 20);
             // 
             // StudyColumn
@@ -714,10 +717,10 @@ namespace DMS.UI.Dormitories
             // 
             // layoutViewField_StudyColumn
             // 
-            this.layoutViewField_StudyColumn.EditorPreferredWidth = 169;
-            this.layoutViewField_StudyColumn.Location = new System.Drawing.Point(0, 306);
+            this.layoutViewField_StudyColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_StudyColumn.Location = new System.Drawing.Point(0, 282);
             this.layoutViewField_StudyColumn.Name = "layoutViewField_StudyColumn";
-            this.layoutViewField_StudyColumn.Size = new System.Drawing.Size(259, 30);
+            this.layoutViewField_StudyColumn.Size = new System.Drawing.Size(201, 30);
             this.layoutViewField_StudyColumn.TextSize = new System.Drawing.Size(81, 20);
             // 
             // layoutViewCard1

@@ -15,6 +15,7 @@ namespace DMS.IServices
         Task<IEnumerable<RegisterRoom>> GetRegisterRoomByRoomID(int roomId);
         Task<int> MandehOtagh(int roomId);
         Task<RegisterRoom> GetRoomByStudentID(int studentId);
+        Task<bool> RemoveStudentFromRoom(int registerRoomId);
 
 
     }
@@ -72,6 +73,22 @@ namespace DMS.IServices
         public async Task<RegisterRoom> GetRoomByStudentID(int studentId)
         {
             return await _unitOfWork.RegisterRoom.GetRoomByStudentID(studentId);
+        }
+
+        public async Task<bool> RemoveStudentFromRoom(int registerRoomId)
+        {
+            try
+            {
+                var find = await _unitOfWork.RegisterRoom.FindByIdAsync(registerRoomId);
+                find.IsActive = false;
+                _unitOfWork.Commit();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }
