@@ -29,6 +29,7 @@ namespace DMS.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -45,6 +46,7 @@ namespace DMS.UI
             this.btnEducationalCenter = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnStudyForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
+            this.btnRegisterRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +90,9 @@ namespace DMS.UI
             this.accordionControlElement7.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.mnuDormitoryForm,
             this.btnRoom,
-            this.btnTrafficType});
+            this.btnTrafficType,
+            this.btnRegisterRoom});
+            this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "خوابگاه";
             // 
@@ -164,6 +168,14 @@ namespace DMS.UI
             this.btnStudyForm.Text = "رشته تحصیلی";
             this.btnStudyForm.Click += new System.EventHandler(this.btnStudyForm_Click);
             // 
+            // btnRegisterRoom
+            // 
+            this.btnRegisterRoom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRegisterRoom.ImageOptions.Image")));
+            this.btnRegisterRoom.Name = "btnRegisterRoom";
+            this.btnRegisterRoom.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnRegisterRoom.Text = "مدیریت اتاق";
+            this.btnRegisterRoom.Click += new System.EventHandler(this.btnRegisterRoom_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -200,5 +212,6 @@ namespace DMS.UI
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnStudentForm;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnEducationalCenter;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnStudyForm;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnRegisterRoom;
     }
 }

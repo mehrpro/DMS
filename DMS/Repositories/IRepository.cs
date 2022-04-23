@@ -14,8 +14,10 @@ namespace DMS.Repositories
         Task<IEnumerable<TEntity>> FindAllAsync();
         Task<TEntity> FindCondition(Expression<Func<TEntity, bool>> predicate);
         Task<IEnumerable<TEntity>> FindAllByCondition(Expression<Func<TEntity, bool>> predicate);
+        Task<int> CountAsyncByCondition(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
+
         void Add(TEntity entity);
         void AddRange(IEnumerable<TEntity> entities);
         void Remove(TEntity entity);
@@ -87,6 +89,11 @@ namespace DMS.Repositories
             }
             Context.Entry(entity).State = EntityState.Modified;
 
+        }
+
+        public async Task<int> CountAsyncByCondition(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await Context.Set<TEntity>().CountAsync(predicate);
         }
 
         public Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)

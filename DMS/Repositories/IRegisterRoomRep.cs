@@ -1,9 +1,13 @@
-﻿using DMS.Entities;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
+using DMS.Entities;
 namespace DMS.Repositories
 {
     public interface IRegisterRoomRep : IRepository<RegisterRoom>
     {
-
+        Task<IEnumerable<RegisterRoom>> GetRegisterRoomByRoomId(int roomId);
     }
 
     public class RegisterRoomRep : Repository<RegisterRoom>, IRegisterRoomRep
@@ -16,6 +20,11 @@ namespace DMS.Repositories
         public ApplicationDbContext ApplicationDbContext
         {
             get { return (ApplicationDbContext)Context; }
+        }
+
+        public async Task<IEnumerable<RegisterRoom>> GetRegisterRoomByRoomId(int roomId)
+        {
+            return await ApplicationDbContext.RegisterRooms.Include(x => x.Room).Include(x => x.Student).Where(x => x.RoomID_FK == roomId).ToListAsync();
         }
     }
 }

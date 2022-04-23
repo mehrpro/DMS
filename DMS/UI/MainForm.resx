@@ -120,6 +120,21 @@
   <metadata name="formAssistant1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRegisterRoom.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAI3RFWHRUaXRsZQBDb2xvcjtD
+        b2xvclNjaGVtZTtDb2xvclRoZW1lO3ZLTzoAAAGcSURBVDhPfZHdK0NhHMeP2TkbV/4TV5K8XClplEJR
+        1OYtSVhtF5ssFy4Ui7A1WVGWxI1ckUYi8ne48bJXYucs+vl9jx178+ypTz31fJ/P75zvI4UOHiRephzV
+        AnBWRURSKVimYOT+ikUkAufIiQTVwcgDZbRvUpmM9pVH/WV15wZJs0hg3ti7p+R7lh7v6nWSb1lKeXt1
+        sF8OXSMpiwSyP3zLQa1AoP0JEmmNlrYukVREAgUTEjwpyWFcALFkRucl8UkL/nMka5myYhlJwQRcopMG
+        nVe+eLR5+m+hBkaxEFgW1y4onsoLnuOfNOs7rljsuGsfX2WGwDq/ckYxFsRSqs5T7IOmPIcVi3U49yCQ
+        IZDtM7vREWeEHHP7ZGeGpndpwh2pWOzwdFgvFgL8BzY1DIoCdZhQWqxBnBmY3IbAUvYsuadRMAFhoxdc
+        enS4deJplfpGAwhaRQLLIE8oLBYdGQL01GPfrCiw9o8Fioot3qvUPbSOYI1IILfavNG2Lh+12hZ0Wjq9
+        1Aw6PNTENLa7opxTRIL/ii2FzyXTD6hGZlCFAI0/AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>46</value>
   </metadata>

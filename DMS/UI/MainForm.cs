@@ -101,5 +101,17 @@ namespace DMS.UI
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnRegisterRoom_Click(object sender, EventArgs e)
+        {
+            foreach (var x in this.MdiChildren) x.Close();
+            var frm = _mainContainer.GetInstance<RegisterRoomForm>();
+            frm.ControlBox = false;
+            frm.Dock = DockStyle.Fill;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

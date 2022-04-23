@@ -11,6 +11,8 @@ namespace DMS.IServices
         bool AddDormitory(Dormitory model);
         Task<bool> Update(Dormitory model);
         Task<IEnumerable<Dormitory>> ListDormitory();
+        Task<int> MandehKol(int dormitoryId);
+
     }
 
     public class DormitoryService : IDormitoryService
@@ -58,6 +60,13 @@ namespace DMS.IServices
         public async Task<IEnumerable<Dormitory>> ListDormitory()
         {
             return await _unitOfWork.Dormitory.FindAllAsync();
+        }
+
+        public async Task<int> MandehKol(int dormitoryId)
+        {
+            var sums = await _unitOfWork.RegisterRoom.CountAsyncByCondition(x => x.Room.DormitoryID_FK == dormitoryId);
+            var zarfiat = await _unitOfWork.Dormitory.FindByIdAsync(dormitoryId);
+            return zarfiat.Valence - sums;
         }
     }
 }

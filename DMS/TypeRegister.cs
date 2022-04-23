@@ -28,6 +28,7 @@ namespace DMS
             For<IEducationalCenterService>().Use<EducationalCenterService>();
             For<IFieldOfStudyService>().Use<FieldOfStudyService>();
             For<IStudentService>().Use<StudentService>();
+            For<IRegisterRoomService>().Use<RegisterRoomService>();
 
 
 

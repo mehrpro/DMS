@@ -218,14 +218,14 @@ namespace DMS.UI.Users
             this.SelectColumn.MinWidth = 40;
             this.SelectColumn.Name = "SelectColumn";
             this.SelectColumn.Visible = true;
-            this.SelectColumn.VisibleIndex = 0;
+            this.SelectColumn.VisibleIndex = 3;
             this.SelectColumn.Width = 40;
             // 
             // btnSelect
             // 
             this.btnSelect.AutoHeight = false;
             this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Left)});
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelect_ButtonClick);
@@ -242,7 +242,7 @@ namespace DMS.UI.Users
             this.FullNameColumn.FieldName = "FullName";
             this.FullNameColumn.Name = "FullNameColumn";
             this.FullNameColumn.Visible = true;
-            this.FullNameColumn.VisibleIndex = 1;
+            this.FullNameColumn.VisibleIndex = 0;
             // 
             // StudentCodeColumn
             // 
@@ -252,7 +252,7 @@ namespace DMS.UI.Users
             this.StudentCodeColumn.MinWidth = 120;
             this.StudentCodeColumn.Name = "StudentCodeColumn";
             this.StudentCodeColumn.Visible = true;
-            this.StudentCodeColumn.VisibleIndex = 2;
+            this.StudentCodeColumn.VisibleIndex = 1;
             this.StudentCodeColumn.Width = 120;
             // 
             // NationalCodeColumn1
@@ -263,7 +263,7 @@ namespace DMS.UI.Users
             this.NationalCodeColumn1.MinWidth = 120;
             this.NationalCodeColumn1.Name = "NationalCodeColumn1";
             this.NationalCodeColumn1.Visible = true;
-            this.NationalCodeColumn1.VisibleIndex = 3;
+            this.NationalCodeColumn1.VisibleIndex = 2;
             this.NationalCodeColumn1.Width = 120;
             // 
             // panelControl2
@@ -550,7 +550,6 @@ namespace DMS.UI.Users
             this.txtBasteganTel.Parmida_ActivePlusMultiKeys = false;
             this.txtBasteganTel.Size = new System.Drawing.Size(187, 26);
             this.txtBasteganTel.TabIndex = 23;
-            this.txtBasteganTel.Visible = false;
             // 
             // labelControl11
             // 
@@ -561,7 +560,6 @@ namespace DMS.UI.Users
             this.labelControl11.Size = new System.Drawing.Size(71, 20);
             this.labelControl11.TabIndex = 12;
             this.labelControl11.Text = "بستگان نزدیک";
-            this.labelControl11.Visible = false;
             // 
             // txtBastega
             // 
@@ -572,7 +570,6 @@ namespace DMS.UI.Users
             this.txtBastega.Parmida_ActivePlusMultiKeys = false;
             this.txtBastega.Size = new System.Drawing.Size(187, 26);
             this.txtBastega.TabIndex = 13;
-            this.txtBastega.Visible = false;
             // 
             // labelControl3
             // 
@@ -593,7 +590,6 @@ namespace DMS.UI.Users
             this.labelControl9.Size = new System.Drawing.Size(62, 20);
             this.labelControl9.TabIndex = 22;
             this.labelControl9.Text = "تلفن بستگان";
-            this.labelControl9.Visible = false;
             // 
             // cbxEducational
             // 
