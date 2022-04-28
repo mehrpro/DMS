@@ -30,15 +30,14 @@ namespace DMS.UI.Dormitories
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomForm));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -94,30 +93,27 @@ namespace DMS.UI.Dormitories
             this.panelControl1.Controls.Add(this.cbxDormitory);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(795, 140);
+            this.panelControl1.Size = new System.Drawing.Size(499, 102);
             this.panelControl1.TabIndex = 1;
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(13, 86);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(20, 60);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 46);
+            this.btnClose.Size = new System.Drawing.Size(68, 29);
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "انصراف";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(127, 86);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(94, 60);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 46);
+            this.btnSave.Size = new System.Drawing.Size(68, 29);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -125,67 +121,61 @@ namespace DMS.UI.Dormitories
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(733, 24);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl2.Location = new System.Drawing.Point(426, 18);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(53, 20);
+            this.labelControl2.Size = new System.Drawing.Size(48, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "نام خوابگاه";
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(734, 60);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl3.Location = new System.Drawing.Point(426, 44);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(51, 20);
+            this.labelControl3.Size = new System.Drawing.Size(52, 13);
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "شماره اتاق";
             // 
             // txtZarfitOtagh
             // 
             this.txtZarfitOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtZarfitOtagh.Location = new System.Drawing.Point(539, 93);
-            this.txtZarfitOtagh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtZarfitOtagh.Location = new System.Drawing.Point(253, 68);
             this.txtZarfitOtagh.Name = "txtZarfitOtagh";
             this.txtZarfitOtagh.Parmida_ActivePlusMultiKeys = false;
-            this.txtZarfitOtagh.Size = new System.Drawing.Size(187, 26);
+            this.txtZarfitOtagh.Size = new System.Drawing.Size(167, 20);
             this.txtZarfitOtagh.TabIndex = 5;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            conditionValidationRule4.Value1 = 0;
-            this.dxValidationProvider1.SetValidationRule(this.txtZarfitOtagh, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.Value1 = 0;
+            this.dxValidationProvider1.SetValidationRule(this.txtZarfitOtagh, conditionValidationRule1);
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(734, 96);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl4.Location = new System.Drawing.Point(426, 70);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(34, 20);
+            this.labelControl4.Size = new System.Drawing.Size(31, 13);
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "ظرفیت";
             // 
             // txtShomareOtagh
             // 
             this.txtShomareOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtShomareOtagh.Location = new System.Drawing.Point(539, 57);
-            this.txtShomareOtagh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtShomareOtagh.Location = new System.Drawing.Point(253, 42);
             this.txtShomareOtagh.Name = "txtShomareOtagh";
             this.txtShomareOtagh.Parmida_ActivePlusMultiKeys = false;
-            this.txtShomareOtagh.Size = new System.Drawing.Size(187, 26);
+            this.txtShomareOtagh.Size = new System.Drawing.Size(167, 20);
             this.txtShomareOtagh.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtShomareOtagh, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtShomareOtagh, conditionValidationRule2);
             // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(481, 24);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl5.Location = new System.Drawing.Point(193, 18);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(35, 20);
+            this.labelControl5.Size = new System.Drawing.Size(33, 13);
             this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "امکانات";
             // 
@@ -193,8 +183,7 @@ namespace DMS.UI.Dormitories
             // 
             this.cbxEmkanat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxEmkanat.EditValue = "";
-            this.cbxEmkanat.Location = new System.Drawing.Point(250, 21);
-            this.cbxEmkanat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxEmkanat.Location = new System.Drawing.Point(20, 16);
             this.cbxEmkanat.Name = "cbxEmkanat";
             this.cbxEmkanat.Parmida_ActivePlusMultiKeys = false;
             this.cbxEmkanat.Properties.AllowMultiSelect = true;
@@ -209,14 +198,13 @@ namespace DMS.UI.Dormitories
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(2, "اجاق گاز"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(3, "یخچال")});
             this.cbxEmkanat.Properties.SelectAllItemVisible = false;
-            this.cbxEmkanat.Size = new System.Drawing.Size(223, 26);
+            this.cbxEmkanat.Size = new System.Drawing.Size(167, 20);
             this.cbxEmkanat.TabIndex = 7;
             // 
             // cbxDormitory
             // 
             this.cbxDormitory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxDormitory.Location = new System.Drawing.Point(539, 21);
-            this.cbxDormitory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxDormitory.Location = new System.Drawing.Point(253, 16);
             this.cbxDormitory.Name = "cbxDormitory";
             this.cbxDormitory.Parmida_ActivePlusMultiKeys = false;
             this.cbxDormitory.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -224,21 +212,21 @@ namespace DMS.UI.Dormitories
             this.cbxDormitory.Properties.AppearanceDropDown.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxDormitory.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxDormitory.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject5.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject6.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject7.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject8.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxDormitory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cbxDormitory.Properties.NullText = "";
             this.cbxDormitory.Properties.PopupSizeable = false;
             this.cbxDormitory.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxDormitory.Size = new System.Drawing.Size(187, 26);
+            this.cbxDormitory.Size = new System.Drawing.Size(167, 20);
             this.cbxDormitory.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.Value1 = 0;
-            this.dxValidationProvider1.SetValidationRule(this.cbxDormitory, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.Value1 = 0;
+            this.dxValidationProvider1.SetValidationRule(this.cbxDormitory, conditionValidationRule3);
             this.cbxDormitory.EditValueChanged += new System.EventHandler(this.cbxDormitory_EditValueChanged);
             // 
             // searchLookUpEdit1View
@@ -298,20 +286,23 @@ namespace DMS.UI.Dormitories
             // 
             this.panelControl2.Controls.Add(this.dgvRoom);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 140);
+            this.panelControl2.Location = new System.Drawing.Point(0, 102);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(795, 427);
+            this.panelControl2.Size = new System.Drawing.Size(499, 347);
             this.panelControl2.TabIndex = 0;
             // 
             // dgvRoom
             // 
             this.dgvRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRoom.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRoom.Location = new System.Drawing.Point(2, 2);
             this.dgvRoom.MainView = this.gridView1;
+            this.dgvRoom.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRoom.Name = "dgvRoom";
             this.dgvRoom.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect});
-            this.dgvRoom.Size = new System.Drawing.Size(791, 423);
+            this.dgvRoom.Size = new System.Drawing.Size(495, 343);
             this.dgvRoom.TabIndex = 0;
             this.dgvRoom.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -378,20 +369,23 @@ namespace DMS.UI.Dormitories
             this.RoomNumberColumn,
             this.RoomCapacityColumn,
             this.FacilitiesColumn});
+            this.gridView1.DetailHeight = 227;
+            this.gridView1.FixedLineWidth = 1;
             this.gridView1.GridControl = this.dgvRoom;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // SelectColumn
             // 
             this.SelectColumn.ColumnEdit = this.btnSelect;
-            this.SelectColumn.MaxWidth = 40;
-            this.SelectColumn.MinWidth = 40;
+            this.SelectColumn.MaxWidth = 30;
+            this.SelectColumn.MinWidth = 30;
             this.SelectColumn.Name = "SelectColumn";
             this.SelectColumn.Visible = true;
             this.SelectColumn.VisibleIndex = 0;
-            this.SelectColumn.Width = 40;
+            this.SelectColumn.Width = 30;
             // 
             // btnSelect
             // 
@@ -406,47 +400,47 @@ namespace DMS.UI.Dormitories
             // 
             this.RoomIDColumn.Caption = "gridColumn1";
             this.RoomIDColumn.FieldName = "RoomID";
+            this.RoomIDColumn.MinWidth = 15;
             this.RoomIDColumn.Name = "RoomIDColumn";
+            this.RoomIDColumn.Width = 56;
             // 
             // RoomNumberColumn
             // 
             this.RoomNumberColumn.Caption = "شماره اتاق";
             this.RoomNumberColumn.FieldName = "RoomNumber";
-            this.RoomNumberColumn.MaxWidth = 100;
-            this.RoomNumberColumn.MinWidth = 100;
+            this.RoomNumberColumn.MaxWidth = 75;
+            this.RoomNumberColumn.MinWidth = 75;
             this.RoomNumberColumn.Name = "RoomNumberColumn";
             this.RoomNumberColumn.Visible = true;
             this.RoomNumberColumn.VisibleIndex = 1;
-            this.RoomNumberColumn.Width = 100;
             // 
             // RoomCapacityColumn
             // 
             this.RoomCapacityColumn.Caption = "ظرفیت اتاق";
             this.RoomCapacityColumn.FieldName = "RoomCapacity";
-            this.RoomCapacityColumn.MaxWidth = 100;
-            this.RoomCapacityColumn.MinWidth = 100;
+            this.RoomCapacityColumn.MaxWidth = 75;
+            this.RoomCapacityColumn.MinWidth = 75;
             this.RoomCapacityColumn.Name = "RoomCapacityColumn";
             this.RoomCapacityColumn.Visible = true;
             this.RoomCapacityColumn.VisibleIndex = 2;
-            this.RoomCapacityColumn.Width = 100;
             // 
             // FacilitiesColumn
             // 
             this.FacilitiesColumn.Caption = "امکانات";
             this.FacilitiesColumn.FieldName = "Facilities";
+            this.FacilitiesColumn.MinWidth = 15;
             this.FacilitiesColumn.Name = "FacilitiesColumn";
             this.FacilitiesColumn.Visible = true;
             this.FacilitiesColumn.VisibleIndex = 3;
-            this.FacilitiesColumn.Width = 743;
+            this.FacilitiesColumn.Width = 557;
             // 
             // RoomForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 567);
+            this.ClientSize = new System.Drawing.Size(499, 449);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RoomForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "اتاق";

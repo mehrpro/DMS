@@ -159,6 +159,12 @@
     <Compile Include="UI\Dormitories\RegisterRoomForm.Designer.cs">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dormitories\TradodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dormitories\TradodForm.Designer.cs">
+      <DependentUpon>TradodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TagCard\RegisterTagForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Administrator\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
@@ -239,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dormitories\RegisterRoomForm.resx">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dormitories\TradodForm.resx">
+      <DependentUpon>TradodForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TagCard\RegisterTagForm.resx">
       <DependentUpon>RegisterTagForm.cs</DependentUpon>
@@ -281,7 +291,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Azad.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

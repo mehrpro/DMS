@@ -77,7 +77,6 @@ namespace DMS.UI.Users
             var focusedRow = gridView1.GetFocusedRow();
             _study = new Study();
             _study = (Study)focusedRow;
-            txtID.EditValue = _study.ID;
             txtStudy.Text = _study.StudyTitle;
             chkIsActive.IsOn = _study.IsActive;
         }

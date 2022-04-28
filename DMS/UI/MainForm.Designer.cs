@@ -58,10 +58,9 @@ namespace DMS.UI
             this.accordionControlElement7,
             this.accordionControlElement4,
             this.accordionControlElement5});
-            this.accordionControl1.Location = new System.Drawing.Point(586, 0);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.accordionControl1.Location = new System.Drawing.Point(623, 0);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(223, 467);
+            this.accordionControl1.Size = new System.Drawing.Size(203, 559);
             this.accordionControl1.TabIndex = 0;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -92,6 +91,7 @@ namespace DMS.UI
             this.btnRoom,
             this.btnTrafficType,
             this.btnRegisterRoom});
+            this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "خوابگاه";
             // 
@@ -129,7 +129,6 @@ namespace DMS.UI
             this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement6,
             this.btnRegisterTag});
-            this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "تگ کارت";
             // 
@@ -178,13 +177,12 @@ namespace DMS.UI
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 467);
+            this.ClientSize = new System.Drawing.Size(826, 559);
             this.Controls.Add(this.accordionControl1);
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "MainForm";

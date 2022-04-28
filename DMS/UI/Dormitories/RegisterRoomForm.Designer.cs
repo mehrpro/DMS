@@ -31,7 +31,6 @@ namespace DMS.UI.Dormitories
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterRoomForm));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.picImg = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -95,6 +94,9 @@ namespace DMS.UI.Dormitories
             this.layoutViewField_StudyColumn = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemove)).BeginInit();
@@ -162,8 +164,9 @@ namespace DMS.UI.Dormitories
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(888, 263);
+            this.panelControl1.Size = new System.Drawing.Size(760, 191);
             this.panelControl1.TabIndex = 0;
             // 
             // groupControl3
@@ -177,17 +180,17 @@ namespace DMS.UI.Dormitories
             this.groupControl3.Controls.Add(this.labelControl8);
             this.groupControl3.Controls.Add(this.btnClose);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(2, 125);
+            this.groupControl3.Location = new System.Drawing.Point(2, 96);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(884, 136);
+            this.groupControl3.Size = new System.Drawing.Size(756, 93);
             this.groupControl3.TabIndex = 53;
             this.groupControl3.Text = "ثبت اتاق برای دانشجو";
             // 
             // cbxStudent
             // 
             this.cbxStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxStudent.Location = new System.Drawing.Point(622, 49);
-            this.cbxStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxStudent.Location = new System.Drawing.Point(559, 34);
             this.cbxStudent.Name = "cbxStudent";
             this.cbxStudent.Parmida_ActivePlusMultiKeys = false;
             this.cbxStudent.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -198,7 +201,7 @@ namespace DMS.UI.Dormitories
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxStudent.Properties.NullText = "";
             this.cbxStudent.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxStudent.Size = new System.Drawing.Size(187, 26);
+            this.cbxStudent.Size = new System.Drawing.Size(140, 20);
             this.cbxStudent.TabIndex = 47;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
@@ -207,6 +210,10 @@ namespace DMS.UI.Dormitories
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn,
+            this.gridColumn2,
+            this.gridColumn3});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -215,21 +222,18 @@ namespace DMS.UI.Dormitories
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(817, 52);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl3.Location = new System.Drawing.Point(706, 36);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(37, 20);
+            this.labelControl3.Size = new System.Drawing.Size(35, 13);
             this.labelControl3.TabIndex = 42;
             this.labelControl3.Text = "دانشجو";
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(109, 84);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(82, 60);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 45);
+            this.btnSave.Size = new System.Drawing.Size(68, 29);
             this.btnSave.TabIndex = 48;
             this.btnSave.Text = "ثبت";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -238,51 +242,49 @@ namespace DMS.UI.Dormitories
             // 
             this.txtEmkanatFelli.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmkanatFelli.Location = new System.Drawing.Point(11, 49);
+            this.txtEmkanatFelli.Location = new System.Drawing.Point(8, 34);
+            this.txtEmkanatFelli.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmkanatFelli.Name = "txtEmkanatFelli";
             this.txtEmkanatFelli.Parmida_ActivePlusMultiKeys = false;
             this.txtEmkanatFelli.Properties.ReadOnly = true;
-            this.txtEmkanatFelli.Size = new System.Drawing.Size(246, 26);
+            this.txtEmkanatFelli.Size = new System.Drawing.Size(277, 20);
             this.txtEmkanatFelli.TabIndex = 50;
             // 
             // txtOtaghFelii
             // 
             this.txtOtaghFelii.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOtaghFelii.Location = new System.Drawing.Point(350, 49);
+            this.txtOtaghFelii.Location = new System.Drawing.Point(355, 34);
+            this.txtOtaghFelii.Margin = new System.Windows.Forms.Padding(2);
             this.txtOtaghFelii.Name = "txtOtaghFelii";
             this.txtOtaghFelii.Parmida_ActivePlusMultiKeys = false;
             this.txtOtaghFelii.Properties.ReadOnly = true;
-            this.txtOtaghFelii.Size = new System.Drawing.Size(184, 26);
+            this.txtOtaghFelii.Size = new System.Drawing.Size(138, 20);
             this.txtOtaghFelii.TabIndex = 50;
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(264, 52);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl9.Location = new System.Drawing.Point(291, 36);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(57, 20);
+            this.labelControl9.Size = new System.Drawing.Size(55, 13);
             this.labelControl9.TabIndex = 43;
             this.labelControl9.Text = "امکانات اتاق";
             // 
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(541, 52);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl8.Location = new System.Drawing.Point(499, 36);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(45, 20);
+            this.labelControl8.Size = new System.Drawing.Size(48, 13);
             this.labelControl8.TabIndex = 43;
             this.labelControl8.Text = "اتاق فعلی";
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(11, 84);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(8, 60);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(90, 45);
+            this.btnClose.Size = new System.Drawing.Size(68, 29);
             this.btnClose.TabIndex = 49;
             this.btnClose.Text = "انصراف";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -307,16 +309,16 @@ namespace DMS.UI.Dormitories
             this.groupControl1.Controls.Add(this.txtEmkanatOtagh);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(884, 123);
+            this.groupControl1.Size = new System.Drawing.Size(756, 94);
             this.groupControl1.TabIndex = 51;
             this.groupControl1.Text = "انتخاب خوابگاه";
             // 
             // cbxRooms
             // 
             this.cbxRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxRooms.Location = new System.Drawing.Point(622, 80);
-            this.cbxRooms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxRooms.Location = new System.Drawing.Point(559, 61);
             this.cbxRooms.Name = "cbxRooms";
             this.cbxRooms.Parmida_ActivePlusMultiKeys = false;
             this.cbxRooms.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -327,7 +329,7 @@ namespace DMS.UI.Dormitories
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxRooms.Properties.NullText = "";
             this.cbxRooms.Properties.PopupView = this.gridView1;
-            this.cbxRooms.Size = new System.Drawing.Size(187, 26);
+            this.cbxRooms.Size = new System.Drawing.Size(140, 20);
             this.cbxRooms.TabIndex = 46;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
@@ -378,18 +380,16 @@ namespace DMS.UI.Dormitories
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(817, 83);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl4.Location = new System.Drawing.Point(706, 63);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(19, 20);
+            this.labelControl4.Size = new System.Drawing.Size(19, 13);
             this.labelControl4.TabIndex = 43;
             this.labelControl4.Text = "اتاق";
             // 
             // cbxDormitory
             // 
             this.cbxDormitory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxDormitory.Location = new System.Drawing.Point(622, 44);
-            this.cbxDormitory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxDormitory.Location = new System.Drawing.Point(559, 35);
             this.cbxDormitory.Name = "cbxDormitory";
             this.cbxDormitory.Parmida_ActivePlusMultiKeys = false;
             this.cbxDormitory.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -402,7 +402,7 @@ namespace DMS.UI.Dormitories
             this.cbxDormitory.Properties.NullText = "";
             this.cbxDormitory.Properties.PopupSizeable = false;
             this.cbxDormitory.Properties.PopupView = this.gridView2;
-            this.cbxDormitory.Size = new System.Drawing.Size(187, 26);
+            this.cbxDormitory.Size = new System.Drawing.Size(140, 20);
             this.cbxDormitory.TabIndex = 45;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
@@ -447,120 +447,118 @@ namespace DMS.UI.Dormitories
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(411, 83);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl6.Location = new System.Drawing.Point(401, 63);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(24, 20);
+            this.labelControl6.Size = new System.Drawing.Size(23, 13);
             this.labelControl6.TabIndex = 43;
             this.labelControl6.Text = "مانده";
             // 
             // labelControl11
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Location = new System.Drawing.Point(264, 83);
-            this.labelControl11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl11.Location = new System.Drawing.Point(291, 63);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(57, 20);
+            this.labelControl11.Size = new System.Drawing.Size(55, 13);
             this.labelControl11.TabIndex = 43;
             this.labelControl11.Text = "امکانات اتاق";
             // 
             // txtMandehKol
             // 
             this.txtMandehKol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMandehKol.Location = new System.Drawing.Point(203, 44);
+            this.txtMandehKol.Location = new System.Drawing.Point(245, 35);
+            this.txtMandehKol.Margin = new System.Windows.Forms.Padding(2);
             this.txtMandehKol.Name = "txtMandehKol";
             this.txtMandehKol.Parmida_ActivePlusMultiKeys = false;
             this.txtMandehKol.Properties.ReadOnly = true;
-            this.txtMandehKol.Size = new System.Drawing.Size(54, 26);
+            this.txtMandehKol.Size = new System.Drawing.Size(40, 20);
             this.txtMandehKol.TabIndex = 50;
             // 
             // txtMandehOtagh
             // 
             this.txtMandehOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMandehOtagh.Location = new System.Drawing.Point(350, 80);
+            this.txtMandehOtagh.Location = new System.Drawing.Point(355, 61);
+            this.txtMandehOtagh.Margin = new System.Windows.Forms.Padding(2);
             this.txtMandehOtagh.Name = "txtMandehOtagh";
             this.txtMandehOtagh.Parmida_ActivePlusMultiKeys = false;
             this.txtMandehOtagh.Properties.ReadOnly = true;
-            this.txtMandehOtagh.Size = new System.Drawing.Size(54, 26);
+            this.txtMandehOtagh.Size = new System.Drawing.Size(40, 20);
             this.txtMandehOtagh.TabIndex = 50;
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(816, 47);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl2.Location = new System.Drawing.Point(705, 37);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(36, 20);
+            this.labelControl2.Size = new System.Drawing.Size(32, 13);
             this.labelControl2.TabIndex = 41;
             this.labelControl2.Text = "خوابگاه";
             // 
             // txtZarfiatOtagh
             // 
             this.txtZarfiatOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtZarfiatOtagh.Location = new System.Drawing.Point(480, 80);
+            this.txtZarfiatOtagh.Location = new System.Drawing.Point(453, 61);
+            this.txtZarfiatOtagh.Margin = new System.Windows.Forms.Padding(2);
             this.txtZarfiatOtagh.Name = "txtZarfiatOtagh";
             this.txtZarfiatOtagh.Parmida_ActivePlusMultiKeys = false;
             this.txtZarfiatOtagh.Properties.ReadOnly = true;
-            this.txtZarfiatOtagh.Size = new System.Drawing.Size(54, 26);
+            this.txtZarfiatOtagh.Size = new System.Drawing.Size(40, 20);
             this.txtZarfiatOtagh.TabIndex = 50;
             // 
             // txtZarfit
             // 
             this.txtZarfit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtZarfit.Location = new System.Drawing.Point(350, 44);
+            this.txtZarfit.Location = new System.Drawing.Point(355, 35);
+            this.txtZarfit.Margin = new System.Windows.Forms.Padding(2);
             this.txtZarfit.Name = "txtZarfit";
             this.txtZarfit.Parmida_ActivePlusMultiKeys = false;
             this.txtZarfit.Properties.ReadOnly = true;
-            this.txtZarfit.Size = new System.Drawing.Size(54, 26);
+            this.txtZarfit.Size = new System.Drawing.Size(40, 20);
             this.txtZarfit.TabIndex = 50;
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(541, 47);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl1.Location = new System.Drawing.Point(499, 37);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 20);
+            this.labelControl1.Size = new System.Drawing.Size(45, 13);
             this.labelControl1.TabIndex = 43;
             this.labelControl1.Text = "تعداد اتاق";
             // 
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(541, 83);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl10.Location = new System.Drawing.Point(499, 63);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(56, 20);
+            this.labelControl10.Size = new System.Drawing.Size(53, 13);
             this.labelControl10.TabIndex = 43;
             this.labelControl10.Text = "ظرفیت اتاق";
             // 
             // txtOtagh
             // 
             this.txtOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOtagh.Location = new System.Drawing.Point(480, 44);
+            this.txtOtagh.Location = new System.Drawing.Point(453, 35);
+            this.txtOtagh.Margin = new System.Windows.Forms.Padding(2);
             this.txtOtagh.Name = "txtOtagh";
             this.txtOtagh.Parmida_ActivePlusMultiKeys = false;
             this.txtOtagh.Properties.ReadOnly = true;
-            this.txtOtagh.Size = new System.Drawing.Size(54, 26);
+            this.txtOtagh.Size = new System.Drawing.Size(40, 20);
             this.txtOtagh.TabIndex = 50;
             // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(411, 47);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl5.Location = new System.Drawing.Point(401, 37);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(51, 20);
+            this.labelControl5.Size = new System.Drawing.Size(47, 13);
             this.labelControl5.TabIndex = 43;
             this.labelControl5.Text = "ظرفیت کل";
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(264, 47);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl7.Location = new System.Drawing.Point(291, 37);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(41, 20);
+            this.labelControl7.Size = new System.Drawing.Size(39, 13);
             this.labelControl7.TabIndex = 43;
             this.labelControl7.Text = "مانده کل";
             // 
@@ -568,7 +566,8 @@ namespace DMS.UI.Dormitories
             // 
             this.txtEmkanatOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmkanatOtagh.Location = new System.Drawing.Point(11, 80);
+            this.txtEmkanatOtagh.Location = new System.Drawing.Point(8, 61);
+            this.txtEmkanatOtagh.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmkanatOtagh.Name = "txtEmkanatOtagh";
             this.txtEmkanatOtagh.Parmida_ActivePlusMultiKeys = false;
             this.txtEmkanatOtagh.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -576,16 +575,17 @@ namespace DMS.UI.Dormitories
             this.txtEmkanatOtagh.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtEmkanatOtagh.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtEmkanatOtagh.Properties.ReadOnly = true;
-            this.txtEmkanatOtagh.Size = new System.Drawing.Size(246, 26);
+            this.txtEmkanatOtagh.Size = new System.Drawing.Size(277, 20);
             this.txtEmkanatOtagh.TabIndex = 50;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.groupControl4);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 263);
+            this.panelControl2.Location = new System.Drawing.Point(0, 191);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(888, 339);
+            this.panelControl2.Size = new System.Drawing.Size(760, 350);
             this.panelControl2.TabIndex = 1;
             // 
             // groupControl4
@@ -593,21 +593,24 @@ namespace DMS.UI.Dormitories
             this.groupControl4.Controls.Add(this.dgvRegisterRoom);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(2, 2);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(884, 335);
+            this.groupControl4.Size = new System.Drawing.Size(756, 346);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "دانشجویان مستقر در اتاق";
             // 
             // dgvRegisterRoom
             // 
             this.dgvRegisterRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRegisterRoom.Location = new System.Drawing.Point(2, 23);
+            this.dgvRegisterRoom.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvRegisterRoom.Location = new System.Drawing.Point(2, 22);
             this.dgvRegisterRoom.MainView = this.layoutView1;
+            this.dgvRegisterRoom.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegisterRoom.Name = "dgvRegisterRoom";
             this.dgvRegisterRoom.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.picImg,
             this.btnSelect});
-            this.dgvRegisterRoom.Size = new System.Drawing.Size(880, 310);
+            this.dgvRegisterRoom.Size = new System.Drawing.Size(752, 322);
             this.dgvRegisterRoom.TabIndex = 0;
             this.dgvRegisterRoom.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -616,7 +619,7 @@ namespace DMS.UI.Dormitories
             // 
             this.layoutView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.layoutView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.layoutView1.CardMinSize = new System.Drawing.Size(130, 245);
+            this.layoutView1.CardMinSize = new System.Drawing.Size(97, 159);
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.SelectColumn,
             this.IDColumn,
@@ -626,6 +629,7 @@ namespace DMS.UI.Dormitories
             this.PicColumn,
             this.EducationColumn,
             this.StudyColumn});
+            this.layoutView1.DetailHeight = 227;
             this.layoutView1.GridControl = this.dgvRegisterRoom;
             this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutViewField_IDColumn});
@@ -650,19 +654,19 @@ namespace DMS.UI.Dormitories
             this.SelectColumn.Caption = "حذف";
             this.SelectColumn.ColumnEdit = this.btnSelect;
             this.SelectColumn.LayoutViewField = this.layoutViewField_SelectColumn;
-            this.SelectColumn.MaxWidth = 40;
-            this.SelectColumn.MinWidth = 40;
+            this.SelectColumn.MaxWidth = 30;
+            this.SelectColumn.MinWidth = 30;
             this.SelectColumn.Name = "SelectColumn";
-            this.SelectColumn.Width = 40;
+            this.SelectColumn.Width = 30;
             // 
             // layoutViewField_SelectColumn
             // 
             this.layoutViewField_SelectColumn.AppearanceItemCaption.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.layoutViewField_SelectColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_SelectColumn.EditorPreferredWidth = 83;
             this.layoutViewField_SelectColumn.Location = new System.Drawing.Point(0, 312);
             this.layoutViewField_SelectColumn.Name = "layoutViewField_SelectColumn";
             this.layoutViewField_SelectColumn.Size = new System.Drawing.Size(201, 24);
-            this.layoutViewField_SelectColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_SelectColumn.TextSize = new System.Drawing.Size(82, 13);
             // 
             // IDColumn
             // 
@@ -671,16 +675,18 @@ namespace DMS.UI.Dormitories
             this.IDColumn.Caption = "ID";
             this.IDColumn.FieldName = "ID";
             this.IDColumn.LayoutViewField = this.layoutViewField_IDColumn;
+            this.IDColumn.MinWidth = 15;
             this.IDColumn.Name = "IDColumn";
+            this.IDColumn.Width = 56;
             // 
             // layoutViewField_IDColumn
             // 
             this.layoutViewField_IDColumn.AppearanceItemCaption.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.layoutViewField_IDColumn.EditorPreferredWidth = 20;
+            this.layoutViewField_IDColumn.EditorPreferredWidth = 15;
             this.layoutViewField_IDColumn.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_IDColumn.Name = "layoutViewField_IDColumn";
             this.layoutViewField_IDColumn.Size = new System.Drawing.Size(201, 336);
-            this.layoutViewField_IDColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_IDColumn.TextSize = new System.Drawing.Size(61, 13);
             // 
             // FullNameColumn
             // 
@@ -689,16 +695,17 @@ namespace DMS.UI.Dormitories
             this.FullNameColumn.Caption = "نام دانشجو";
             this.FullNameColumn.FieldName = "Student.FullName";
             this.FullNameColumn.LayoutViewField = this.layoutViewField_FullNameColumn;
+            this.FullNameColumn.MinWidth = 15;
             this.FullNameColumn.Name = "FullNameColumn";
-            this.FullNameColumn.Width = 240;
+            this.FullNameColumn.Width = 180;
             // 
             // layoutViewField_FullNameColumn
             // 
-            this.layoutViewField_FullNameColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_FullNameColumn.EditorPreferredWidth = 83;
             this.layoutViewField_FullNameColumn.Location = new System.Drawing.Point(0, 162);
             this.layoutViewField_FullNameColumn.Name = "layoutViewField_FullNameColumn";
             this.layoutViewField_FullNameColumn.Size = new System.Drawing.Size(201, 30);
-            this.layoutViewField_FullNameColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_FullNameColumn.TextSize = new System.Drawing.Size(82, 13);
             // 
             // StudentCodeColumn
             // 
@@ -707,16 +714,17 @@ namespace DMS.UI.Dormitories
             this.StudentCodeColumn.Caption = "شماره دانشجوی";
             this.StudentCodeColumn.FieldName = "Student.StudentCode";
             this.StudentCodeColumn.LayoutViewField = this.layoutViewField_StudentCodeColumn;
+            this.StudentCodeColumn.MinWidth = 15;
             this.StudentCodeColumn.Name = "StudentCodeColumn";
-            this.StudentCodeColumn.Width = 240;
+            this.StudentCodeColumn.Width = 180;
             // 
             // layoutViewField_StudentCodeColumn
             // 
-            this.layoutViewField_StudentCodeColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_StudentCodeColumn.EditorPreferredWidth = 83;
             this.layoutViewField_StudentCodeColumn.Location = new System.Drawing.Point(0, 192);
             this.layoutViewField_StudentCodeColumn.Name = "layoutViewField_StudentCodeColumn";
             this.layoutViewField_StudentCodeColumn.Size = new System.Drawing.Size(201, 30);
-            this.layoutViewField_StudentCodeColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_StudentCodeColumn.TextSize = new System.Drawing.Size(82, 13);
             // 
             // NationalCodeColumn
             // 
@@ -725,16 +733,17 @@ namespace DMS.UI.Dormitories
             this.NationalCodeColumn.Caption = "کد ملی";
             this.NationalCodeColumn.FieldName = "Student.NationalCode";
             this.NationalCodeColumn.LayoutViewField = this.layoutViewField_NationalCodeColumn;
+            this.NationalCodeColumn.MinWidth = 15;
             this.NationalCodeColumn.Name = "NationalCodeColumn";
-            this.NationalCodeColumn.Width = 169;
+            this.NationalCodeColumn.Width = 127;
             // 
             // layoutViewField_NationalCodeColumn
             // 
-            this.layoutViewField_NationalCodeColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_NationalCodeColumn.EditorPreferredWidth = 83;
             this.layoutViewField_NationalCodeColumn.Location = new System.Drawing.Point(0, 222);
             this.layoutViewField_NationalCodeColumn.Name = "layoutViewField_NationalCodeColumn";
             this.layoutViewField_NationalCodeColumn.Size = new System.Drawing.Size(201, 30);
-            this.layoutViewField_NationalCodeColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_NationalCodeColumn.TextSize = new System.Drawing.Size(82, 13);
             // 
             // PicColumn
             // 
@@ -744,19 +753,20 @@ namespace DMS.UI.Dormitories
             this.PicColumn.ColumnEdit = this.picImg;
             this.PicColumn.FieldName = "Student.Img";
             this.PicColumn.LayoutViewField = this.layoutViewField_PicColumn;
+            this.PicColumn.MinWidth = 15;
             this.PicColumn.Name = "PicColumn";
-            this.PicColumn.Width = 167;
+            this.PicColumn.Width = 125;
             // 
             // layoutViewField_PicColumn
             // 
             this.layoutViewField_PicColumn.AppearanceItemCaption.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.layoutViewField_PicColumn.EditorPreferredWidth = 197;
+            this.layoutViewField_PicColumn.EditorPreferredWidth = 148;
             this.layoutViewField_PicColumn.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_PicColumn.Name = "layoutViewField_PicColumn";
             this.layoutViewField_PicColumn.Size = new System.Drawing.Size(201, 162);
             this.layoutViewField_PicColumn.StartNewLine = true;
             this.layoutViewField_PicColumn.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutViewField_PicColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_PicColumn.TextSize = new System.Drawing.Size(82, 13);
             // 
             // EducationColumn
             // 
@@ -765,15 +775,17 @@ namespace DMS.UI.Dormitories
             this.EducationColumn.Caption = "دانشگاه";
             this.EducationColumn.FieldName = "Student.EducationalCenter.EducationalName";
             this.EducationColumn.LayoutViewField = this.layoutViewField_EducationColumn;
+            this.EducationColumn.MinWidth = 15;
             this.EducationColumn.Name = "EducationColumn";
+            this.EducationColumn.Width = 56;
             // 
             // layoutViewField_EducationColumn
             // 
-            this.layoutViewField_EducationColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_EducationColumn.EditorPreferredWidth = 83;
             this.layoutViewField_EducationColumn.Location = new System.Drawing.Point(0, 252);
             this.layoutViewField_EducationColumn.Name = "layoutViewField_EducationColumn";
             this.layoutViewField_EducationColumn.Size = new System.Drawing.Size(201, 30);
-            this.layoutViewField_EducationColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_EducationColumn.TextSize = new System.Drawing.Size(82, 13);
             // 
             // StudyColumn
             // 
@@ -782,15 +794,17 @@ namespace DMS.UI.Dormitories
             this.StudyColumn.Caption = "رشته تحصیلی";
             this.StudyColumn.FieldName = "Student.Study.StudyTitle";
             this.StudyColumn.LayoutViewField = this.layoutViewField_StudyColumn;
+            this.StudyColumn.MinWidth = 15;
             this.StudyColumn.Name = "StudyColumn";
+            this.StudyColumn.Width = 56;
             // 
             // layoutViewField_StudyColumn
             // 
-            this.layoutViewField_StudyColumn.EditorPreferredWidth = 111;
+            this.layoutViewField_StudyColumn.EditorPreferredWidth = 83;
             this.layoutViewField_StudyColumn.Location = new System.Drawing.Point(0, 282);
             this.layoutViewField_StudyColumn.Name = "layoutViewField_StudyColumn";
             this.layoutViewField_StudyColumn.Size = new System.Drawing.Size(201, 30);
-            this.layoutViewField_StudyColumn.TextSize = new System.Drawing.Size(81, 20);
+            this.layoutViewField_StudyColumn.TextSize = new System.Drawing.Size(82, 13);
             // 
             // layoutViewCard1
             // 
@@ -809,13 +823,38 @@ namespace DMS.UI.Dormitories
             this.layoutViewCard1.OptionsItemText.TextToControlDistance = 5;
             this.layoutViewCard1.Text = "TemplateCard";
             // 
+            // gridColumn
+            // 
+            this.gridColumn.Caption = "دانشجو";
+            this.gridColumn.FieldName = "FullName";
+            this.gridColumn.Name = "gridColumn";
+            this.gridColumn.Visible = true;
+            this.gridColumn.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "شماره دانشجوی";
+            this.gridColumn2.FieldName = "StudentCode";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "کد ملی";
+            this.gridColumn3.FieldName = "NationalCode";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
             // RegisterRoomForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 602);
+            this.ClientSize = new System.Drawing.Size(760, 541);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegisterRoomForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "مدیریت اتاق";
@@ -927,5 +966,8 @@ namespace DMS.UI.Dormitories
         private DevExpress.XtraGrid.Columns.GridColumn DormitoryNameColumn;
         private DevExpress.XtraGrid.Columns.GridColumn RoomColumn;
         private DevExpress.XtraGrid.Columns.GridColumn ValenceColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

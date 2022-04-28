@@ -86,7 +86,6 @@ namespace DMS.UI.Users
             var focusedRow = gridView1.GetFocusedRow();
             _educationalCenter = new EducationalCenter();
             _educationalCenter = (EducationalCenter)focusedRow;
-            txtID.EditValue = _educationalCenter.ID;
             chkIsActive.IsOn = _educationalCenter.IsActive;
             txtEducation.Text = _educationalCenter.EducationalName;
 

@@ -30,9 +30,8 @@ namespace DMS.UI.TagCard
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterTagForm));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtHomeTel = new DevExpress.XtraEditors.TextEdit();
             this.picPerson = new DevExpress.XtraEditors.PictureEdit();
@@ -111,197 +110,178 @@ namespace DMS.UI.TagCard
             this.panelControl1.Controls.Add(this.cbxStudent);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(781, 311);
+            this.panelControl1.Size = new System.Drawing.Size(625, 211);
             this.panelControl1.TabIndex = 0;
             // 
             // txtHomeTel
             // 
             this.txtHomeTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHomeTel.Location = new System.Drawing.Point(479, 247);
-            this.txtHomeTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtHomeTel.Location = new System.Drawing.Point(372, 176);
             this.txtHomeTel.Name = "txtHomeTel";
             this.txtHomeTel.Parmida_ActivePlusMultiKeys = false;
             this.txtHomeTel.Properties.ReadOnly = true;
-            this.txtHomeTel.Size = new System.Drawing.Size(187, 26);
-            this.txtHomeTel.TabIndex = 67;
+            this.txtHomeTel.Size = new System.Drawing.Size(140, 20);
+            this.txtHomeTel.TabIndex = 13;
             // 
             // picPerson
             // 
             this.picPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picPerson.Location = new System.Drawing.Point(19, 28);
-            this.picPerson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picPerson.Location = new System.Drawing.Point(27, 18);
             this.picPerson.Name = "picPerson";
             this.picPerson.Parmida_ActivePlusMultiKeys = false;
             this.picPerson.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.picPerson.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.picPerson.Size = new System.Drawing.Size(186, 206);
-            this.picPerson.TabIndex = 74;
+            this.picPerson.Size = new System.Drawing.Size(140, 143);
+            this.picPerson.TabIndex = 16;
             // 
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(673, 142);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl8.Location = new System.Drawing.Point(518, 100);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(81, 20);
-            this.labelControl8.TabIndex = 62;
+            this.labelControl8.Size = new System.Drawing.Size(82, 13);
+            this.labelControl8.TabIndex = 6;
             this.labelControl8.Text = "شماره دانشجویی";
             // 
             // txtFatherName
             // 
             this.txtFatherName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFatherName.Location = new System.Drawing.Point(479, 175);
-            this.txtFatherName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFatherName.Location = new System.Drawing.Point(372, 124);
             this.txtFatherName.Name = "txtFatherName";
             this.txtFatherName.Parmida_ActivePlusMultiKeys = false;
             this.txtFatherName.Properties.ReadOnly = true;
-            this.txtFatherName.Size = new System.Drawing.Size(187, 26);
-            this.txtFatherName.TabIndex = 65;
+            this.txtFatherName.Size = new System.Drawing.Size(140, 20);
+            this.txtFatherName.TabIndex = 9;
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(674, 250);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl6.Location = new System.Drawing.Point(519, 177);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(49, 20);
-            this.labelControl6.TabIndex = 66;
+            this.labelControl6.Size = new System.Drawing.Size(46, 13);
+            this.labelControl6.TabIndex = 12;
             this.labelControl6.Text = "تلفن منزل";
             // 
             // txtMobile
             // 
             this.txtMobile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMobile.Location = new System.Drawing.Point(479, 67);
-            this.txtMobile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMobile.Location = new System.Drawing.Point(372, 46);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Parmida_ActivePlusMultiKeys = false;
             this.txtMobile.Properties.ReadOnly = true;
-            this.txtMobile.Size = new System.Drawing.Size(187, 26);
-            this.txtMobile.TabIndex = 69;
+            this.txtMobile.Size = new System.Drawing.Size(140, 20);
+            this.txtMobile.TabIndex = 3;
             // 
             // labelControl13
             // 
             this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl13.Location = new System.Drawing.Point(673, 109);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl13.Location = new System.Drawing.Point(518, 76);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(32, 20);
-            this.labelControl13.TabIndex = 70;
+            this.labelControl13.Size = new System.Drawing.Size(35, 13);
+            this.labelControl13.TabIndex = 4;
             this.labelControl13.Text = "کد ملی";
             // 
             // txtCodemelii
             // 
             this.txtCodemelii.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCodemelii.Location = new System.Drawing.Point(479, 103);
-            this.txtCodemelii.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCodemelii.Location = new System.Drawing.Point(372, 72);
             this.txtCodemelii.Name = "txtCodemelii";
             this.txtCodemelii.Parmida_ActivePlusMultiKeys = false;
             this.txtCodemelii.Properties.ReadOnly = true;
-            this.txtCodemelii.Size = new System.Drawing.Size(187, 26);
-            this.txtCodemelii.TabIndex = 71;
+            this.txtCodemelii.Size = new System.Drawing.Size(140, 20);
+            this.txtCodemelii.TabIndex = 5;
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(674, 178);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl4.Location = new System.Drawing.Point(519, 126);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(34, 20);
-            this.labelControl4.TabIndex = 64;
+            this.labelControl4.Size = new System.Drawing.Size(29, 13);
+            this.labelControl4.TabIndex = 8;
             this.labelControl4.Text = "نام پدر";
             // 
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(674, 214);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl10.Location = new System.Drawing.Point(519, 152);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(73, 20);
-            this.labelControl10.TabIndex = 72;
+            this.labelControl10.Size = new System.Drawing.Size(68, 13);
+            this.labelControl10.TabIndex = 10;
             this.labelControl10.Text = "تلفن همراه پدر";
             // 
             // txtSmariDanshjoi
             // 
             this.txtSmariDanshjoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSmariDanshjoi.Location = new System.Drawing.Point(479, 139);
-            this.txtSmariDanshjoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSmariDanshjoi.Location = new System.Drawing.Point(372, 98);
             this.txtSmariDanshjoi.Name = "txtSmariDanshjoi";
             this.txtSmariDanshjoi.Parmida_ActivePlusMultiKeys = false;
             this.txtSmariDanshjoi.Properties.ReadOnly = true;
-            this.txtSmariDanshjoi.Size = new System.Drawing.Size(187, 26);
-            this.txtSmariDanshjoi.TabIndex = 63;
+            this.txtSmariDanshjoi.Size = new System.Drawing.Size(140, 20);
+            this.txtSmariDanshjoi.TabIndex = 7;
             // 
             // txtFatherTel
             // 
             this.txtFatherTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFatherTel.Location = new System.Drawing.Point(479, 211);
-            this.txtFatherTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFatherTel.Location = new System.Drawing.Point(372, 150);
             this.txtFatherTel.Name = "txtFatherTel";
             this.txtFatherTel.Parmida_ActivePlusMultiKeys = false;
             this.txtFatherTel.Properties.ReadOnly = true;
-            this.txtFatherTel.Size = new System.Drawing.Size(187, 26);
-            this.txtFatherTel.TabIndex = 73;
+            this.txtFatherTel.Size = new System.Drawing.Size(140, 20);
+            this.txtFatherTel.TabIndex = 11;
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(674, 68);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl1.Location = new System.Drawing.Point(519, 46);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(53, 20);
-            this.labelControl1.TabIndex = 68;
+            this.labelControl1.Size = new System.Drawing.Size(52, 13);
+            this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "تلفن همراه";
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(19, 244);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(25, 167);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(90, 45);
-            this.btnClose.TabIndex = 61;
+            this.btnClose.Size = new System.Drawing.Size(68, 29);
+            this.btnClose.TabIndex = 18;
             this.btnClose.Text = "انصراف";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(117, 244);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(99, 167);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 45);
-            this.btnSave.TabIndex = 60;
+            this.btnSave.Size = new System.Drawing.Size(68, 29);
+            this.btnSave.TabIndex = 17;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(673, 34);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl2.Location = new System.Drawing.Point(518, 22);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(37, 20);
-            this.labelControl2.TabIndex = 53;
+            this.labelControl2.Size = new System.Drawing.Size(35, 13);
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "دانشجو";
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(416, 34);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl3.Location = new System.Drawing.Point(325, 22);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(25, 20);
-            this.labelControl3.TabIndex = 54;
+            this.labelControl3.Size = new System.Drawing.Size(18, 13);
+            this.labelControl3.TabIndex = 14;
             this.labelControl3.Text = "Tag";
             // 
             // cbxTag
             // 
             this.cbxTag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxTag.Location = new System.Drawing.Point(226, 31);
-            this.cbxTag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxTag.Location = new System.Drawing.Point(183, 20);
             this.cbxTag.Name = "cbxTag";
             this.cbxTag.Parmida_ActivePlusMultiKeys = false;
             this.cbxTag.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -312,11 +292,11 @@ namespace DMS.UI.TagCard
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxTag.Properties.NullText = "";
             this.cbxTag.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxTag.Size = new System.Drawing.Size(183, 26);
-            this.cbxTag.TabIndex = 59;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.cbxTag, conditionValidationRule3);
+            this.cbxTag.Size = new System.Drawing.Size(137, 20);
+            this.cbxTag.TabIndex = 15;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.cbxTag, conditionValidationRule1);
             this.cbxTag.EditValueChanged += new System.EventHandler(this.cbxTag_EditValueChanged);
             // 
             // searchLookUpEdit1View
@@ -348,8 +328,7 @@ namespace DMS.UI.TagCard
             // cbxStudent
             // 
             this.cbxStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxStudent.Location = new System.Drawing.Point(479, 31);
-            this.cbxStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxStudent.Location = new System.Drawing.Point(372, 20);
             this.cbxStudent.Name = "cbxStudent";
             this.cbxStudent.Parmida_ActivePlusMultiKeys = false;
             this.cbxStudent.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -362,11 +341,11 @@ namespace DMS.UI.TagCard
             this.cbxStudent.Properties.NullText = "";
             this.cbxStudent.Properties.PopupSizeable = false;
             this.cbxStudent.Properties.PopupView = this.gridView2;
-            this.cbxStudent.Size = new System.Drawing.Size(187, 26);
-            this.cbxStudent.TabIndex = 57;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.cbxStudent, conditionValidationRule1);
+            this.cbxStudent.Size = new System.Drawing.Size(140, 20);
+            this.cbxStudent.TabIndex = 1;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.cbxStudent, conditionValidationRule2);
             this.cbxStudent.EditValueChanged += new System.EventHandler(this.cbxStudent_EditValueChanged);
             // 
             // gridView2
@@ -408,18 +387,21 @@ namespace DMS.UI.TagCard
             // 
             this.panelControl2.Controls.Add(this.dgvRegisterTagList);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 311);
+            this.panelControl2.Location = new System.Drawing.Point(0, 211);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(781, 274);
+            this.panelControl2.Size = new System.Drawing.Size(625, 237);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvRegisterTagList
             // 
             this.dgvRegisterTagList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRegisterTagList.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegisterTagList.Location = new System.Drawing.Point(2, 2);
             this.dgvRegisterTagList.MainView = this.gridView1;
+            this.dgvRegisterTagList.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegisterTagList.Name = "dgvRegisterTagList";
-            this.dgvRegisterTagList.Size = new System.Drawing.Size(777, 270);
+            this.dgvRegisterTagList.Size = new System.Drawing.Size(621, 233);
             this.dgvRegisterTagList.TabIndex = 0;
             this.dgvRegisterTagList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -485,6 +467,8 @@ namespace DMS.UI.TagCard
             this.TagHexColumn,
             this.TagSerialColumn,
             this.ActiveColumn});
+            this.gridView1.DetailHeight = 227;
+            this.gridView1.FixedLineWidth = 1;
             this.gridView1.GridControl = this.dgvRegisterTagList;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
@@ -494,49 +478,52 @@ namespace DMS.UI.TagCard
             // 
             this.IdColumn.Caption = "شناسه";
             this.IdColumn.FieldName = "Tag.ID";
-            this.IdColumn.MaxWidth = 100;
+            this.IdColumn.MaxWidth = 75;
+            this.IdColumn.MinWidth = 15;
             this.IdColumn.Name = "IdColumn";
             this.IdColumn.Visible = true;
             this.IdColumn.VisibleIndex = 0;
-            this.IdColumn.Width = 100;
             // 
             // TagHexColumn
             // 
             this.TagHexColumn.Caption = "TagHex";
             this.TagHexColumn.FieldName = "Tag.TagID_HEX";
-            this.TagHexColumn.MaxWidth = 150;
+            this.TagHexColumn.MaxWidth = 112;
+            this.TagHexColumn.MinWidth = 15;
             this.TagHexColumn.Name = "TagHexColumn";
             this.TagHexColumn.Visible = true;
             this.TagHexColumn.VisibleIndex = 1;
-            this.TagHexColumn.Width = 150;
+            this.TagHexColumn.Width = 112;
             // 
             // TagSerialColumn
             // 
             this.TagSerialColumn.Caption = "شماره سریال کارت";
             this.TagSerialColumn.FieldName = "Tag.CartView";
+            this.TagSerialColumn.MinWidth = 15;
             this.TagSerialColumn.Name = "TagSerialColumn";
             this.TagSerialColumn.Visible = true;
             this.TagSerialColumn.VisibleIndex = 2;
-            this.TagSerialColumn.Width = 448;
+            this.TagSerialColumn.Width = 336;
             // 
             // ActiveColumn
             // 
             this.ActiveColumn.Caption = "وضعیت";
             this.ActiveColumn.FieldName = "Tag.IsUsed";
-            this.ActiveColumn.MaxWidth = 65;
-            this.ActiveColumn.MinWidth = 65;
+            this.ActiveColumn.MaxWidth = 49;
+            this.ActiveColumn.MinWidth = 49;
             this.ActiveColumn.Name = "ActiveColumn";
             this.ActiveColumn.Visible = true;
             this.ActiveColumn.VisibleIndex = 3;
-            this.ActiveColumn.Width = 65;
+            this.ActiveColumn.Width = 49;
             // 
             // RegisterTagForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 585);
+            this.ClientSize = new System.Drawing.Size(625, 448);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegisterTagForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ثبت تگ کارت";

@@ -30,7 +30,6 @@ namespace DMS.UI.Dormitories
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrafficTypeForm));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -64,19 +63,16 @@ namespace DMS.UI.Dormitories
             this.panelControl1.Controls.Add(this.txtTrafficTypeTitle);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(548, 76);
+            this.panelControl1.Size = new System.Drawing.Size(406, 65);
             this.panelControl1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(13, 14);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(20, 17);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 46);
+            this.btnClose.Size = new System.Drawing.Size(68, 29);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "انصراف";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -84,11 +80,9 @@ namespace DMS.UI.Dormitories
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(127, 14);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(94, 17);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 46);
+            this.btnSave.Size = new System.Drawing.Size(68, 29);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -96,21 +90,19 @@ namespace DMS.UI.Dormitories
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(475, 28);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl2.Location = new System.Drawing.Point(339, 24);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(53, 20);
+            this.labelControl2.Size = new System.Drawing.Size(47, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "عنوان تردد";
             // 
             // txtTrafficTypeTitle
             // 
             this.txtTrafficTypeTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTrafficTypeTitle.Location = new System.Drawing.Point(262, 25);
-            this.txtTrafficTypeTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTrafficTypeTitle.Location = new System.Drawing.Point(179, 22);
             this.txtTrafficTypeTitle.Name = "txtTrafficTypeTitle";
             this.txtTrafficTypeTitle.Parmida_ActivePlusMultiKeys = false;
-            this.txtTrafficTypeTitle.Size = new System.Drawing.Size(206, 26);
+            this.txtTrafficTypeTitle.Size = new System.Drawing.Size(154, 20);
             this.txtTrafficTypeTitle.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
@@ -120,23 +112,20 @@ namespace DMS.UI.Dormitories
             // 
             this.panelControl2.Controls.Add(this.dgvTrafficType);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 76);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControl2.Location = new System.Drawing.Point(0, 65);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(548, 449);
+            this.panelControl2.Size = new System.Drawing.Size(406, 283);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvTrafficType
             // 
             this.dgvTrafficType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTrafficType.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTrafficType.Location = new System.Drawing.Point(2, 2);
             this.dgvTrafficType.MainView = this.gridView1;
-            this.dgvTrafficType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTrafficType.Name = "dgvTrafficType";
             this.dgvTrafficType.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect});
-            this.dgvTrafficType.Size = new System.Drawing.Size(544, 445);
+            this.dgvTrafficType.Size = new System.Drawing.Size(402, 279);
             this.dgvTrafficType.TabIndex = 0;
             this.dgvTrafficType.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -201,8 +190,7 @@ namespace DMS.UI.Dormitories
             this.SelectColumn,
             this.TrafficTypeTitleColumn,
             this.IDColumn});
-            this.gridView1.DetailHeight = 539;
-            this.gridView1.FixedLineWidth = 4;
+            this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.dgvTrafficType;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
@@ -211,12 +199,12 @@ namespace DMS.UI.Dormitories
             // SelectColumn
             // 
             this.SelectColumn.ColumnEdit = this.btnSelect;
-            this.SelectColumn.MaxWidth = 40;
-            this.SelectColumn.MinWidth = 40;
+            this.SelectColumn.MaxWidth = 30;
+            this.SelectColumn.MinWidth = 30;
             this.SelectColumn.Name = "SelectColumn";
             this.SelectColumn.Visible = true;
             this.SelectColumn.VisibleIndex = 0;
-            this.SelectColumn.Width = 40;
+            this.SelectColumn.Width = 30;
             // 
             // btnSelect
             // 
@@ -231,25 +219,27 @@ namespace DMS.UI.Dormitories
             // 
             this.TrafficTypeTitleColumn.Caption = "عنوان تردد";
             this.TrafficTypeTitleColumn.FieldName = "TrafficTypeTitle";
+            this.TrafficTypeTitleColumn.MinWidth = 15;
             this.TrafficTypeTitleColumn.Name = "TrafficTypeTitleColumn";
             this.TrafficTypeTitleColumn.Visible = true;
             this.TrafficTypeTitleColumn.VisibleIndex = 1;
-            this.TrafficTypeTitleColumn.Width = 478;
+            this.TrafficTypeTitleColumn.Width = 358;
             // 
             // IDColumn
             // 
             this.IDColumn.Caption = "ID";
             this.IDColumn.FieldName = "ID";
+            this.IDColumn.MinWidth = 15;
             this.IDColumn.Name = "IDColumn";
+            this.IDColumn.Width = 56;
             // 
             // TrafficTypeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 525);
+            this.ClientSize = new System.Drawing.Size(406, 348);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TrafficTypeForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "نوع تردد";

@@ -34,22 +34,20 @@ namespace DMS.UI.Dormitories
             cbxDormitory.Properties.DataSource = Task.Run(async () => await _dormitoryService.ListDormitory()).Result;
 
             cbxRooms.Properties.DisplayMember = "RoomNumber";
-            cbxRooms.Properties.ValueMember = "RoomID";
 
 
             cbxStudent.Properties.DisplayMember = "FullName";
-            cbxStudent.Properties.ValueMember = "StudentID";
 
 
         }
 
-        private void cbxStudentList()
+        private void CbxStudentList()
         {
             var resultAll = Task.Run(async () => await _studentService.StudentList()).Result;
             var x = resultAll.ToList();
             var resultRemove = Task.Run(async () => await _registerRoomService.GetRegisterRoomByRoomID(_selectRoom.RoomID)).Result;
             var registers = resultRemove.ToList();
-            var removeIdList = registers.GroupBy(x => x.StudentID_FK).Select(x => x.First()).ToList().Select(x => x.StudentID_FK);
+            var removeIdList = registers.GroupBy(registerRoom => registerRoom.StudentID_FK).Select(grouping => grouping.First()).ToList().Select(registerRoom => registerRoom.StudentID_FK);
             foreach (var item in removeIdList)
             {
                 var findRemove = resultAll.FirstOrDefault(x => x.StudentID == item);
@@ -64,7 +62,7 @@ namespace DMS.UI.Dormitories
         private void Clear()
         {
 
-            cbxStudentList();
+            CbxStudentList();
             cbxStudent.EditValue = 0;
             dgvRegisterRoomList();
             MandeyOtagh();
@@ -112,7 +110,7 @@ namespace DMS.UI.Dormitories
             }
             txtZarfiatOtagh.EditValue = _selectRoom.RoomCapacity;
             txtEmkanatOtagh.EditValue = _selectRoom.Facilities;
-            cbxStudentList();
+            CbxStudentList();
             dgvRegisterRoomList();
             MandeyOtagh();
 

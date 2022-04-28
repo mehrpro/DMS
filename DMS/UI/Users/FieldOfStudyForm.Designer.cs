@@ -30,14 +30,12 @@ namespace DMS.UI.Users
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FieldOfStudyForm));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.chkIsActive = new DevExpress.XtraEditors.ToggleSwitch();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.txtStudy = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvStudyList = new DevExpress.XtraGrid.GridControl();
@@ -51,7 +49,6 @@ namespace DMS.UI.Users
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsActive.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -67,47 +64,43 @@ namespace DMS.UI.Users
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.txtID);
             this.panelControl1.Controls.Add(this.txtStudy);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(745, 80);
+            this.panelControl1.Size = new System.Drawing.Size(535, 66);
             this.panelControl1.TabIndex = 1;
             // 
             // chkIsActive
             // 
             this.chkIsActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkIsActive.EditValue = true;
-            this.chkIsActive.Location = new System.Drawing.Point(278, 25);
+            this.chkIsActive.Location = new System.Drawing.Point(164, 23);
+            this.chkIsActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Parmida_ActivePlusMultiKeys = false;
             this.chkIsActive.Properties.OffText = "غیرفعال";
             this.chkIsActive.Properties.OnText = "فعال";
-            this.chkIsActive.Size = new System.Drawing.Size(158, 30);
+            this.chkIsActive.Size = new System.Drawing.Size(118, 24);
             this.chkIsActive.TabIndex = 46;
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(13, 17);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(17, 20);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 46);
+            this.btnClose.Size = new System.Drawing.Size(68, 29);
             this.btnClose.TabIndex = 45;
             this.btnClose.Text = "انصراف";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(127, 17);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(91, 20);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 46);
+            this.btnSave.Size = new System.Drawing.Size(68, 29);
             this.btnSave.TabIndex = 44;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -115,55 +108,45 @@ namespace DMS.UI.Users
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(663, 30);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControl2.Location = new System.Drawing.Point(453, 26);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(68, 20);
+            this.labelControl2.Size = new System.Drawing.Size(66, 13);
             this.labelControl2.TabIndex = 41;
             this.labelControl2.Text = "رشته تحصیلی";
-            // 
-            // txtID
-            // 
-            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtID.Location = new System.Drawing.Point(724, 7);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtID.Name = "txtID";
-            this.txtID.Parmida_ActivePlusMultiKeys = false;
-            this.txtID.Size = new System.Drawing.Size(15, 26);
-            this.txtID.TabIndex = 42;
-            this.txtID.Visible = false;
             // 
             // txtStudy
             // 
             this.txtStudy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStudy.Location = new System.Drawing.Point(443, 27);
-            this.txtStudy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtStudy.Location = new System.Drawing.Point(288, 25);
             this.txtStudy.Name = "txtStudy";
             this.txtStudy.Parmida_ActivePlusMultiKeys = false;
-            this.txtStudy.Size = new System.Drawing.Size(212, 26);
+            this.txtStudy.Size = new System.Drawing.Size(159, 20);
             this.txtStudy.TabIndex = 43;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.txtStudy, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtStudy, conditionValidationRule1);
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.dgvStudyList);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 80);
+            this.panelControl2.Location = new System.Drawing.Point(0, 66);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(745, 446);
+            this.panelControl2.Size = new System.Drawing.Size(535, 276);
             this.panelControl2.TabIndex = 2;
             // 
             // dgvStudyList
             // 
             this.dgvStudyList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStudyList.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvStudyList.Location = new System.Drawing.Point(2, 2);
             this.dgvStudyList.MainView = this.gridView1;
+            this.dgvStudyList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvStudyList.Name = "dgvStudyList";
             this.dgvStudyList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect});
-            this.dgvStudyList.Size = new System.Drawing.Size(741, 442);
+            this.dgvStudyList.Size = new System.Drawing.Size(531, 272);
             this.dgvStudyList.TabIndex = 0;
             this.dgvStudyList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -229,18 +212,20 @@ namespace DMS.UI.Users
             this.IDColumn,
             this.StudyTitleColumn,
             this.IsActiveColumn});
+            this.gridView1.DetailHeight = 227;
+            this.gridView1.FixedLineWidth = 1;
             this.gridView1.GridControl = this.dgvStudyList;
             this.gridView1.Name = "gridView1";
             // 
             // SelectColumn
             // 
             this.SelectColumn.ColumnEdit = this.btnSelect;
-            this.SelectColumn.MaxWidth = 40;
-            this.SelectColumn.MinWidth = 40;
+            this.SelectColumn.MaxWidth = 30;
+            this.SelectColumn.MinWidth = 30;
             this.SelectColumn.Name = "SelectColumn";
             this.SelectColumn.Visible = true;
             this.SelectColumn.VisibleIndex = 0;
-            this.SelectColumn.Width = 40;
+            this.SelectColumn.Width = 30;
             // 
             // btnSelect
             // 
@@ -255,35 +240,37 @@ namespace DMS.UI.Users
             // 
             this.IDColumn.Caption = "ID";
             this.IDColumn.FieldName = "ID";
+            this.IDColumn.MinWidth = 15;
             this.IDColumn.Name = "IDColumn";
+            this.IDColumn.Width = 56;
             // 
             // StudyTitleColumn
             // 
             this.StudyTitleColumn.Caption = "رشته تحصیلی";
             this.StudyTitleColumn.FieldName = "StudyTitle";
+            this.StudyTitleColumn.MinWidth = 15;
             this.StudyTitleColumn.Name = "StudyTitleColumn";
             this.StudyTitleColumn.Visible = true;
             this.StudyTitleColumn.VisibleIndex = 1;
+            this.StudyTitleColumn.Width = 56;
             // 
             // IsActiveColumn
             // 
             this.IsActiveColumn.Caption = "وضعیت";
             this.IsActiveColumn.FieldName = "IsActive";
-            this.IsActiveColumn.MaxWidth = 100;
-            this.IsActiveColumn.MinWidth = 100;
+            this.IsActiveColumn.MaxWidth = 75;
+            this.IsActiveColumn.MinWidth = 75;
             this.IsActiveColumn.Name = "IsActiveColumn";
             this.IsActiveColumn.Visible = true;
             this.IsActiveColumn.VisibleIndex = 2;
-            this.IsActiveColumn.Width = 100;
             // 
             // FieldOfStudyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 526);
+            this.ClientSize = new System.Drawing.Size(535, 342);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FieldOfStudyForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "رشته های تحصیلی";
@@ -291,7 +278,6 @@ namespace DMS.UI.Users
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsActive.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -309,7 +295,6 @@ namespace DMS.UI.Users
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtID;
         private DevExpress.XtraEditors.TextEdit txtStudy;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl dgvStudyList;
