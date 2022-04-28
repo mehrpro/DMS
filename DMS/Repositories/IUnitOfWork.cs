@@ -21,6 +21,7 @@ namespace DMS.Repositories
         ITrafficTypeRep TrafficType { get; }
         ITradodRep Tradod { get; }
         tsmsService TsmsService { get; }
+        IDestinationRep Destination { get; }
 
         int Commit();
     }
@@ -41,6 +42,7 @@ namespace DMS.Repositories
         private ITagreciveRep _tagreciveRep;
         private ITrafficTypeRep _trafficTypeRep;
         private ITradodRep _tradodRep;
+        private IDestinationRep _destination;
         private tsmsService _tsmsService;
 
         private bool _disposed;
@@ -65,6 +67,7 @@ namespace DMS.Repositories
         public ITagreciveRep Tagrecive => _tagreciveRep ??= new TagreciveRep(_context);
         public ITrafficTypeRep TrafficType => _trafficTypeRep ??= new TrafficTypeRep(_context);
         public ITradodRep Tradod => _tradodRep ??= new TradodRep(_context);
+        public IDestinationRep Destination => _destination ??= new DestinationRep(_context);
         public tsmsService TsmsService => _tsmsService ??= new tsmsServiceClient();
 
 

@@ -7,13 +7,13 @@ namespace DMS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class pdateDB : IMigrationMetadata
+    public sealed partial class CreateDB1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(pdateDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDB1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204280513446_pdateDB"; }
+            get { return "202204281516020_CreateDB1"; }
         }
         
         string IMigrationMetadata.Source

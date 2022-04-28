@@ -22,7 +22,7 @@ namespace DMS.IServices
         {
             try
             {
-                var
+                
                 _unitOfWork.Tradod.Add(model);
                 _unitOfWork.Commit();
                 return true;

@@ -32,6 +32,8 @@ namespace DMS
             For<IRegisterTagService>().Use<RegisterTagService>();
             For<ITagService>().Use<TagService>();
             For<ITradodService>().Use<TradodService>();
+            For<ITrafficTypeService>().Use<TrafficTypeService>();
+            For<IDestinationService>().Use<DestinationService>();
 
 
         }

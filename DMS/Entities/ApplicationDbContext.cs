@@ -26,6 +26,8 @@ namespace DMS.Entities
             modelBuilder.Configurations.Add(new TagConfigure());
             modelBuilder.Configurations.Add(new TagReciveConfigure());
             modelBuilder.Configurations.Add(new TrafficTypeConfigure());
+            modelBuilder.Configurations.Add(new TradodConfigure());
+            modelBuilder.Configurations.Add(new DestinationConfigure());
         }
 
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
@@ -40,6 +42,8 @@ namespace DMS.Entities
         public virtual DbSet<Tagrecive> Tagrecives { get; set; }
         public virtual DbSet<TrafficType> TrafficTypes { get; set; }
         public virtual DbSet<RegisterRoom> RegisterRooms { get; set; }
+        public virtual DbSet<Tradod> Tradods { get; set; }
+        public virtual DbSet<Destination> Destinations { get; set; }
 
 
     }

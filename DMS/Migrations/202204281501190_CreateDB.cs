@@ -21,45 +21,32 @@
                 .PrimaryKey(t => t.UserID);
             
             CreateTable(
-                "dbo.Dormitories",
+                "dbo.Tradods",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        DormitoryName = c.String(nullable: false, maxLength: 50),
-                        Room = c.Int(nullable: false),
-                        Valence = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            CreateTable(
-                "dbo.Rooms",
-                c => new
-                    {
-                        RoomID = c.Int(nullable: false, identity: true),
-                        RoomNumber = c.String(nullable: false, maxLength: 50),
-                        RoomCapacity = c.Int(nullable: false),
-                        Facilities = c.String(maxLength: 500),
-                        IntFacilities = c.String(maxLength: 100),
-                        DormitoryID_FK = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.RoomID)
-                .ForeignKey("dbo.Dormitories", t => t.DormitoryID_FK)
-                .Index(t => t.DormitoryID_FK);
-            
-            CreateTable(
-                "dbo.RegisterRooms",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        RoomID_FK = c.Int(nullable: false),
                         StudentID_FK = c.Int(nullable: false),
+                        TrfficTypeID_FK = c.Int(nullable: false),
+                        OutTime = c.DateTime(nullable: false),
+                        InCommingTime = c.DateTime(nullable: false),
                         IsActive = c.Boolean(nullable: false),
+                        IsDelete = c.Boolean(nullable: false),
+                        UserID_FK = c.Int(nullable: false),
+                        SendSMS1 = c.Boolean(nullable: false),
+                        ReciverNumber1 = c.String(maxLength: 11),
+                        Delivery1 = c.String(maxLength: 20),
+                        SendSMS2 = c.String(nullable: false),
+                        ReciverNumber2 = c.String(maxLength: 11),
+                        Delivery2 = c.String(maxLength: 20),
+                        Student_StudentID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Students", t => t.StudentID_FK)
-                .ForeignKey("dbo.Rooms", t => t.RoomID_FK)
-                .Index(t => t.RoomID_FK)
-                .Index(t => t.StudentID_FK);
+                .ForeignKey("dbo.Students", t => t.Student_StudentID)
+                .ForeignKey("dbo.TrafficTypes", t => t.TrfficTypeID_FK)
+                .ForeignKey("dbo.ApplicationUsers", t => t.UserID_FK)
+                .Index(t => t.TrfficTypeID_FK)
+                .Index(t => t.UserID_FK)
+                .Index(t => t.Student_StudentID);
             
             CreateTable(
                 "dbo.Students",
@@ -97,29 +84,45 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
-                "dbo.Studies",
+                "dbo.RegisterRooms",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        StudyTitle = c.String(nullable: false, maxLength: 100),
+                        RoomID_FK = c.Int(nullable: false),
+                        StudentID_FK = c.Int(nullable: false),
                         IsActive = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Rooms", t => t.RoomID_FK)
+                .ForeignKey("dbo.Students", t => t.StudentID_FK)
+                .Index(t => t.RoomID_FK)
+                .Index(t => t.StudentID_FK);
             
             CreateTable(
-                "dbo.PanelInfoes",
+                "dbo.Rooms",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        SendNumber = c.String(nullable: false, maxLength: 25),
-                        WarningReceiver = c.String(nullable: false, maxLength: 11),
-                        MinCredit = c.Int(nullable: false),
-                        MidCredit = c.Int(nullable: false),
-                        IsActive = c.Boolean(nullable: false),
-                        Username = c.String(nullable: false, maxLength: 50),
-                        Password = c.String(nullable: false, maxLength: 50),
+                        RoomID = c.Int(nullable: false, identity: true),
+                        RoomNumber = c.String(nullable: false, maxLength: 50),
+                        RoomCapacity = c.Int(nullable: false),
+                        Facilities = c.String(maxLength: 500),
+                        IntFacilities = c.String(maxLength: 100),
+                        DormitoryID_FK = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.RoomID)
+                .ForeignKey("dbo.Dormitories", t => t.DormitoryID_FK)
+                .Index(t => t.DormitoryID_FK);
+            
+            CreateTable(
+                "dbo.Dormitories",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        DormitoryName = c.String(nullable: false, maxLength: 50),
+                        Room = c.Int(nullable: false),
+                        Valence = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.RegisterTags",
@@ -129,14 +132,12 @@
                         StudentID_FK = c.Int(nullable: false),
                         TagID_FK = c.Int(nullable: false),
                         IsActive = c.Boolean(nullable: false),
-                        Student_StudentID = c.Int(),
-                        Tag_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Students", t => t.Student_StudentID)
-                .ForeignKey("dbo.Tags", t => t.Tag_ID)
-                .Index(t => t.Student_StudentID)
-                .Index(t => t.Tag_ID);
+                .ForeignKey("dbo.Tags", t => t.TagID_FK)
+                .ForeignKey("dbo.Students", t => t.StudentID_FK)
+                .Index(t => t.StudentID_FK)
+                .Index(t => t.TagID_FK);
             
             CreateTable(
                 "dbo.Tags",
@@ -168,6 +169,16 @@
                 .Index(t => t.RegisterTagID_FK);
             
             CreateTable(
+                "dbo.Studies",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        StudyTitle = c.String(nullable: false, maxLength: 100),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
                 "dbo.TrafficTypes",
                 c => new
                     {
@@ -176,37 +187,59 @@
                     })
                 .PrimaryKey(t => t.ID);
             
+            CreateTable(
+                "dbo.PanelInfoes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        SendNumber = c.String(nullable: false, maxLength: 25),
+                        WarningReceiver = c.String(nullable: false, maxLength: 11),
+                        MinCredit = c.Int(nullable: false),
+                        MidCredit = c.Int(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        Username = c.String(nullable: false, maxLength: 50),
+                        Password = c.String(nullable: false, maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Tagrecives", "RegisterTagID_FK", "dbo.RegisterTags");
-            DropForeignKey("dbo.RegisterTags", "Tag_ID", "dbo.Tags");
-            DropForeignKey("dbo.RegisterTags", "Student_StudentID", "dbo.Students");
-            DropForeignKey("dbo.Rooms", "DormitoryID_FK", "dbo.Dormitories");
-            DropForeignKey("dbo.RegisterRooms", "RoomID_FK", "dbo.Rooms");
+            DropForeignKey("dbo.Tradods", "UserID_FK", "dbo.ApplicationUsers");
+            DropForeignKey("dbo.Tradods", "TrfficTypeID_FK", "dbo.TrafficTypes");
+            DropForeignKey("dbo.Tradods", "Student_StudentID", "dbo.Students");
             DropForeignKey("dbo.Students", "StudyID_FK", "dbo.Studies");
+            DropForeignKey("dbo.RegisterTags", "StudentID_FK", "dbo.Students");
+            DropForeignKey("dbo.Tagrecives", "RegisterTagID_FK", "dbo.RegisterTags");
+            DropForeignKey("dbo.RegisterTags", "TagID_FK", "dbo.Tags");
             DropForeignKey("dbo.RegisterRooms", "StudentID_FK", "dbo.Students");
+            DropForeignKey("dbo.RegisterRooms", "RoomID_FK", "dbo.Rooms");
+            DropForeignKey("dbo.Rooms", "DormitoryID_FK", "dbo.Dormitories");
             DropForeignKey("dbo.Students", "EducationalID_FK", "dbo.EducationalCenters");
             DropIndex("dbo.Tagrecives", new[] { "RegisterTagID_FK" });
-            DropIndex("dbo.RegisterTags", new[] { "Tag_ID" });
-            DropIndex("dbo.RegisterTags", new[] { "Student_StudentID" });
-            DropIndex("dbo.Students", new[] { "EducationalID_FK" });
-            DropIndex("dbo.Students", new[] { "StudyID_FK" });
+            DropIndex("dbo.RegisterTags", new[] { "TagID_FK" });
+            DropIndex("dbo.RegisterTags", new[] { "StudentID_FK" });
+            DropIndex("dbo.Rooms", new[] { "DormitoryID_FK" });
             DropIndex("dbo.RegisterRooms", new[] { "StudentID_FK" });
             DropIndex("dbo.RegisterRooms", new[] { "RoomID_FK" });
-            DropIndex("dbo.Rooms", new[] { "DormitoryID_FK" });
+            DropIndex("dbo.Students", new[] { "EducationalID_FK" });
+            DropIndex("dbo.Students", new[] { "StudyID_FK" });
+            DropIndex("dbo.Tradods", new[] { "Student_StudentID" });
+            DropIndex("dbo.Tradods", new[] { "UserID_FK" });
+            DropIndex("dbo.Tradods", new[] { "TrfficTypeID_FK" });
+            DropTable("dbo.PanelInfoes");
             DropTable("dbo.TrafficTypes");
+            DropTable("dbo.Studies");
             DropTable("dbo.Tagrecives");
             DropTable("dbo.Tags");
             DropTable("dbo.RegisterTags");
-            DropTable("dbo.PanelInfoes");
-            DropTable("dbo.Studies");
+            DropTable("dbo.Dormitories");
+            DropTable("dbo.Rooms");
+            DropTable("dbo.RegisterRooms");
             DropTable("dbo.EducationalCenters");
             DropTable("dbo.Students");
-            DropTable("dbo.RegisterRooms");
-            DropTable("dbo.Rooms");
-            DropTable("dbo.Dormitories");
+            DropTable("dbo.Tradods");
             DropTable("dbo.ApplicationUsers");
         }
     }
