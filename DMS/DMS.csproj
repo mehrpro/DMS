@@ -62,6 +62,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,6 +89,11 @@
     <Compile Include="Configuration\TagReciveConfigure.cs" />
     <Compile Include="Configuration\TradodConfigure.cs" />
     <Compile Include="Configuration\TrafficTypeConfigure.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Entities\ApplicationDbContext.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Dormitory.cs" />
@@ -109,6 +116,7 @@
     <Compile Include="IServices\IRoomService.cs" />
     <Compile Include="IServices\IStudentService.cs" />
     <Compile Include="IServices\ITagService.cs" />
+    <Compile Include="IServices\ITradodService.cs" />
     <Compile Include="IServices\ITrafficTypeTitleService.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +148,7 @@
     <Compile Include="Repositories\IStudyRep.cs" />
     <Compile Include="Repositories\ITagreciveRep.cs" />
     <Compile Include="Repositories\ITagRep.cs" />
+    <Compile Include="Repositories\ITradodRep.cs" />
     <Compile Include="Repositories\ITrafficTypeRep.cs" />
     <Compile Include="Repositories\IUnitOfWork.cs" />
     <Compile Include="TypeRegister.cs" />
@@ -279,6 +288,19 @@
     <EmbeddedResource Include="UI\Users\StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\DMS.ServiceReference1.object1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\DMS.ServiceReference1.object2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\DMS.ServiceReference1.object3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\DMS.ServiceReference1.objectInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\SMSService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -295,6 +317,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Azad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

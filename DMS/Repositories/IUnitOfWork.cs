@@ -1,5 +1,6 @@
 ﻿using DMS.Entities;
 using System;
+using DMS.ServiceReference1;
 
 namespace DMS.Repositories
 {
@@ -18,11 +19,13 @@ namespace DMS.Repositories
         ITagreciveRep Tagrecive { get; }
         ITagRep Tag { get; }
         ITrafficTypeRep TrafficType { get; }
+        ITradodRep Tradod { get; }
+        tsmsService TsmsService { get; }
 
         int Commit();
     }
 
-    public class UnitOfWork : IUnitOfWork ,IDisposable
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly ApplicationDbContext _context;
         private IApplicationUserRep _applicationUserRep;
@@ -37,6 +40,9 @@ namespace DMS.Repositories
         private IStudyRep _studyRep;
         private ITagreciveRep _tagreciveRep;
         private ITrafficTypeRep _trafficTypeRep;
+        private ITradodRep _tradodRep;
+        private tsmsService _tsmsService;
+
         private bool _disposed;
 
 
@@ -58,6 +64,9 @@ namespace DMS.Repositories
         public IStudyRep Study => _studyRep ??= new StudyRep(_context);
         public ITagreciveRep Tagrecive => _tagreciveRep ??= new TagreciveRep(_context);
         public ITrafficTypeRep TrafficType => _trafficTypeRep ??= new TrafficTypeRep(_context);
+        public ITradodRep Tradod => _tradodRep ??= new TradodRep(_context);
+        public tsmsService TsmsService => _tsmsService ??= new tsmsServiceClient();
+
 
         public int Commit()
         {
