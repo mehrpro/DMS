@@ -59,9 +59,10 @@ namespace DMS.UI
             this.accordionControlElement7,
             this.accordionControlElement4,
             this.accordionControlElement5});
-            this.accordionControl1.Location = new System.Drawing.Point(623, 0);
+            this.accordionControl1.Location = new System.Drawing.Point(830, 0);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(203, 559);
+            this.accordionControl1.Size = new System.Drawing.Size(271, 746);
             this.accordionControl1.TabIndex = 0;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -134,7 +135,7 @@ namespace DMS.UI
             // 
             // btnTradod
             // 
-            this.btnTradod.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement8.ImageOptions.Image")));
+            this.btnTradod.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTradod.ImageOptions.Image")));
             this.btnTradod.Name = "btnTradod";
             this.btnTradod.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnTradod.Text = "ثبت تردد";
@@ -200,12 +201,13 @@ namespace DMS.UI
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 559);
+            this.ClientSize = new System.Drawing.Size(1101, 746);
             this.Controls.Add(this.accordionControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "MainForm";

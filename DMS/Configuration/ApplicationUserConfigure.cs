@@ -16,7 +16,11 @@ namespace DMS.Configuration
             Property(x => x.Password).IsRequired().HasMaxLength(120);
             Property(x => x.Username).IsRequired().HasMaxLength(50);
             Property(x => x.Role).IsRequired();
-            
+            HasMany(x => x.Tradods)
+                .WithRequired(x => x.ApplicationUser)
+                .HasForeignKey(x => x.UserID_FK)
+                .WillCascadeOnDelete(false);
+
 
         }
     }

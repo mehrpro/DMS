@@ -10,6 +10,7 @@ namespace DMS.Entities
         {
             RegisterRooms = new HashSet<RegisterRoom>();
             RegisterTags = new HashSet<RegisterTag>();
+            Tradods = new HashSet<Tradod>();
         }
 
 
@@ -34,6 +35,7 @@ namespace DMS.Entities
 
         public virtual ICollection<RegisterRoom> RegisterRooms { get; set; }
         public virtual ICollection<RegisterTag> RegisterTags { get; set; }
+        public virtual ICollection<Tradod> Tradods { get; set; }
 
     }
 }

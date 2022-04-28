@@ -85,6 +85,7 @@
     <Compile Include="Configuration\StudyConfigure.cs" />
     <Compile Include="Configuration\TagConfigure.cs" />
     <Compile Include="Configuration\TagReciveConfigure.cs" />
+    <Compile Include="Configuration\TradodConfigure.cs" />
     <Compile Include="Configuration\TrafficTypeConfigure.cs" />
     <Compile Include="Entities\ApplicationDbContext.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Entities\Study.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Tagrecive.cs" />
+    <Compile Include="Entities\Tradod.cs" />
     <Compile Include="Entities\TrafficType.cs" />
     <Compile Include="IServices\IDormitoryService.cs" />
     <Compile Include="IServices\IEducationalCenterService.cs" />
