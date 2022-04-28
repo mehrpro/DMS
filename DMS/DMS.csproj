@@ -106,6 +106,7 @@
     <Compile Include="IServices\IRegisterTagService.cs" />
     <Compile Include="IServices\IRoomService.cs" />
     <Compile Include="IServices\IStudentService.cs" />
+    <Compile Include="IServices\ITagService.cs" />
     <Compile Include="IServices\ITrafficTypeTitleService.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -116,6 +117,10 @@
     <Compile Include="Migrations\202204231300503_CreateDB.cs" />
     <Compile Include="Migrations\202204231300503_CreateDB.designer.cs">
       <DependentUpon>202204231300503_CreateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204280513446_pdateDB.cs" />
+    <Compile Include="Migrations\202204280513446_pdateDB.designer.cs">
+      <DependentUpon>202204280513446_pdateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -213,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204231300503_CreateDB.resx">
       <DependentUpon>202204231300503_CreateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204280513446_pdateDB.resx">
+      <DependentUpon>202204280513446_pdateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

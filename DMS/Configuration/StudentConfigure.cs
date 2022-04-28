@@ -25,6 +25,10 @@ namespace DMS.Configuration
                 .WithRequired(x => x.Student)
                 .HasForeignKey(x => x.StudentID_FK)
                 .WillCascadeOnDelete(false);
+            HasMany(x=>x.RegisterTags)
+                .WithRequired(x=>x.Student)
+                .HasForeignKey(x=>x.StudentID_FK)
+                .WillCascadeOnDelete(false);
 
         }
     }

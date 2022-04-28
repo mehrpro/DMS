@@ -14,6 +14,10 @@ namespace DMS.Configuration
             Property(x => x.IsDeleted).IsRequired();
             Property(x => x.TagID_HEX).IsRequired().HasMaxLength(50);
             Property(x => x.CartView).IsRequired().HasMaxLength(50);
+            HasMany(x=>x.RegisterTags)
+                .WithRequired(x=>x.Tag)
+                .HasForeignKey(x=>x.TagID_FK)
+                .WillCascadeOnDelete(false);
 
         }
     }

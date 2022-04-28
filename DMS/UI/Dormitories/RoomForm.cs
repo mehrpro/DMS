@@ -47,7 +47,7 @@ namespace DMS.UI.Dormitories
             var focusedRow = gridView1.GetFocusedRow();
             _room = new Room();
             _room = (Room)focusedRow;
-            txtID.EditValue = _room.RoomID;
+       
             cbxDormitory.Enabled = false;
             txtShomareOtagh.EditValue = _room.RoomNumber;
             txtZarfitOtagh.EditValue = _room.RoomCapacity;
@@ -59,7 +59,7 @@ namespace DMS.UI.Dormitories
 
         private void Clear()
         {
-            txtID.EditValue = 0;
+          
             txtShomareOtagh.EditValue = 0;
             txtZarfitOtagh.EditValue = 0;
             cbxEmkanat.EditValue = 0;

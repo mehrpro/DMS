@@ -37,8 +37,6 @@ namespace DMS.UI.Dormitories
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTrafficTypeTitle = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvTrafficType = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,7 +48,6 @@ namespace DMS.UI.Dormitories
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTrafficTypeTitle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrafficType)).BeginInit();
@@ -65,13 +62,11 @@ namespace DMS.UI.Dormitories
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.txtTrafficTypeTitle);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.textEdit1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(540, 76);
+            this.panelControl1.Size = new System.Drawing.Size(548, 76);
             this.panelControl1.TabIndex = 0;
             // 
             // btnClose
@@ -82,7 +77,7 @@ namespace DMS.UI.Dormitories
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(107, 46);
-            this.btnClose.TabIndex = 39;
+            this.btnClose.TabIndex = 3;
             this.btnClose.Text = "انصراف";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -94,54 +89,32 @@ namespace DMS.UI.Dormitories
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 46);
-            this.btnSave.TabIndex = 38;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(467, 28);
+            this.labelControl2.Location = new System.Drawing.Point(475, 28);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(53, 20);
-            this.labelControl2.TabIndex = 21;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "عنوان تردد";
             // 
             // txtTrafficTypeTitle
             // 
             this.txtTrafficTypeTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTrafficTypeTitle.Location = new System.Drawing.Point(254, 25);
+            this.txtTrafficTypeTitle.Location = new System.Drawing.Point(262, 25);
             this.txtTrafficTypeTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTrafficTypeTitle.Name = "txtTrafficTypeTitle";
             this.txtTrafficTypeTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtTrafficTypeTitle.Size = new System.Drawing.Size(206, 26);
-            this.txtTrafficTypeTitle.TabIndex = 26;
+            this.txtTrafficTypeTitle.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtTrafficTypeTitle, conditionValidationRule1);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(387, 10);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(32, 20);
-            this.labelControl1.TabIndex = 20;
-            this.labelControl1.Text = "شناسه";
-            this.labelControl1.Visible = false;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(331, 7);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit1.Size = new System.Drawing.Size(49, 26);
-            this.textEdit1.TabIndex = 25;
-            this.textEdit1.Visible = false;
             // 
             // panelControl2
             // 
@@ -150,7 +123,7 @@ namespace DMS.UI.Dormitories
             this.panelControl2.Location = new System.Drawing.Point(0, 76);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(540, 411);
+            this.panelControl2.Size = new System.Drawing.Size(548, 449);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvTrafficType
@@ -163,7 +136,7 @@ namespace DMS.UI.Dormitories
             this.dgvTrafficType.Name = "dgvTrafficType";
             this.dgvTrafficType.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect});
-            this.dgvTrafficType.Size = new System.Drawing.Size(536, 407);
+            this.dgvTrafficType.Size = new System.Drawing.Size(544, 445);
             this.dgvTrafficType.TabIndex = 0;
             this.dgvTrafficType.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -232,6 +205,7 @@ namespace DMS.UI.Dormitories
             this.gridView1.FixedLineWidth = 4;
             this.gridView1.GridControl = this.dgvTrafficType;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // SelectColumn
@@ -272,7 +246,7 @@ namespace DMS.UI.Dormitories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 487);
+            this.ClientSize = new System.Drawing.Size(548, 525);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -283,7 +257,6 @@ namespace DMS.UI.Dormitories
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTrafficTypeTitle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrafficType)).EndInit();
@@ -298,9 +271,7 @@ namespace DMS.UI.Dormitories
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.TextEdit txtTrafficTypeTitle;
         private DevExpress.XtraGrid.GridControl dgvTrafficType;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

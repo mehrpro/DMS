@@ -9,6 +9,7 @@ namespace DMS.Entities
         public Student()
         {
             RegisterRooms = new HashSet<RegisterRoom>();
+            RegisterTags = new HashSet<RegisterTag>();
         }
 
 
@@ -32,6 +33,7 @@ namespace DMS.Entities
 
 
         public virtual ICollection<RegisterRoom> RegisterRooms { get; set; }
+        public virtual ICollection<RegisterTag> RegisterTags { get; set; }
 
     }
 }

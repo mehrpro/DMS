@@ -27,15 +27,15 @@ namespace DMS.UI.Users
             cbxStudy.Properties.DisplayMember = "StudyTitle";
             cbxStudy.Properties.ValueMember = "ID";
             //cbxEducationList();
-            cbxEducationList();
+            CbxEducationList();
             StudentList();
             Clear();
 
         }
 
-        private async void StudentList()
+        private  void StudentList()
         {
-            dgvStudentList.DataSource = await _studentService.StudentList();
+            dgvStudentList.DataSource =Task.Run(async ()=> await _studentService.StudentList()).Result;
         }
 
         private void Clear()
@@ -53,13 +53,14 @@ namespace DMS.UI.Users
             datTavalod.DateTime = DateTime.Today;
             picPerson.Image = null;
             _student = new Student();
+            StudentList();
 
 
         }
-        private async void cbxEducationList()
+        private  void CbxEducationList()
         {
-            cbxEducational.Properties.DataSource = await _educationalCenterService.EducationalCenterList();
-            cbxStudy.Properties.DataSource = await _studyService.StudyList();
+            cbxEducational.Properties.DataSource =Task.Run(async ()=> await _educationalCenterService.EducationalCenterList()).Result;
+            cbxStudy.Properties.DataSource =Task.Run(async ()=>  await _studyService.StudyList()).Result;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

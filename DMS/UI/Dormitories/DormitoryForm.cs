@@ -25,7 +25,7 @@ namespace DMS.UI.Dormitories
         private void Clear()
         {
             _dormitory = new Dormitory();
-            txtID.EditValue = txtOtagh.EditValue = txtZarfiat.EditValue = 0;
+             txtOtagh.EditValue = txtZarfiat.EditValue = 0;
             txtTitle.EditValue = "";
             txtTitle.Focus();
             UpdateList();
@@ -79,7 +79,7 @@ namespace DMS.UI.Dormitories
             var focusedRow = gridView1.GetFocusedRow();
             _dormitory = new Dormitory();
             _dormitory = (Dormitory)focusedRow;
-            txtID.EditValue = _dormitory.ID;
+           
             txtOtagh.EditValue = _dormitory.Room;
             txtTitle.EditValue = _dormitory.DormitoryName;
             txtZarfiat.EditValue = _dormitory.Valence;

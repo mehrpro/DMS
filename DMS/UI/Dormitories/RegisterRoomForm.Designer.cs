@@ -51,9 +51,15 @@ namespace DMS.UI.Dormitories
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cbxRooms = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.RoomNumberColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RoomCapacityColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FacilitiesColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.cbxDormitory = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.DormitoryNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RoomColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ValenceColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txtMandehKol = new DevExpress.XtraEditors.TextEdit();
@@ -157,7 +163,7 @@ namespace DMS.UI.Dormitories
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(880, 263);
+            this.panelControl1.Size = new System.Drawing.Size(888, 263);
             this.panelControl1.TabIndex = 0;
             // 
             // groupControl3
@@ -173,14 +179,14 @@ namespace DMS.UI.Dormitories
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(2, 125);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(876, 136);
+            this.groupControl3.Size = new System.Drawing.Size(884, 136);
             this.groupControl3.TabIndex = 53;
             this.groupControl3.Text = "ثبت اتاق برای دانشجو";
             // 
             // cbxStudent
             // 
             this.cbxStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxStudent.Location = new System.Drawing.Point(614, 49);
+            this.cbxStudent.Location = new System.Drawing.Point(622, 49);
             this.cbxStudent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxStudent.Name = "cbxStudent";
             this.cbxStudent.Parmida_ActivePlusMultiKeys = false;
@@ -209,7 +215,7 @@ namespace DMS.UI.Dormitories
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(809, 52);
+            this.labelControl3.Location = new System.Drawing.Point(817, 52);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(37, 20);
@@ -236,13 +242,13 @@ namespace DMS.UI.Dormitories
             this.txtEmkanatFelli.Name = "txtEmkanatFelli";
             this.txtEmkanatFelli.Parmida_ActivePlusMultiKeys = false;
             this.txtEmkanatFelli.Properties.ReadOnly = true;
-            this.txtEmkanatFelli.Size = new System.Drawing.Size(238, 26);
+            this.txtEmkanatFelli.Size = new System.Drawing.Size(246, 26);
             this.txtEmkanatFelli.TabIndex = 50;
             // 
             // txtOtaghFelii
             // 
             this.txtOtaghFelii.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOtaghFelii.Location = new System.Drawing.Point(342, 49);
+            this.txtOtaghFelii.Location = new System.Drawing.Point(350, 49);
             this.txtOtaghFelii.Name = "txtOtaghFelii";
             this.txtOtaghFelii.Parmida_ActivePlusMultiKeys = false;
             this.txtOtaghFelii.Properties.ReadOnly = true;
@@ -252,7 +258,7 @@ namespace DMS.UI.Dormitories
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(256, 52);
+            this.labelControl9.Location = new System.Drawing.Point(264, 52);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(57, 20);
@@ -262,7 +268,7 @@ namespace DMS.UI.Dormitories
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(533, 52);
+            this.labelControl8.Location = new System.Drawing.Point(541, 52);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(45, 20);
@@ -302,14 +308,14 @@ namespace DMS.UI.Dormitories
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(876, 123);
+            this.groupControl1.Size = new System.Drawing.Size(884, 123);
             this.groupControl1.TabIndex = 51;
             this.groupControl1.Text = "انتخاب خوابگاه";
             // 
             // cbxRooms
             // 
             this.cbxRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxRooms.Location = new System.Drawing.Point(614, 80);
+            this.cbxRooms.Location = new System.Drawing.Point(622, 80);
             this.cbxRooms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxRooms.Name = "cbxRooms";
             this.cbxRooms.Parmida_ActivePlusMultiKeys = false;
@@ -330,15 +336,49 @@ namespace DMS.UI.Dormitories
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.RoomNumberColumn,
+            this.RoomCapacityColumn,
+            this.FacilitiesColumn});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // RoomNumberColumn
+            // 
+            this.RoomNumberColumn.Caption = "شماره اتاق";
+            this.RoomNumberColumn.FieldName = "RoomNumber";
+            this.RoomNumberColumn.MaxWidth = 100;
+            this.RoomNumberColumn.MinWidth = 100;
+            this.RoomNumberColumn.Name = "RoomNumberColumn";
+            this.RoomNumberColumn.Visible = true;
+            this.RoomNumberColumn.VisibleIndex = 2;
+            this.RoomNumberColumn.Width = 100;
+            // 
+            // RoomCapacityColumn
+            // 
+            this.RoomCapacityColumn.Caption = "ظرفیت اتاق";
+            this.RoomCapacityColumn.FieldName = "RoomCapacity";
+            this.RoomCapacityColumn.MaxWidth = 60;
+            this.RoomCapacityColumn.MinWidth = 60;
+            this.RoomCapacityColumn.Name = "RoomCapacityColumn";
+            this.RoomCapacityColumn.Visible = true;
+            this.RoomCapacityColumn.VisibleIndex = 0;
+            this.RoomCapacityColumn.Width = 60;
+            // 
+            // FacilitiesColumn
+            // 
+            this.FacilitiesColumn.Caption = "امکانات";
+            this.FacilitiesColumn.FieldName = "Facilities";
+            this.FacilitiesColumn.Name = "FacilitiesColumn";
+            this.FacilitiesColumn.Visible = true;
+            this.FacilitiesColumn.VisibleIndex = 1;
+            // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(809, 83);
+            this.labelControl4.Location = new System.Drawing.Point(817, 83);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(19, 20);
@@ -348,7 +388,7 @@ namespace DMS.UI.Dormitories
             // cbxDormitory
             // 
             this.cbxDormitory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxDormitory.Location = new System.Drawing.Point(614, 44);
+            this.cbxDormitory.Location = new System.Drawing.Point(622, 44);
             this.cbxDormitory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxDormitory.Name = "cbxDormitory";
             this.cbxDormitory.Parmida_ActivePlusMultiKeys = false;
@@ -371,15 +411,43 @@ namespace DMS.UI.Dormitories
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.DormitoryNameColumn,
+            this.RoomColumn,
+            this.ValenceColumn});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // DormitoryNameColumn
+            // 
+            this.DormitoryNameColumn.Caption = "نام خوابگاه";
+            this.DormitoryNameColumn.FieldName = "DormitoryName";
+            this.DormitoryNameColumn.Name = "DormitoryNameColumn";
+            this.DormitoryNameColumn.Visible = true;
+            this.DormitoryNameColumn.VisibleIndex = 0;
+            // 
+            // RoomColumn
+            // 
+            this.RoomColumn.Caption = "تعداد اتاق";
+            this.RoomColumn.FieldName = "Room";
+            this.RoomColumn.Name = "RoomColumn";
+            this.RoomColumn.Visible = true;
+            this.RoomColumn.VisibleIndex = 1;
+            // 
+            // ValenceColumn
+            // 
+            this.ValenceColumn.Caption = "ظرفیت کل خوابگاه";
+            this.ValenceColumn.FieldName = "Valence";
+            this.ValenceColumn.Name = "ValenceColumn";
+            this.ValenceColumn.Visible = true;
+            this.ValenceColumn.VisibleIndex = 2;
+            // 
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(403, 83);
+            this.labelControl6.Location = new System.Drawing.Point(411, 83);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(24, 20);
@@ -389,7 +457,7 @@ namespace DMS.UI.Dormitories
             // labelControl11
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Location = new System.Drawing.Point(256, 83);
+            this.labelControl11.Location = new System.Drawing.Point(264, 83);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(57, 20);
@@ -399,7 +467,7 @@ namespace DMS.UI.Dormitories
             // txtMandehKol
             // 
             this.txtMandehKol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMandehKol.Location = new System.Drawing.Point(195, 44);
+            this.txtMandehKol.Location = new System.Drawing.Point(203, 44);
             this.txtMandehKol.Name = "txtMandehKol";
             this.txtMandehKol.Parmida_ActivePlusMultiKeys = false;
             this.txtMandehKol.Properties.ReadOnly = true;
@@ -409,7 +477,7 @@ namespace DMS.UI.Dormitories
             // txtMandehOtagh
             // 
             this.txtMandehOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMandehOtagh.Location = new System.Drawing.Point(342, 80);
+            this.txtMandehOtagh.Location = new System.Drawing.Point(350, 80);
             this.txtMandehOtagh.Name = "txtMandehOtagh";
             this.txtMandehOtagh.Parmida_ActivePlusMultiKeys = false;
             this.txtMandehOtagh.Properties.ReadOnly = true;
@@ -419,7 +487,7 @@ namespace DMS.UI.Dormitories
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(808, 47);
+            this.labelControl2.Location = new System.Drawing.Point(816, 47);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(36, 20);
@@ -429,7 +497,7 @@ namespace DMS.UI.Dormitories
             // txtZarfiatOtagh
             // 
             this.txtZarfiatOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtZarfiatOtagh.Location = new System.Drawing.Point(472, 80);
+            this.txtZarfiatOtagh.Location = new System.Drawing.Point(480, 80);
             this.txtZarfiatOtagh.Name = "txtZarfiatOtagh";
             this.txtZarfiatOtagh.Parmida_ActivePlusMultiKeys = false;
             this.txtZarfiatOtagh.Properties.ReadOnly = true;
@@ -439,7 +507,7 @@ namespace DMS.UI.Dormitories
             // txtZarfit
             // 
             this.txtZarfit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtZarfit.Location = new System.Drawing.Point(342, 44);
+            this.txtZarfit.Location = new System.Drawing.Point(350, 44);
             this.txtZarfit.Name = "txtZarfit";
             this.txtZarfit.Parmida_ActivePlusMultiKeys = false;
             this.txtZarfit.Properties.ReadOnly = true;
@@ -449,7 +517,7 @@ namespace DMS.UI.Dormitories
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(533, 47);
+            this.labelControl1.Location = new System.Drawing.Point(541, 47);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 20);
@@ -459,7 +527,7 @@ namespace DMS.UI.Dormitories
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(533, 83);
+            this.labelControl10.Location = new System.Drawing.Point(541, 83);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(56, 20);
@@ -469,7 +537,7 @@ namespace DMS.UI.Dormitories
             // txtOtagh
             // 
             this.txtOtagh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOtagh.Location = new System.Drawing.Point(472, 44);
+            this.txtOtagh.Location = new System.Drawing.Point(480, 44);
             this.txtOtagh.Name = "txtOtagh";
             this.txtOtagh.Parmida_ActivePlusMultiKeys = false;
             this.txtOtagh.Properties.ReadOnly = true;
@@ -479,7 +547,7 @@ namespace DMS.UI.Dormitories
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(403, 47);
+            this.labelControl5.Location = new System.Drawing.Point(411, 47);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(51, 20);
@@ -489,7 +557,7 @@ namespace DMS.UI.Dormitories
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(256, 47);
+            this.labelControl7.Location = new System.Drawing.Point(264, 47);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(41, 20);
@@ -508,7 +576,7 @@ namespace DMS.UI.Dormitories
             this.txtEmkanatOtagh.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtEmkanatOtagh.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtEmkanatOtagh.Properties.ReadOnly = true;
-            this.txtEmkanatOtagh.Size = new System.Drawing.Size(238, 26);
+            this.txtEmkanatOtagh.Size = new System.Drawing.Size(246, 26);
             this.txtEmkanatOtagh.TabIndex = 50;
             // 
             // panelControl2
@@ -517,7 +585,7 @@ namespace DMS.UI.Dormitories
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 263);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(880, 336);
+            this.panelControl2.Size = new System.Drawing.Size(888, 339);
             this.panelControl2.TabIndex = 1;
             // 
             // groupControl4
@@ -526,20 +594,20 @@ namespace DMS.UI.Dormitories
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(2, 2);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(876, 332);
+            this.groupControl4.Size = new System.Drawing.Size(884, 335);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "دانشجویان مستقر در اتاق";
             // 
             // dgvRegisterRoom
             // 
             this.dgvRegisterRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRegisterRoom.Location = new System.Drawing.Point(2, 27);
+            this.dgvRegisterRoom.Location = new System.Drawing.Point(2, 23);
             this.dgvRegisterRoom.MainView = this.layoutView1;
             this.dgvRegisterRoom.Name = "dgvRegisterRoom";
             this.dgvRegisterRoom.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.picImg,
             this.btnSelect});
-            this.dgvRegisterRoom.Size = new System.Drawing.Size(872, 303);
+            this.dgvRegisterRoom.Size = new System.Drawing.Size(880, 310);
             this.dgvRegisterRoom.TabIndex = 0;
             this.dgvRegisterRoom.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -562,6 +630,7 @@ namespace DMS.UI.Dormitories
             this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutViewField_IDColumn});
             this.layoutView1.Name = "layoutView1";
+            this.layoutView1.OptionsBehavior.ReadOnly = true;
             this.layoutView1.OptionsBehavior.ScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             this.layoutView1.OptionsCustomization.AllowFilter = false;
             this.layoutView1.OptionsCustomization.AllowSort = false;
@@ -744,7 +813,7 @@ namespace DMS.UI.Dormitories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 599);
+            this.ClientSize = new System.Drawing.Size(888, 602);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "RegisterRoomForm";
@@ -852,5 +921,11 @@ namespace DMS.UI.Dormitories
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_EducationColumn;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_StudyColumn;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomNumberColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomCapacityColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn FacilitiesColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn DormitoryNameColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn RoomColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn ValenceColumn;
     }
 }
