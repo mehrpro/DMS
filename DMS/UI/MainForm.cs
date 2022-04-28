@@ -131,5 +131,17 @@ namespace DMS.UI
             //frm.MdiParent = this;
             frm.ShowDialog();
         }
+
+        private void btnTradod_Click(object sender, EventArgs e)
+        {
+            var frm = _mainContainer.GetInstance<TradodForm>();
+            //frm.ControlBox = false;
+            //frm.Dock = DockStyle.Fill;
+            //frm.WindowState = FormWindowState.Maximized;
+            frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            //frm.MdiParent = this;
+            frm.ShowDialog();
+        }
     }
 }

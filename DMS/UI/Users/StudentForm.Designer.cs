@@ -359,7 +359,7 @@ namespace DMS.UI.Users
             this.datTavalod.Properties.Parmida_CheckDateOnLeave = false;
             this.datTavalod.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
             this.datTavalod.Size = new System.Drawing.Size(140, 20);
-            this.datTavalod.TabIndex = 17;
+            this.datTavalod.TabIndex = 7;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.datTavalod, conditionValidationRule1);
@@ -377,11 +377,11 @@ namespace DMS.UI.Users
             // txtHomeTel
             // 
             this.txtHomeTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHomeTel.Location = new System.Drawing.Point(408, 152);
+            this.txtHomeTel.Location = new System.Drawing.Point(408, 180);
             this.txtHomeTel.Name = "txtHomeTel";
             this.txtHomeTel.Parmida_ActivePlusMultiKeys = false;
             this.txtHomeTel.Size = new System.Drawing.Size(140, 20);
-            this.txtHomeTel.TabIndex = 11;
+            this.txtHomeTel.TabIndex = 23;
             // 
             // picPerson
             // 
@@ -412,7 +412,7 @@ namespace DMS.UI.Users
             this.labelControl8.Location = new System.Drawing.Point(554, 50);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(82, 13);
-            this.labelControl8.TabIndex = 2;
+            this.labelControl8.TabIndex = 4;
             this.labelControl8.Text = "شماره دانشجویی";
             // 
             // txtFatherName
@@ -422,7 +422,7 @@ namespace DMS.UI.Users
             this.txtFatherName.Name = "txtFatherName";
             this.txtFatherName.Parmida_ActivePlusMultiKeys = false;
             this.txtFatherName.Size = new System.Drawing.Size(140, 20);
-            this.txtFatherName.TabIndex = 9;
+            this.txtFatherName.TabIndex = 15;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtFatherName, conditionValidationRule3);
@@ -430,10 +430,10 @@ namespace DMS.UI.Users
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(555, 154);
+            this.labelControl6.Location = new System.Drawing.Point(555, 182);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(46, 13);
-            this.labelControl6.TabIndex = 10;
+            this.labelControl6.TabIndex = 22;
             this.labelControl6.Text = "تلفن منزل";
             // 
             // txtMobile
@@ -443,7 +443,7 @@ namespace DMS.UI.Users
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Parmida_ActivePlusMultiKeys = false;
             this.txtMobile.Size = new System.Drawing.Size(140, 20);
-            this.txtMobile.TabIndex = 15;
+            this.txtMobile.TabIndex = 3;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtMobile, conditionValidationRule4);
@@ -454,7 +454,7 @@ namespace DMS.UI.Users
             this.labelControl13.Location = new System.Drawing.Point(331, 78);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(35, 13);
-            this.labelControl13.TabIndex = 18;
+            this.labelControl13.TabIndex = 10;
             this.labelControl13.Text = "کد ملی";
             // 
             // txtCodemelii
@@ -464,7 +464,7 @@ namespace DMS.UI.Users
             this.txtCodemelii.Name = "txtCodemelii";
             this.txtCodemelii.Parmida_ActivePlusMultiKeys = false;
             this.txtCodemelii.Size = new System.Drawing.Size(140, 20);
-            this.txtCodemelii.TabIndex = 19;
+            this.txtCodemelii.TabIndex = 11;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtCodemelii, conditionValidationRule5);
@@ -475,7 +475,7 @@ namespace DMS.UI.Users
             this.labelControl4.Location = new System.Drawing.Point(555, 127);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(29, 13);
-            this.labelControl4.TabIndex = 8;
+            this.labelControl4.TabIndex = 14;
             this.labelControl4.Text = "نام پدر";
             // 
             // labelControl10
@@ -484,7 +484,7 @@ namespace DMS.UI.Users
             this.labelControl10.Location = new System.Drawing.Point(332, 127);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(68, 13);
-            this.labelControl10.TabIndex = 20;
+            this.labelControl10.TabIndex = 16;
             this.labelControl10.Text = "تلفن همراه پدر";
             // 
             // labelControl1
@@ -493,7 +493,7 @@ namespace DMS.UI.Users
             this.labelControl1.Location = new System.Drawing.Point(555, 102);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(66, 13);
-            this.labelControl1.TabIndex = 6;
+            this.labelControl1.TabIndex = 12;
             this.labelControl1.Text = "رشته تحصیلی";
             // 
             // txtSmariDanshjoi
@@ -503,7 +503,7 @@ namespace DMS.UI.Users
             this.txtSmariDanshjoi.Name = "txtSmariDanshjoi";
             this.txtSmariDanshjoi.Parmida_ActivePlusMultiKeys = false;
             this.txtSmariDanshjoi.Size = new System.Drawing.Size(140, 20);
-            this.txtSmariDanshjoi.TabIndex = 3;
+            this.txtSmariDanshjoi.TabIndex = 5;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule6.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtSmariDanshjoi, conditionValidationRule6);
@@ -514,7 +514,7 @@ namespace DMS.UI.Users
             this.labelControl7.Location = new System.Drawing.Point(555, 78);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(37, 13);
-            this.labelControl7.TabIndex = 4;
+            this.labelControl7.TabIndex = 8;
             this.labelControl7.Text = "دانشگاه";
             // 
             // txtFatherTel
@@ -524,7 +524,7 @@ namespace DMS.UI.Users
             this.txtFatherTel.Name = "txtFatherTel";
             this.txtFatherTel.Parmida_ActivePlusMultiKeys = false;
             this.txtFatherTel.Size = new System.Drawing.Size(140, 20);
-            this.txtFatherTel.TabIndex = 21;
+            this.txtFatherTel.TabIndex = 17;
             conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule7.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtFatherTel, conditionValidationRule7);
@@ -535,35 +535,35 @@ namespace DMS.UI.Users
             this.labelControl5.Location = new System.Drawing.Point(331, 52);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(41, 13);
-            this.labelControl5.TabIndex = 16;
+            this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "تاریخ تولد";
             // 
             // txtBasteganTel
             // 
             this.txtBasteganTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBasteganTel.Location = new System.Drawing.Point(186, 177);
+            this.txtBasteganTel.Location = new System.Drawing.Point(186, 151);
             this.txtBasteganTel.Name = "txtBasteganTel";
             this.txtBasteganTel.Parmida_ActivePlusMultiKeys = false;
             this.txtBasteganTel.Size = new System.Drawing.Size(140, 20);
-            this.txtBasteganTel.TabIndex = 23;
+            this.txtBasteganTel.TabIndex = 21;
             // 
             // labelControl11
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Location = new System.Drawing.Point(555, 180);
+            this.labelControl11.Location = new System.Drawing.Point(555, 154);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(65, 13);
-            this.labelControl11.TabIndex = 12;
+            this.labelControl11.TabIndex = 18;
             this.labelControl11.Text = "بستگان نزدیک";
             // 
             // txtBastega
             // 
             this.txtBastega.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBastega.Location = new System.Drawing.Point(408, 178);
+            this.txtBastega.Location = new System.Drawing.Point(408, 152);
             this.txtBastega.Name = "txtBastega";
             this.txtBastega.Parmida_ActivePlusMultiKeys = false;
             this.txtBastega.Size = new System.Drawing.Size(140, 20);
-            this.txtBastega.TabIndex = 13;
+            this.txtBastega.TabIndex = 19;
             // 
             // labelControl3
             // 
@@ -571,16 +571,16 @@ namespace DMS.UI.Users
             this.labelControl3.Location = new System.Drawing.Point(332, 23);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(52, 13);
-            this.labelControl3.TabIndex = 14;
+            this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "تلفن همراه";
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(332, 179);
+            this.labelControl9.Location = new System.Drawing.Point(332, 153);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(59, 13);
-            this.labelControl9.TabIndex = 22;
+            this.labelControl9.TabIndex = 20;
             this.labelControl9.Text = "تلفن بستگان";
             // 
             // cbxEducational
@@ -600,7 +600,7 @@ namespace DMS.UI.Users
             this.cbxEducational.Properties.PopupSizeable = false;
             this.cbxEducational.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxEducational.Size = new System.Drawing.Size(140, 20);
-            this.cbxEducational.TabIndex = 5;
+            this.cbxEducational.TabIndex = 9;
             conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule8.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.cbxEducational, conditionValidationRule8);
@@ -693,7 +693,7 @@ namespace DMS.UI.Users
             this.cbxStudy.Properties.PopupSizeable = false;
             this.cbxStudy.Properties.PopupView = this.gridView2;
             this.cbxStudy.Size = new System.Drawing.Size(140, 20);
-            this.cbxStudy.TabIndex = 7;
+            this.cbxStudy.TabIndex = 13;
             conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule9.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.cbxStudy, conditionValidationRule9);
