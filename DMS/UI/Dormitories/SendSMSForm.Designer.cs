@@ -40,6 +40,7 @@ namespace DMS.UI.Dormitories
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtStatus2 = new DevExpress.XtraEditors.TextEdit();
+            this.resultLabel = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtReciver1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmobile1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStatus1.Properties)).BeginInit();
@@ -131,7 +132,8 @@ namespace DMS.UI.Dormitories
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(68, 29);
             this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "بستن";
+            this.btnClose.Text = "انصراف";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // labelControl2
             // 
@@ -152,11 +154,20 @@ namespace DMS.UI.Dormitories
             this.txtStatus2.Size = new System.Drawing.Size(139, 20);
             this.txtStatus2.TabIndex = 3;
             // 
+            // resultLabel
+            // 
+            this.resultLabel.Location = new System.Drawing.Point(314, 85);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(63, 13);
+            this.resultLabel.TabIndex = 5;
+            this.resultLabel.Text = "labelControl5";
+            // 
             // SendSMSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 110);
+            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtMobile2);
             this.Controls.Add(this.txtStatus2);
@@ -200,5 +211,6 @@ namespace DMS.UI.Dormitories
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtStatus2;
+        private DevExpress.XtraEditors.LabelControl resultLabel;
     }
 }

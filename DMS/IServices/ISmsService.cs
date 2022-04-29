@@ -28,13 +28,12 @@ namespace DMS.IServices
             {
                 try
                 {
-
-                    if (resultConnection.Info == null) return new ResultMessage(success: false, errorMessage: "عدم برقراری ارتباط با سامانه پیام کوتاه", resultCode: "0");
+                    if (resultConnection.Info == null) return new ResultMessage(success: false, errorMessage: "اطلاعات حساب کاربری صحیح نیست", resultCode: "0");
                     string[] smsNumber = { resultConnection.Info.SendNumber };
                     string[] to = { mobile.ToString("00000000000") };
                     var result = await _unitOfWork.TsmsService.sendSmsAsync(resultConnection.Info.Username, resultConnection.Info.Password, smsNumber, to, content, new string[] { }, "");
                     if (result == null) return new ResultMessage(false, @"خطا در ارسال پیامک و دریافت مقدار نامعتبر در زمان ارسال", "0");
-                    if (result[0] > 0) return new ResultMessage(true, $"پیامک برای شماره همراه  {to} با موفقیت ارسال گردید : کد پیگیری سامانه {result[0]}", result[0].ToString());
+                    if (result[0] > 0) return new ResultMessage(true, $"پیامک برای شماره همراه  {to[0]} با موفقیت ارسال گردید : کد پیگیری سامانه {result[0]}", result[0].ToString());
                 }
                 catch (Exception e)
                 {
@@ -43,7 +42,6 @@ namespace DMS.IServices
             }
             else
                 return new ResultMessage(false, @"خطای نرم افزاری لطفا دوباره امتحان کنید", "0");
-
             return new ResultMessage(false, @"خطای نرم افزاری لطفا دوباره امتحان کنید", "0");
         }
         private async Task CreditMid(objectInfo[] resultUsernfo, PanelInfo info)

@@ -138,7 +138,7 @@ namespace DMS.UI
             //frm.ControlBox = false;
             //frm.Dock = DockStyle.Fill;
             //frm.WindowState = FormWindowState.Maximized;
-            frm.MainContainer = _mainContainer;
+            //frm.MainContainer = _mainContainer;
             frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             frm.StartPosition = FormStartPosition.CenterScreen;
             //frm.MdiParent = this;
