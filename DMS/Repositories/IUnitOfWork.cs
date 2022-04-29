@@ -22,7 +22,7 @@ namespace DMS.Repositories
         ITradodRep Tradod { get; }
         tsmsService TsmsService { get; }
         IDestinationRep Destination { get; }
-
+        ICreditWarningRep CreditWarning { get; }
         int Commit();
     }
 
@@ -44,7 +44,7 @@ namespace DMS.Repositories
         private ITradodRep _tradodRep;
         private IDestinationRep _destination;
         private tsmsService _tsmsService;
-
+        private ICreditWarningRep _creditWarning;
         private bool _disposed;
 
 
@@ -69,6 +69,7 @@ namespace DMS.Repositories
         public ITradodRep Tradod => _tradodRep ??= new TradodRep(_context);
         public IDestinationRep Destination => _destination ??= new DestinationRep(_context);
         public tsmsService TsmsService => _tsmsService ??= new tsmsServiceClient();
+        public ICreditWarningRep CreditWarning => _creditWarning ??= new CreditWarningRep(_context);
 
 
         public int Commit()

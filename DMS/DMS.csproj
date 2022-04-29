@@ -26,6 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -77,6 +79,7 @@
   <ItemGroup>
     <Compile Include="AutoMapperProfile.cs" />
     <Compile Include="Configuration\ApplicationUserConfigure.cs" />
+    <Compile Include="Configuration\CreditWarningConfigure.cs" />
     <Compile Include="Configuration\DestinationConfigure.cs" />
     <Compile Include="Configuration\DormitoryConfigure.cs" />
     <Compile Include="Configuration\EducationalCenterConfigure.cs" />
@@ -97,6 +100,7 @@
     </Compile>
     <Compile Include="Entities\ApplicationDbContext.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\CreditWarning.cs" />
     <Compile Include="Entities\Destination.cs" />
     <Compile Include="Entities\Dormitory.cs" />
     <Compile Include="Entities\EducationalCenter.cs" />
@@ -117,10 +121,13 @@
     <Compile Include="IServices\IRegisterRoomService.cs" />
     <Compile Include="IServices\IRegisterTagService.cs" />
     <Compile Include="IServices\IRoomService.cs" />
+    <Compile Include="IServices\ISmsService.cs" />
     <Compile Include="IServices\IStudentService.cs" />
     <Compile Include="IServices\ITagService.cs" />
     <Compile Include="IServices\ITradodService.cs" />
     <Compile Include="IServices\ITrafficTypeTitleService.cs" />
+    <Compile Include="IServices\ResultMessage.cs" />
+    <Compile Include="IServices\Sms.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +146,16 @@
     <Compile Include="Migrations\202204281556210_CreateDB2.designer.cs">
       <DependentUpon>202204281556210_CreateDB2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204290818277_UpdateDB.cs" />
+    <Compile Include="Migrations\202204290818277_UpdateDB.designer.cs">
+      <DependentUpon>202204290818277_UpdateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicValues.cs" />
     <Compile Include="Repositories\IApplicationUserRep.cs" />
+    <Compile Include="Repositories\ICreditWarningRep.cs" />
     <Compile Include="Repositories\IDestinationRep.cs" />
     <Compile Include="Repositories\IDormitoryRep.cs" />
     <Compile Include="Repositories\IEducationalCenterRep.cs" />
@@ -177,6 +189,12 @@
     </Compile>
     <Compile Include="UI\Dormitories\RegisterRoomForm.Designer.cs">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dormitories\SendSMSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dormitories\SendSMSForm.Designer.cs">
+      <DependentUpon>SendSMSForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Dormitories\TradodForm.cs">
       <SubType>Form</SubType>
@@ -250,6 +268,9 @@
     <EmbeddedResource Include="Migrations\202204281556210_CreateDB2.resx">
       <DependentUpon>202204281556210_CreateDB2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204290818277_UpdateDB.resx">
+      <DependentUpon>202204290818277_UpdateDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -268,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dormitories\RegisterRoomForm.resx">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dormitories\SendSMSForm.resx">
+      <DependentUpon>SendSMSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dormitories\TradodForm.resx">
       <DependentUpon>TradodForm.cs</DependentUpon>

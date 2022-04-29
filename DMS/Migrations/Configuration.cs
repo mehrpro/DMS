@@ -99,7 +99,17 @@ namespace DMS.Migrations
                     DestinationTitle = "سایر"
                 });
 
-
+            context.PanelInfos.AddOrUpdate(new PanelInfo()
+            {
+                Id = 1,
+                SendNumber = "30007227001374",
+                WarningReceiver = "09186620474",
+                MinCredit = 12000,
+                MidCredit = 50000,
+                IsActive = true,
+                Username = "iaubijar",
+                Password = "M4228056"
+            });
 
             base.Seed(context);
         }

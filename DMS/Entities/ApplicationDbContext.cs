@@ -28,6 +28,7 @@ namespace DMS.Entities
             modelBuilder.Configurations.Add(new TrafficTypeConfigure());
             modelBuilder.Configurations.Add(new TradodConfigure());
             modelBuilder.Configurations.Add(new DestinationConfigure());
+            modelBuilder.Configurations.Add(new CreditWarningConfigure());
         }
 
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
@@ -44,6 +45,7 @@ namespace DMS.Entities
         public virtual DbSet<RegisterRoom> RegisterRooms { get; set; }
         public virtual DbSet<Tradod> Tradods { get; set; }
         public virtual DbSet<Destination> Destinations { get; set; }
+        public virtual DbSet<CreditWarning> CreditWarnings { get; set; }
 
 
     }

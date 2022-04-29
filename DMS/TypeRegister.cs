@@ -34,6 +34,7 @@ namespace DMS
             For<ITradodService>().Use<TradodService>();
             For<ITrafficTypeService>().Use<TrafficTypeService>();
             For<IDestinationService>().Use<DestinationService>();
+            For<ISmsService>().Use<SmsService>();
 
 
         }

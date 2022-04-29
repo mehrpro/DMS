@@ -12,6 +12,7 @@ using DevExpress.XtraEditors;
 using DMS.Entities;
 using DMS.IServices;
 
+
 namespace DMS.UI.Dormitories
 {
     public partial class TradodForm : XtraForm
@@ -20,6 +21,14 @@ namespace DMS.UI.Dormitories
         private readonly ITrafficTypeService _trafficTypeService;
         private readonly IStudentService _studentService;
         private readonly IDestinationService _destinationService;
+
+        private StructureMap.Container _mainContainer;
+
+        public StructureMap.Container MainContainer
+        {
+            get => _mainContainer;
+            set => _mainContainer = value;
+        }
 
         public TradodForm(ITradodService tradodService
             ,ITrafficTypeService trafficTypeService,IStudentService studentService,IDestinationService destinationService)
@@ -85,6 +94,15 @@ namespace DMS.UI.Dormitories
         private void btnSMS_Click(object sender, EventArgs e)
         {
 
+            var content = $"ثبت خروج مسعود کریم زاده به مقصد مهمان شهرستان ثبت گردید";
+
+            var frm = _mainContainer.GetInstance<SendSMSForm>();
+            frm.Sms =
+                new Sms(Convert.ToInt64(txtMobile.Text), mobile2: Convert.ToInt64(txtBasteganTel.Text),
+                    reciverName1: txtFatherName.Text, reciverName2: txtBastega.Text, content);
+            frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
     }
 }
