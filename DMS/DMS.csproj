@@ -190,12 +190,6 @@
     <Compile Include="UI\Dormitories\RegisterRoomForm.Designer.cs">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dormitories\SendSMSForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dormitories\SendSMSForm.Designer.cs">
-      <DependentUpon>SendSMSForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Dormitories\TradodForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,9 +283,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dormitories\RegisterRoomForm.resx">
       <DependentUpon>RegisterRoomForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dormitories\SendSMSForm.resx">
-      <DependentUpon>SendSMSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dormitories\TradodForm.resx">
       <DependentUpon>TradodForm.cs</DependentUpon>
