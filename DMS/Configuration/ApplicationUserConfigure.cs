@@ -15,11 +15,14 @@ namespace DMS.Configuration
             Property(x => x.Job).HasMaxLength(50);
             Property(x => x.Password).IsRequired().HasMaxLength(120);
             Property(x => x.Username).IsRequired().HasMaxLength(50);
-            Property(x => x.Role).IsRequired();
+            Property(x => x.AccessID_FK).IsRequired();
             HasMany(x => x.Tradods)
                 .WithRequired(x => x.ApplicationUser)
                 .HasForeignKey(x => x.UserID_FK)
                 .WillCascadeOnDelete(false);
+            HasMany(x => x.ElementUsers)
+                .WithRequired(x => x.ApplicationUser)
+                .HasForeignKey(x => x.UserID_FK).WillCascadeOnDelete(false);
 
 
         }

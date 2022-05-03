@@ -35,6 +35,8 @@ namespace DMS
             For<ITrafficTypeService>().Use<TrafficTypeService>();
             For<IDestinationService>().Use<DestinationService>();
             For<ISmsService>().Use<SmsService>();
+            For<IAccordionElementService>().Use<AccordionElementService>();
+            For<IElementUserService>().Use<ElementUserService>();
 
 
         }

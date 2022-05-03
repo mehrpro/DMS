@@ -29,6 +29,9 @@ namespace DMS.Entities
             modelBuilder.Configurations.Add(new TradodConfigure());
             modelBuilder.Configurations.Add(new DestinationConfigure());
             modelBuilder.Configurations.Add(new CreditWarningConfigure());
+            modelBuilder.Configurations.Add(new ElementUserConfigure());
+            modelBuilder.Configurations.Add(new AccordionElementConfigure());
+            modelBuilder.Configurations.Add(new AccessTableConfigure());
         }
 
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
@@ -46,6 +49,9 @@ namespace DMS.Entities
         public virtual DbSet<Tradod> Tradods { get; set; }
         public virtual DbSet<Destination> Destinations { get; set; }
         public virtual DbSet<CreditWarning> CreditWarnings { get; set; }
+        public virtual DbSet<AccordionElement> AccordionElements { get; set; }
+        public virtual DbSet<ElementUser> ElementUsers { get; set; }
+        public virtual DbSet<AccessTable> AccessTables { get; set; }
 
 
     }

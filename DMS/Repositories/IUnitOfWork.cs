@@ -23,6 +23,8 @@ namespace DMS.Repositories
         tsmsService TsmsService { get; }
         IDestinationRep Destination { get; }
         ICreditWarningRep CreditWarning { get; }
+        IElementUserRep ElementUser { get; }
+        IAccordionElementRep AccordionElement { get; }
         int Commit();
     }
 
@@ -45,6 +47,8 @@ namespace DMS.Repositories
         private IDestinationRep _destination;
         private tsmsService _tsmsService;
         private ICreditWarningRep _creditWarning;
+        private IAccordionElementRep _accordionElementRep;
+        private IElementUserRep _elementUserRep;
         private bool _disposed;
 
 
@@ -70,7 +74,8 @@ namespace DMS.Repositories
         public IDestinationRep Destination => _destination ??= new DestinationRep(_context);
         public tsmsService TsmsService => _tsmsService ??= new tsmsServiceClient();
         public ICreditWarningRep CreditWarning => _creditWarning ??= new CreditWarningRep(_context);
-
+        public IAccordionElementRep AccordionElement => _accordionElementRep ??= new AccordionElementRep(_context);
+        public IElementUserRep ElementUser => _elementUserRep ??= new ElementUserRep(_context);
 
         public int Commit()
         {

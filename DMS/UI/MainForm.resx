@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="accordionControlElement2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUser.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABh0RVh0VGl0
         bGUAVGVhbTtQZW9wbGU7R3JvdXA7XDnoFgAAA11JREFUOE99kntMk1cAxb8q8dmyVVvT+cB264JuCghT
@@ -154,6 +154,23 @@
         La2NB+SLH8NR/OZN7QT25Ci6RpeEziO1c2QRoT0VN6qtfLggW0ABbwb3VTHcwQ0vol3Ur2indSAcwbVH
         Fj5cmDXgeqWZhlT46csEMvxB+kpHFJebjw3IvXJ/0FFcbkJxWVqR8AFFpWlXyeUS42eazcsWwP/eeeQ8
         uZBx8T/8Hs2wnH8WtJzsBjpZdwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnMenuBuilder.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABx0RVh0VGl0
+        bGUASG9yaXpvbnRhbDtBbGlnbjtSaWdodMNx4foAAAJ2SURBVDhPhZPrS5NhGMaXZ+3wb0RUVHSACsPO
+        mUQZokkFCYG4lX7QMm1umTbMPJJpKVQeWsNTilpSohlSSDqdZZaIHajs6Oamc0ev7vvZ67IgGvx2PYzr
+        +r0f9rwy6bOI8JHw/Q9+UnKXdzKfa9qBrjKdAUwpc3eeQZFZVRHIvB0O9c09yKjYifTyMJwtDX0siWS+
+        XJwDfkNfCylq3YehL+UeJsphmLiBpMJNoK0/C/yu1uhF0Wp3YWYem4dporBlLwYnytA0EivoeX8Bpws2
+        siBACIor+4XAM3JiZtZJQwk6FzTvhv5zCe69ihE8eauE4soGr8A//9ZzuMnAT+MBY5EwE3lNu9D3qRiN
+        w9FoIDrHU5GQs54FgUKQW9ELt3tOlD1DB8xWhgSUuY070PsxH3UvolBPdIwlI16zjgVBLAjQXH8KFwtm
+        HJjiIecCcuq349mHy6gdOixoH03Eyay1LAhmQWBWSQ+crjkq22GigWmaoTOlkdDUhqHnXTZ0hkjB/dcJ
+        iMtc4xUEqYu64XC6qWyH0eLApMXuxWixIVu3Dd3jKugGDwqah+NwQrWaBSFCcD6vC3YSeEY2TJopzTb8
+        lLioDUXnWBq0Awdwh2h8eQzHlatYsJgFwak5HbA5XKL8Y344RWcJdc1WPBpNQU1/BKqJOsMRHE1fyYIl
+        LAhJvvRQXCIuf2dMs5Sz+EbJqKq3oP1NEo33C3QDUYg9t0CQlPlAXCAeipFRwmTFV6MVysrNaBuRQ6uP
+        RFVfOOUhxJxZ4RUExqc1dJ1StUGRwbRCrmyFgpArWwRcjk75k8jE5fwyiXvAryXfKLYt/QfL/oJ/o79Q
+        5vMLUC90FxRh7UAAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="mnuDormitoryForm.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

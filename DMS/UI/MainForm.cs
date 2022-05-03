@@ -1,24 +1,22 @@
-﻿using DevExpress.XtraEditors;
+﻿using DMS.UI.Dormitories;
+using DMS.UI.TagCard;
+using DMS.UI.Users;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraBars.Navigation;
 using DMS.Entities;
-using DMS.UI.Dormitories;
-using DMS.UI.Users;
-using Container = StructureMap.Container;
-using DMS.UI.TagCard;
+using DMS.Repositories;
+using DMS.UI.Administrator;
+
 
 namespace DMS.UI
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
-        private Container _mainContainer;
+        private readonly IUnitOfWork _unitOfWork;
+        private StructureMap.Container _mainContainer;
 
         public StructureMap.Container MainContainer
         {
@@ -26,10 +24,13 @@ namespace DMS.UI
             set => _mainContainer = value;
         }
 
-        public MainForm()
+        public MainForm(IUnitOfWork unitOfWork)
         {
+            _unitOfWork = unitOfWork;
             InitializeComponent();
         }
+
+
 
         private void mnuDormitoryForm_Click(object sender, EventArgs e)
         {
@@ -143,6 +144,42 @@ namespace DMS.UI
             frm.StartPosition = FormStartPosition.CenterScreen;
             //frm.MdiParent = this;
             frm.ShowDialog();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            var frm = _mainContainer.GetInstance<AccountForm>();
+            //frm.ControlBox = false;
+            //frm.Dock = DockStyle.Fill;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.MainContainer = _mainContainer;
+            frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            //frm.MdiParent = this;
+            frm.ShowDialog();
+        }
+
+        private void btnMenuBuilder_Click(object sender, EventArgs e)
+        {
+            var mu = munMain.Elements.ToArray();
+            var master = new List<AccordionControl>();
+            foreach (var accordionControlElement in mu)
+            {
+                var item = accordionControlElement.Text;
+                foreach (var element in accordionControlElement.Elements)
+                {
+                    _unitOfWork.AccordionElement.Add(new AccordionElement()
+                    {
+                        AccTag = accordionControlElement.Tag.ToString(),
+                        EleTag = element.Tag.ToString(),
+                        IsActive = true,
+                    });
+                }
+
+            }
+            _unitOfWork.Commit();
+
+
         }
     }
 }

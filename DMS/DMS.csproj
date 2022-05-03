@@ -78,11 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperProfile.cs" />
+    <Compile Include="Configuration\AccessTableConfigure.cs" />
+    <Compile Include="Configuration\AccordionElementConfigure.cs" />
     <Compile Include="Configuration\ApplicationUserConfigure.cs" />
     <Compile Include="Configuration\CreditWarningConfigure.cs" />
     <Compile Include="Configuration\DestinationConfigure.cs" />
     <Compile Include="Configuration\DormitoryConfigure.cs" />
     <Compile Include="Configuration\EducationalCenterConfigure.cs" />
+    <Compile Include="Configuration\ElementUserConfigure.cs" />
     <Compile Include="Configuration\PanelInfoConfigure.cs" />
     <Compile Include="Configuration\RegisterRoomConfigure.cs" />
     <Compile Include="Configuration\RegisterTagConfigure.cs" />
@@ -98,12 +101,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Entities\AccessTable.cs" />
+    <Compile Include="Entities\AccordionElement.cs" />
     <Compile Include="Entities\ApplicationDbContext.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\CreditWarning.cs" />
     <Compile Include="Entities\Destination.cs" />
     <Compile Include="Entities\Dormitory.cs" />
     <Compile Include="Entities\EducationalCenter.cs" />
+    <Compile Include="Entities\ElementUser.cs" />
     <Compile Include="Entities\PanelInfo.cs" />
     <Compile Include="Entities\RegisterRoom.cs" />
     <Compile Include="Entities\RegisterTag.cs" />
@@ -114,9 +120,11 @@
     <Compile Include="Entities\Tagrecive.cs" />
     <Compile Include="Entities\Tradod.cs" />
     <Compile Include="Entities\TrafficType.cs" />
+    <Compile Include="IServices\IAccordionElementService.cs" />
     <Compile Include="IServices\IDestinationService.cs" />
     <Compile Include="IServices\IDormitoryService.cs" />
     <Compile Include="IServices\IEducationalCenterService.cs" />
+    <Compile Include="IServices\IElementUserService.cs" />
     <Compile Include="IServices\IFieldOfStudyService.cs" />
     <Compile Include="IServices\IRegisterRoomService.cs" />
     <Compile Include="IServices\IRegisterTagService.cs" />
@@ -134,31 +142,21 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204281501190_CreateDB.cs" />
-    <Compile Include="Migrations\202204281501190_CreateDB.designer.cs">
-      <DependentUpon>202204281501190_CreateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204281516020_CreateDB1.cs" />
-    <Compile Include="Migrations\202204281516020_CreateDB1.designer.cs">
-      <DependentUpon>202204281516020_CreateDB1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204281556210_CreateDB2.cs" />
-    <Compile Include="Migrations\202204281556210_CreateDB2.designer.cs">
-      <DependentUpon>202204281556210_CreateDB2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204290818277_UpdateDB.cs" />
-    <Compile Include="Migrations\202204290818277_UpdateDB.designer.cs">
-      <DependentUpon>202204290818277_UpdateDB.cs</DependentUpon>
+    <Compile Include="Migrations\202205030505146_UpdateDB.cs" />
+    <Compile Include="Migrations\202205030505146_UpdateDB.designer.cs">
+      <DependentUpon>202205030505146_UpdateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicValues.cs" />
+    <Compile Include="Repositories\IAccordionElementRep.cs" />
     <Compile Include="Repositories\IApplicationUserRep.cs" />
     <Compile Include="Repositories\ICreditWarningRep.cs" />
     <Compile Include="Repositories\IDestinationRep.cs" />
     <Compile Include="Repositories\IDormitoryRep.cs" />
     <Compile Include="Repositories\IEducationalCenterRep.cs" />
+    <Compile Include="Repositories\IElementUserRep.cs" />
     <Compile Include="Repositories\IPanelInfoRep.cs" />
     <Compile Include="Repositories\IRegisterRoomRep.cs" />
     <Compile Include="Repositories\IRegisterTagRep.cs" />
@@ -253,17 +251,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204281501190_CreateDB.resx">
-      <DependentUpon>202204281501190_CreateDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204281516020_CreateDB1.resx">
-      <DependentUpon>202204281516020_CreateDB1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204281556210_CreateDB2.resx">
-      <DependentUpon>202204281556210_CreateDB2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204290818277_UpdateDB.resx">
-      <DependentUpon>202204290818277_UpdateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205030505146_UpdateDB.resx">
+      <DependentUpon>202205030505146_UpdateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

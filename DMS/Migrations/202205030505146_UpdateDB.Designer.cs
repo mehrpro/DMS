@@ -13,7 +13,7 @@ namespace DMS.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202204290818277_UpdateDB"; }
+            get { return "202205030505146_UpdateDB"; }
         }
         
         string IMigrationMetadata.Source

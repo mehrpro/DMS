@@ -21,7 +21,7 @@ namespace DMS.Migrations
             //  to avoid creating duplicate seed data.
 
 
-           context.Studies.AddOrUpdate(new Study()
+            context.Studies.AddOrUpdate(new Study()
             {
                 ID = 1,
                 IsActive = true,
@@ -59,13 +59,13 @@ namespace DMS.Migrations
             {
                 ID = 1,
                 TrafficTypeTitle = "مهمان داخل شهر"
-            },new TrafficType()
+            }, new TrafficType()
             {
                 ID = 2,
                 TrafficTypeTitle = "مهمان شهرستان"
             });
 
-            context.Dormitories.AddOrUpdate( new Dormitory()
+            context.Dormitories.AddOrUpdate(new Dormitory()
             {
                 ID = 1,
                 DormitoryName = "خوابگاه دکترحسابی",
@@ -89,11 +89,11 @@ namespace DMS.Migrations
                     ID = 1,
                     DestinationTitle = "منزل بستگان"
 
-                },new Destination()
+                }, new Destination()
                 {
                     ID = 2,
                     DestinationTitle = "منزل دوستان",
-                },new Destination()
+                }, new Destination()
                 {
                     ID = 3,
                     DestinationTitle = "سایر"
@@ -110,6 +110,50 @@ namespace DMS.Migrations
                 Username = "iaubijar",
                 Password = "M4228056"
             });
+
+            context.AccessTables.AddOrUpdate(new AccessTable()
+            {
+                ID = 1,
+                AccessTitle = "مدیر سیستم",
+
+            }, new AccessTable()
+            {
+                ID = 2,
+                AccessTitle = "ثبت و تغییراطلاعات",
+
+            }, new AccessTable()
+            {
+                ID = 3,
+                AccessTitle = "ثبت اطلاعات",
+
+            });
+            context.ApplicationUsers.AddOrUpdate(new ApplicationUser
+            {
+                UserID = 1,
+                Username = "administrator",
+                Password = "123456789",
+                AccessID_FK = 1,
+                Job = "مدیر سیستم",
+                IsActive = true,
+
+            }, new ApplicationUser
+            {
+                UserID = 2,
+                Username = "manage",
+                Password = "manage",
+                AccessID_FK = 2,
+                Job = "کاربر ارشد",
+                IsActive = true,
+            }, new ApplicationUser
+            {
+                UserID = 3,
+                Username = "user",
+                Password = "user",
+                AccessID_FK = 3,
+                Job = "کاربر",
+                IsActive = true,
+            });
+
 
             base.Seed(context);
         }
