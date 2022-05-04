@@ -46,15 +46,15 @@ namespace DMS.UI.Administrator
             this.RoleColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dgvUser = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.UserIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.UsernameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.JobColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IsActiveColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.AccessIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SelectColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.UserIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UsernameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AccessIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.JobColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IsActiveColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsActive.Properties)).BeginInit();
@@ -65,7 +65,7 @@ namespace DMS.UI.Administrator
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
             this.SuspendLayout();
@@ -235,24 +235,24 @@ namespace DMS.UI.Administrator
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.gridControl1);
+            this.panelControl2.Controls.Add(this.dgvUser);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 113);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(671, 395);
             this.panelControl2.TabIndex = 1;
             // 
-            // gridControl1
+            // dgvUser
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUser.Location = new System.Drawing.Point(2, 2);
+            this.dgvUser.MainView = this.gridView1;
+            this.dgvUser.Name = "dgvUser";
+            this.dgvUser.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect});
-            this.gridControl1.Size = new System.Drawing.Size(667, 391);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvUser.Size = new System.Drawing.Size(667, 391);
+            this.dgvUser.TabIndex = 0;
+            this.dgvUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -319,8 +319,28 @@ namespace DMS.UI.Administrator
             this.JobColumn,
             this.IsActiveColumn});
             this.gridView1.FixedLineWidth = 3;
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.dgvUser;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // SelectColumn
+            // 
+            this.SelectColumn.ColumnEdit = this.btnSelect;
+            this.SelectColumn.MaxWidth = 40;
+            this.SelectColumn.MinWidth = 40;
+            this.SelectColumn.Name = "SelectColumn";
+            this.SelectColumn.Visible = true;
+            this.SelectColumn.VisibleIndex = 0;
+            this.SelectColumn.Width = 40;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.AutoHeight = false;
+            this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Left)});
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelect_ButtonClick);
             // 
             // UserIDColumn
             // 
@@ -337,6 +357,16 @@ namespace DMS.UI.Administrator
             this.UsernameColumn.Visible = true;
             this.UsernameColumn.VisibleIndex = 1;
             this.UsernameColumn.Width = 144;
+            // 
+            // AccessIDColumn
+            // 
+            this.AccessIDColumn.Caption = "سطح دسترسی";
+            this.AccessIDColumn.FieldName = "AccessTable.AccessTitle";
+            this.AccessIDColumn.MinWidth = 100;
+            this.AccessIDColumn.Name = "AccessIDColumn";
+            this.AccessIDColumn.Visible = true;
+            this.AccessIDColumn.VisibleIndex = 2;
+            this.AccessIDColumn.Width = 144;
             // 
             // JobColumn
             // 
@@ -358,35 +388,6 @@ namespace DMS.UI.Administrator
             this.IsActiveColumn.Visible = true;
             this.IsActiveColumn.VisibleIndex = 4;
             this.IsActiveColumn.Width = 120;
-            // 
-            // AccessIDColumn
-            // 
-            this.AccessIDColumn.Caption = "سطح دسترسی";
-            this.AccessIDColumn.FieldName = "AccessTable.AccessTitle";
-            this.AccessIDColumn.MinWidth = 100;
-            this.AccessIDColumn.Name = "AccessIDColumn";
-            this.AccessIDColumn.Visible = true;
-            this.AccessIDColumn.VisibleIndex = 2;
-            this.AccessIDColumn.Width = 144;
-            // 
-            // SelectColumn
-            // 
-            this.SelectColumn.ColumnEdit = this.btnSelect;
-            this.SelectColumn.MaxWidth = 40;
-            this.SelectColumn.MinWidth = 40;
-            this.SelectColumn.Name = "SelectColumn";
-            this.SelectColumn.Visible = true;
-            this.SelectColumn.VisibleIndex = 0;
-            this.SelectColumn.Width = 40;
-            // 
-            // btnSelect
-            // 
-            this.btnSelect.AutoHeight = false;
-            this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Left)});
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelect_ButtonClick);
             // 
             // AccountForm
             // 
@@ -412,7 +413,7 @@ namespace DMS.UI.Administrator
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
             this.ResumeLayout(false);
@@ -429,7 +430,7 @@ namespace DMS.UI.Administrator
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtUsername;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl dgvUser;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnSave;

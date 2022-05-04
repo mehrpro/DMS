@@ -15,21 +15,39 @@ namespace DMS.UI.Administrator
 {
     public partial class AccountForm : XtraForm
     {
+        private readonly IApplicationUserService _applicationUserService;
         private ApplicationUser _user;
-        public AccountForm(IApplicationUserSer)
+
+        public AccountForm(IApplicationUserService applicationUserService)
         {
+            _applicationUserService = applicationUserService;
             InitializeComponent();
+
+            cbxAccessTable.Properties.DisplayMember = "AccessTitle";
+            cbxAccessTable.Properties.DataSource =
+                Task.Run(async () => await _applicationUserService.GetAccessList()).Result;
+            UserList();
         }
+
+        private void UserList()
+        {
+            dgvUser.DataSource = Task.Run(async () => await _applicationUserService.GetAllUser()).Result;
+        }
+
+
+
+
+
 
         private void btnSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-                        if (gridView1.GetFocusedRowCellValue("UserID") == null) return;
+            if (gridView1.GetFocusedRowCellValue("UserID") == null) return;
             var focusedRow = gridView1.GetFocusedRow();
             _user = new ApplicationUser();
             _user = (ApplicationUser)focusedRow;
             txtUsername.Text = _user.Username;
             txtJob.Text = _user.Job;
-            
+
         }
     }
 }

@@ -37,6 +37,7 @@ namespace DMS
             For<ISmsService>().Use<SmsService>();
             For<IAccordionElementService>().Use<AccordionElementService>();
             For<IElementUserService>().Use<ElementUserService>();
+            For<IApplicationUserService>().Use<ApplicationUserService>();
 
 
         }

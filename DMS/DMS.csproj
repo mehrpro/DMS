@@ -121,6 +121,7 @@
     <Compile Include="Entities\Tradod.cs" />
     <Compile Include="Entities\TrafficType.cs" />
     <Compile Include="IServices\IAccordionElementService.cs" />
+    <Compile Include="IServices\IApplicationUserService.cs" />
     <Compile Include="IServices\IDestinationService.cs" />
     <Compile Include="IServices\IDormitoryService.cs" />
     <Compile Include="IServices\IEducationalCenterService.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicValues.cs" />
+    <Compile Include="Repositories\IAccessTablesRep.cs" />
     <Compile Include="Repositories\IAccordionElementRep.cs" />
     <Compile Include="Repositories\IApplicationUserRep.cs" />
     <Compile Include="Repositories\ICreditWarningRep.cs" />
