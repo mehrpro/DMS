@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DMS.Entities;
 using DMS.Repositories;
@@ -9,6 +10,8 @@ namespace DMS.IServices
     {
         Task<IEnumerable<ApplicationUser>> GetAllUser();
         Task<IEnumerable<AccessTable>> GetAccessList();
+        Task<bool> AddUser(ApplicationUser model);
+        Task<bool> UpdateUser(ApplicationUser model);
     }
 
     public class ApplicationUserService : IApplicationUserService
@@ -28,6 +31,34 @@ namespace DMS.IServices
         public async Task<IEnumerable<AccessTable>> GetAccessList()
         {
             return await _unitOfWork.AccessTable.FindAllAsync();
+        }
+
+        public async Task<bool> AddUser(ApplicationUser model)
+        {
+            try
+            {
+                _unitOfWork.ApplicationUser.Add(model);
+                _unitOfWork.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> UpdateUser(ApplicationUser model)
+        {
+            try
+            {
+                _unitOfWork.ApplicationUser.Update(model,model.UserID);
+                _unitOfWork.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }

@@ -33,7 +33,9 @@ namespace DMS.UI
             this.munMain = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnUser = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnUserAccess = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnMenuBuilder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.mnuDormitoryForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnRoom = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -48,7 +50,6 @@ namespace DMS.UI
             this.btnEducationalCenter = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnStudyForm = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
-            this.btnMenuBuilder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.munMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@ namespace DMS.UI
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnUser,
+            this.btnUserAccess,
             this.accordionControlElement3,
             this.btnMenuBuilder});
             this.accordionControlElement1.Expanded = true;
@@ -86,6 +88,15 @@ namespace DMS.UI
             this.btnUser.Text = "کاربران";
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
+            // btnUserAccess
+            // 
+            this.btnUserAccess.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUserAccess.ImageOptions.Image")));
+            this.btnUserAccess.Name = "btnUserAccess";
+            this.btnUserAccess.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnUserAccess.Tag = "itmUserAccess";
+            this.btnUserAccess.Text = "مجوز کاربران";
+            this.btnUserAccess.Click += new System.EventHandler(this.btnUserAccess_Click);
+            // 
             // accordionControlElement3
             // 
             this.accordionControlElement3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
@@ -93,6 +104,15 @@ namespace DMS.UI
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Tag = "itmSMS";
             this.accordionControlElement3.Text = "سامانه پیام کوتاه";
+            // 
+            // btnMenuBuilder
+            // 
+            this.btnMenuBuilder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuBuilder.ImageOptions.Image")));
+            this.btnMenuBuilder.Name = "btnMenuBuilder";
+            this.btnMenuBuilder.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnMenuBuilder.Tag = "itmMenuBuilder";
+            this.btnMenuBuilder.Text = "منو";
+            this.btnMenuBuilder.Click += new System.EventHandler(this.btnMenuBuilder_Click);
             // 
             // accordionControlElement7
             // 
@@ -214,15 +234,6 @@ namespace DMS.UI
             this.btnStudyForm.Text = "رشته تحصیلی";
             this.btnStudyForm.Click += new System.EventHandler(this.btnStudyForm_Click);
             // 
-            // btnMenuBuilder
-            // 
-            this.btnMenuBuilder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuBuilder.ImageOptions.Image")));
-            this.btnMenuBuilder.Name = "btnMenuBuilder";
-            this.btnMenuBuilder.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnMenuBuilder.Tag = "itmMenuBuilder";
-            this.btnMenuBuilder.Text = "منو";
-            this.btnMenuBuilder.Click += new System.EventHandler(this.btnMenuBuilder_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,5 +272,6 @@ namespace DMS.UI
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnRegisterRoom;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnTradod;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnMenuBuilder;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnUserAccess;
     }
 }

@@ -29,6 +29,11 @@ namespace DMS.UI.Administrator
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.chkIsActive = new DevExpress.XtraEditors.CheckEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -43,8 +48,7 @@ namespace DMS.UI.Administrator
             this.cbxAccessTable = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RoleColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AccessTitleColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvUser = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -55,6 +59,7 @@ namespace DMS.UI.Administrator
             this.AccessIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.JobColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IsActiveColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkIsActive.Properties)).BeginInit();
@@ -68,6 +73,7 @@ namespace DMS.UI.Administrator
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -87,7 +93,7 @@ namespace DMS.UI.Administrator
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(671, 113);
-            this.panelControl1.TabIndex = 0;
+            this.panelControl1.TabIndex = 1;
             // 
             // chkIsActive
             // 
@@ -98,7 +104,7 @@ namespace DMS.UI.Administrator
             this.chkIsActive.Properties.Caption = "فعال";
             this.chkIsActive.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.chkIsActive.Size = new System.Drawing.Size(48, 20);
-            this.chkIsActive.TabIndex = 42;
+            this.chkIsActive.TabIndex = 8;
             // 
             // btnClose
             // 
@@ -106,8 +112,9 @@ namespace DMS.UI.Administrator
             this.btnClose.Location = new System.Drawing.Point(16, 67);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(68, 29);
-            this.btnClose.TabIndex = 41;
+            this.btnClose.TabIndex = 10;
             this.btnClose.Text = "انصراف";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -115,8 +122,9 @@ namespace DMS.UI.Administrator
             this.btnSave.Location = new System.Drawing.Point(90, 67);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 29);
-            this.btnSave.TabIndex = 40;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl2
             // 
@@ -124,7 +132,7 @@ namespace DMS.UI.Administrator
             this.labelControl2.Location = new System.Drawing.Point(580, 26);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
-            this.labelControl2.TabIndex = 9;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "نام کاربری";
             // 
             // labelControl3
@@ -133,7 +141,7 @@ namespace DMS.UI.Administrator
             this.labelControl3.Location = new System.Drawing.Point(333, 26);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(77, 13);
-            this.labelControl3.TabIndex = 10;
+            this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "سطح دسترسی";
             // 
             // txtPassword
@@ -142,8 +150,12 @@ namespace DMS.UI.Administrator
             this.txtPassword.Location = new System.Drawing.Point(435, 50);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
+            this.txtPassword.Properties.PasswordChar = '#';
             this.txtPassword.Size = new System.Drawing.Size(140, 20);
-            this.txtPassword.TabIndex = 15;
+            this.txtPassword.TabIndex = 3;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtPassword, conditionValidationRule1);
             // 
             // txtJob
             // 
@@ -152,7 +164,10 @@ namespace DMS.UI.Administrator
             this.txtJob.Name = "txtJob";
             this.txtJob.Parmida_ActivePlusMultiKeys = false;
             this.txtJob.Size = new System.Drawing.Size(140, 20);
-            this.txtJob.TabIndex = 16;
+            this.txtJob.TabIndex = 7;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtJob, conditionValidationRule2);
             // 
             // labelControl4
             // 
@@ -160,7 +175,7 @@ namespace DMS.UI.Administrator
             this.labelControl4.Location = new System.Drawing.Point(333, 52);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(61, 13);
-            this.labelControl4.TabIndex = 11;
+            this.labelControl4.TabIndex = 6;
             this.labelControl4.Text = "عنوان شغلی";
             // 
             // txtUsername
@@ -170,7 +185,10 @@ namespace DMS.UI.Administrator
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Parmida_ActivePlusMultiKeys = false;
             this.txtUsername.Size = new System.Drawing.Size(140, 20);
-            this.txtUsername.TabIndex = 14;
+            this.txtUsername.TabIndex = 1;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtUsername, conditionValidationRule3);
             // 
             // labelControl5
             // 
@@ -178,7 +196,7 @@ namespace DMS.UI.Administrator
             this.labelControl5.Location = new System.Drawing.Point(580, 53);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(32, 13);
-            this.labelControl5.TabIndex = 12;
+            this.labelControl5.TabIndex = 2;
             this.labelControl5.Text = "گذرواژه";
             // 
             // cbxAccessTable
@@ -199,14 +217,17 @@ namespace DMS.UI.Administrator
             this.cbxAccessTable.Properties.PopupView = this.gridLookUpEdit1View;
             this.cbxAccessTable.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cbxAccessTable.Size = new System.Drawing.Size(140, 20);
-            this.cbxAccessTable.TabIndex = 17;
+            this.cbxAccessTable.TabIndex = 5;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.cbxAccessTable, conditionValidationRule4);
+            this.cbxAccessTable.EditValueChanged += new System.EventHandler(this.cbxAccessTable_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.IDColumn,
-            this.RoleColumn,
-            this.gridColumn3});
+            this.AccessTitleColumn});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -218,20 +239,13 @@ namespace DMS.UI.Administrator
             this.IDColumn.FieldName = "ID";
             this.IDColumn.Name = "IDColumn";
             // 
-            // RoleColumn
+            // AccessTitleColumn
             // 
-            this.RoleColumn.Caption = "دسترسی";
-            this.RoleColumn.FieldName = "Role";
-            this.RoleColumn.Name = "RoleColumn";
-            this.RoleColumn.Visible = true;
-            this.RoleColumn.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
+            this.AccessTitleColumn.Caption = "دسترسی";
+            this.AccessTitleColumn.FieldName = "AccessTitle";
+            this.AccessTitleColumn.Name = "AccessTitleColumn";
+            this.AccessTitleColumn.Visible = true;
+            this.AccessTitleColumn.VisibleIndex = 0;
             // 
             // panelControl2
             // 
@@ -416,6 +430,7 @@ namespace DMS.UI.Administrator
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,8 +454,7 @@ namespace DMS.UI.Administrator
         private DevExpress.XtraEditors.GridLookUpEdit cbxAccessTable;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn IDColumn;
-        private DevExpress.XtraGrid.Columns.GridColumn RoleColumn;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn AccessTitleColumn;
         private DevExpress.XtraGrid.Columns.GridColumn SelectColumn;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSelect;
         private DevExpress.XtraGrid.Columns.GridColumn UserIDColumn;
@@ -448,5 +462,6 @@ namespace DMS.UI.Administrator
         private DevExpress.XtraGrid.Columns.GridColumn AccessIDColumn;
         private DevExpress.XtraGrid.Columns.GridColumn JobColumn;
         private DevExpress.XtraGrid.Columns.GridColumn IsActiveColumn;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
     }
 }

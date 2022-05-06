@@ -171,8 +171,9 @@ namespace DMS.UI
                     _unitOfWork.AccordionElement.Add(new AccordionElement()
                     {
                         AccTag = accordionControlElement.Tag.ToString(),
-                        EleTag = element.Tag.ToString(),
-                        IsActive = true,
+                        AccStr = accordionControlElement.Text.Trim(),
+                        EleStr = element.Text.Trim(),
+                        EleTag = element.Tag.ToString()
                     });
                 }
 
@@ -180,6 +181,13 @@ namespace DMS.UI
             _unitOfWork.Commit();
 
 
+        }
+
+        private void btnUserAccess_Click(object sender, EventArgs e)
+        {
+            var frm = _mainContainer.GetInstance<AccessForm>();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
     }
 }

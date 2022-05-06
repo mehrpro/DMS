@@ -107,8 +107,8 @@ namespace DMS.Migrations
                 MinCredit = 12000,
                 MidCredit = 50000,
                 IsActive = true,
-                Username = "iaubijar",
-                Password = "M4228056"
+                Username = "aWF1YmlqYXI=",
+                Password = "TTQyMjgwNTY="
             });
 
             context.AccessTables.AddOrUpdate(new AccessTable()
@@ -131,7 +131,7 @@ namespace DMS.Migrations
             {
                 UserID = 1,
                 Username = "administrator",
-                Password = "123456789",
+                Password = "MTIzNDU2Nzg5",
                 AccessID_FK = 1,
                 Job = "مدیر سیستم",
                 IsActive = true,
@@ -140,7 +140,7 @@ namespace DMS.Migrations
             {
                 UserID = 2,
                 Username = "manage",
-                Password = "manage",
+                Password = "MTIzNDU2Nzg5",
                 AccessID_FK = 2,
                 Job = "کاربر ارشد",
                 IsActive = true,
@@ -148,7 +148,7 @@ namespace DMS.Migrations
             {
                 UserID = 3,
                 Username = "user",
-                Password = "user",
+                Password = "MTIzNDU2Nzg5",
                 AccessID_FK = 3,
                 Job = "کاربر",
                 IsActive = true,

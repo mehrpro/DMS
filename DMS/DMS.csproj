@@ -52,6 +52,7 @@
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -143,9 +144,9 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205030505146_UpdateDB.cs" />
-    <Compile Include="Migrations\202205030505146_UpdateDB.designer.cs">
-      <DependentUpon>202205030505146_UpdateDB.cs</DependentUpon>
+    <Compile Include="Migrations\202205060520311_createdb.cs" />
+    <Compile Include="Migrations\202205060520311_createdb.designer.cs">
+      <DependentUpon>202205060520311_createdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -172,6 +173,12 @@
     <Compile Include="Repositories\ITrafficTypeRep.cs" />
     <Compile Include="Repositories\IUnitOfWork.cs" />
     <Compile Include="TypeRegister.cs" />
+    <Compile Include="UI\Administrator\AccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administrator\AccessForm.Designer.cs">
+      <DependentUpon>AccessForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Administrator\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,8 +260,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205030505146_UpdateDB.resx">
-      <DependentUpon>202205030505146_UpdateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205060520311_createdb.resx">
+      <DependentUpon>202205060520311_createdb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -266,6 +273,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Administrator\AccessForm.resx">
+      <DependentUpon>AccessForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Administrator\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>

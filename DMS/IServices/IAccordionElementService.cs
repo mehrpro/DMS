@@ -1,10 +1,14 @@
-﻿using DMS.Repositories;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using DMS.Entities;
+using DMS.Repositories;
 
 namespace DMS.IServices
 {
     public interface IAccordionElementService
     {
-
+        IEnumerable<AccordionElement> GetGroup();
+    
     }
 
     public class AccordionElementService : IAccordionElementService
@@ -14,6 +18,11 @@ namespace DMS.IServices
         public AccordionElementService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+        }
+
+        public IEnumerable<AccordionElement> GetGroup()
+        {
+            return Task.Run(async () => await _unitOfWork.AccordionElement.FindAllAsync()).Result;
         }
     }
 }

@@ -11,8 +11,10 @@ namespace DMS.Entities
 
         public int ID { get; set; }
         public string AccTag { get; set; }
+        public string AccStr { get; set; }
         public string EleTag { get; set; }
-        public bool IsActive { get; set; }
+        public string EleStr { get; set; }
+
 
         public virtual ICollection<ElementUser> ElementUsers { get; set; }
 
