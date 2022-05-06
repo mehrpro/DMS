@@ -6,7 +6,8 @@ namespace DMS.IServices
 {
     public interface ITradodService
     {
-        bool Send(Tradod model);
+        //bool Send(Tradod model);
+        bool Add(Tradod model);
     }
 
     public class TradodService : ITradodService
@@ -18,11 +19,25 @@ namespace DMS.IServices
             _unitOfWork = unitOfWork;
         }
 
-        public bool Send(Tradod model)
+        //public bool Send(Tradod model)
+        //{
+        //    try
+        //    {
+                
+        //        _unitOfWork.Tradod.Add(model);
+        //        _unitOfWork.Commit();
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        public bool Add(Tradod model)
         {
             try
             {
-                
                 _unitOfWork.Tradod.Add(model);
                 _unitOfWork.Commit();
                 return true;

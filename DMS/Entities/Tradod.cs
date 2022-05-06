@@ -12,6 +12,9 @@ namespace DMS.Entities
         public int TrfficTypeID_FK { get; set; }
         public TrafficType TrafficType { get; set; }
 
+        public int DestinationID_FK { get; set; }
+        public Destination Destination { get; set; }
+
         public DateTime OutTime { get; set; }
         public DateTime InCommingTime { get; set; }
 
@@ -25,7 +28,7 @@ namespace DMS.Entities
         public string ReciverNumber1 { get; set; }
         public string Delivery1 { get; set; }
 
-        public string SendSMS2 { get; set; }
+        public bool SendSMS2 { get; set; }
         public string ReciverNumber2 { get; set; }
         public string Delivery2 { get; set; }
     }

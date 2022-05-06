@@ -31,7 +31,7 @@ namespace DMS.IServices
                     if (resultConnection.Info == null) return new ResultMessage(success: false, errorMessage: "اطلاعات حساب کاربری صحیح نیست", resultCode: "0");
                     string[] smsNumber = { resultConnection.Info.SendNumber };
                     string[] to = { mobile.ToString("00000000000") };
-                    var result = await _unitOfWork.TsmsService.sendSmsAsync(resultConnection.Info.Username, resultConnection.Info.Password, smsNumber, to, content, new string[] { }, "");
+                    var result = await _unitOfWork.TsmsService.sendSmsAsync(PublicValues.Base64Decode(resultConnection.Info.Username), PublicValues.Base64Decode(resultConnection.Info.Password), smsNumber, to, content, new string[] { }, "");
                     if (result == null) return new ResultMessage(false, @"خطا در ارسال پیامک و دریافت مقدار نامعتبر در زمان ارسال", "0");
                     if (result[0] > 0) return new ResultMessage(true, $"پیامک برای شماره همراه  {to[0]} با موفقیت ارسال گردید : کد پیگیری سامانه {result[0]}", result[0].ToString());
                 }
@@ -54,7 +54,7 @@ namespace DMS.IServices
                         x.SendTime.Date == DateTime.Now.Date &&
                         !x.IsDelete &&
                         x.CreditLevel == info.MidCredit)) return;
-            var resultSend = await _unitOfWork.TsmsService.sendSmsAsync(info.Username, info.Password, smsNumber, vs, creditMessage, new string[] { }, "");
+            var resultSend = await _unitOfWork.TsmsService.sendSmsAsync(PublicValues.Base64Decode(info.Username), PublicValues.Base64Decode(info.Password), smsNumber, vs, creditMessage, new string[] { }, "");
             if (resultSend[0] > 0)
             {
                 //_eventList.Add($"اخظار کاهش اعتبار ارسال شد به :  {vs} , {resultSend[0]}");
@@ -83,7 +83,7 @@ namespace DMS.IServices
                         x.SendTime.Date == DateTime.Now.Date &&
                         !x.IsDelete &&
                         x.CreditLevel == info.MinCredit)) return;
-            var resultSend = await _unitOfWork.TsmsService.sendSmsAsync(info.Username, info.Password, smsNumber, vs,
+            var resultSend = await _unitOfWork.TsmsService.sendSmsAsync(PublicValues.Base64Decode(info.Username), PublicValues.Base64Decode(info.Password), smsNumber, vs,
                 creditMessage, new string[] { }, "");
             if (resultSend[0] > 0)
             {
@@ -124,7 +124,7 @@ namespace DMS.IServices
                     return new ResultConnection() { Success = false, Info = null };
                 }
 
-                var userInfoAsync = await _unitOfWork.TsmsService.UserInfoAsync(info.Username, info.Password);
+                var userInfoAsync = await _unitOfWork.TsmsService.UserInfoAsync(PublicValues.Base64Decode(info.Username), PublicValues.Base64Decode(info.Password));
 
                 if (userInfoAsync[0].sms_numebrs.Contains(info.SendNumber))
                 {

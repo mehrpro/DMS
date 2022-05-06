@@ -34,6 +34,7 @@ namespace DMS.UI.Dormitories
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.marqueeProgressBarControl1 = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             this.txtMobile = new DevExpress.XtraEditors.TextEdit();
@@ -71,7 +72,7 @@ namespace DMS.UI.Dormitories
             this.cbxMagsad = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).BeginInit();
@@ -91,7 +92,6 @@ namespace DMS.UI.Dormitories
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMagsad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -129,7 +129,7 @@ namespace DMS.UI.Dormitories
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(609, 271);
+            this.groupControl1.Size = new System.Drawing.Size(606, 271);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "ثبت تردد";
             // 
@@ -140,14 +140,14 @@ namespace DMS.UI.Dormitories
             this.marqueeProgressBarControl1.Location = new System.Drawing.Point(2, 259);
             this.marqueeProgressBarControl1.Name = "marqueeProgressBarControl1";
             this.marqueeProgressBarControl1.Parmida_ActivePlusMultiKeys = false;
-            this.marqueeProgressBarControl1.Size = new System.Drawing.Size(605, 10);
+            this.marqueeProgressBarControl1.Size = new System.Drawing.Size(602, 10);
             this.marqueeProgressBarControl1.TabIndex = 42;
             this.marqueeProgressBarControl1.Visible = false;
             // 
             // txtMobile
             // 
             this.txtMobile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMobile.Location = new System.Drawing.Point(361, 91);
+            this.txtMobile.Location = new System.Drawing.Point(358, 91);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Parmida_ActivePlusMultiKeys = false;
             this.txtMobile.Properties.ReadOnly = true;
@@ -157,7 +157,7 @@ namespace DMS.UI.Dormitories
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(507, 92);
+            this.labelControl7.Location = new System.Drawing.Point(504, 92);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(52, 13);
             this.labelControl7.TabIndex = 40;
@@ -166,7 +166,7 @@ namespace DMS.UI.Dormitories
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(295, 198);
+            this.labelControl5.Location = new System.Drawing.Point(292, 198);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(40, 13);
             this.labelControl5.TabIndex = 38;
@@ -175,7 +175,7 @@ namespace DMS.UI.Dormitories
             // labelControl13
             // 
             this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl13.Location = new System.Drawing.Point(284, 69);
+            this.labelControl13.Location = new System.Drawing.Point(281, 69);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(35, 13);
             this.labelControl13.TabIndex = 38;
@@ -184,7 +184,7 @@ namespace DMS.UI.Dormitories
             // txtCodemelii
             // 
             this.txtCodemelii.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCodemelii.Location = new System.Drawing.Point(139, 65);
+            this.txtCodemelii.Location = new System.Drawing.Point(136, 65);
             this.txtCodemelii.Name = "txtCodemelii";
             this.txtCodemelii.Parmida_ActivePlusMultiKeys = false;
             this.txtCodemelii.Properties.ReadOnly = true;
@@ -194,7 +194,7 @@ namespace DMS.UI.Dormitories
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(507, 67);
+            this.labelControl8.Location = new System.Drawing.Point(504, 67);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(82, 13);
             this.labelControl8.TabIndex = 36;
@@ -203,7 +203,7 @@ namespace DMS.UI.Dormitories
             // txtSmariDanshjoi
             // 
             this.txtSmariDanshjoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSmariDanshjoi.Location = new System.Drawing.Point(361, 65);
+            this.txtSmariDanshjoi.Location = new System.Drawing.Point(358, 65);
             this.txtSmariDanshjoi.Name = "txtSmariDanshjoi";
             this.txtSmariDanshjoi.Parmida_ActivePlusMultiKeys = false;
             this.txtSmariDanshjoi.Properties.ReadOnly = true;
@@ -213,7 +213,7 @@ namespace DMS.UI.Dormitories
             // txtHomeTel
             // 
             this.txtHomeTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHomeTel.Location = new System.Drawing.Point(139, 91);
+            this.txtHomeTel.Location = new System.Drawing.Point(136, 91);
             this.txtHomeTel.Name = "txtHomeTel";
             this.txtHomeTel.Parmida_ActivePlusMultiKeys = false;
             this.txtHomeTel.Properties.ReadOnly = true;
@@ -223,7 +223,7 @@ namespace DMS.UI.Dormitories
             // txtFatherName
             // 
             this.txtFatherName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFatherName.Location = new System.Drawing.Point(361, 117);
+            this.txtFatherName.Location = new System.Drawing.Point(358, 117);
             this.txtFatherName.Name = "txtFatherName";
             this.txtFatherName.Parmida_ActivePlusMultiKeys = false;
             this.txtFatherName.Properties.ReadOnly = true;
@@ -233,7 +233,7 @@ namespace DMS.UI.Dormitories
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(286, 93);
+            this.labelControl6.Location = new System.Drawing.Point(283, 93);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(46, 13);
             this.labelControl6.TabIndex = 34;
@@ -242,7 +242,7 @@ namespace DMS.UI.Dormitories
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(508, 118);
+            this.labelControl3.Location = new System.Drawing.Point(505, 118);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(29, 13);
             this.labelControl3.TabIndex = 26;
@@ -251,7 +251,7 @@ namespace DMS.UI.Dormitories
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(285, 118);
+            this.labelControl10.Location = new System.Drawing.Point(282, 118);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(68, 13);
             this.labelControl10.TabIndex = 28;
@@ -260,7 +260,7 @@ namespace DMS.UI.Dormitories
             // txtFatherTel
             // 
             this.txtFatherTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFatherTel.Location = new System.Drawing.Point(139, 117);
+            this.txtFatherTel.Location = new System.Drawing.Point(136, 117);
             this.txtFatherTel.Name = "txtFatherTel";
             this.txtFatherTel.Parmida_ActivePlusMultiKeys = false;
             this.txtFatherTel.Properties.ReadOnly = true;
@@ -270,7 +270,7 @@ namespace DMS.UI.Dormitories
             // txtBasteganTel
             // 
             this.txtBasteganTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBasteganTel.Location = new System.Drawing.Point(139, 142);
+            this.txtBasteganTel.Location = new System.Drawing.Point(136, 142);
             this.txtBasteganTel.Name = "txtBasteganTel";
             this.txtBasteganTel.Parmida_ActivePlusMultiKeys = false;
             this.txtBasteganTel.Properties.ReadOnly = true;
@@ -280,7 +280,7 @@ namespace DMS.UI.Dormitories
             // labelControl11
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Location = new System.Drawing.Point(508, 145);
+            this.labelControl11.Location = new System.Drawing.Point(505, 145);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(65, 13);
             this.labelControl11.TabIndex = 30;
@@ -289,7 +289,7 @@ namespace DMS.UI.Dormitories
             // txtDescription
             // 
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(14, 195);
+            this.txtDescription.Location = new System.Drawing.Point(11, 195);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtDescription.Size = new System.Drawing.Size(275, 20);
@@ -298,7 +298,7 @@ namespace DMS.UI.Dormitories
             // txtBastega
             // 
             this.txtBastega.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBastega.Location = new System.Drawing.Point(361, 143);
+            this.txtBastega.Location = new System.Drawing.Point(358, 143);
             this.txtBastega.Name = "txtBastega";
             this.txtBastega.Parmida_ActivePlusMultiKeys = false;
             this.txtBastega.Properties.ReadOnly = true;
@@ -308,7 +308,7 @@ namespace DMS.UI.Dormitories
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(285, 144);
+            this.labelControl9.Location = new System.Drawing.Point(282, 144);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(59, 13);
             this.labelControl9.TabIndex = 32;
@@ -317,7 +317,7 @@ namespace DMS.UI.Dormitories
             // picPerson
             // 
             this.picPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picPerson.Location = new System.Drawing.Point(14, 38);
+            this.picPerson.Location = new System.Drawing.Point(11, 38);
             this.picPerson.Name = "picPerson";
             this.picPerson.Parmida_ActivePlusMultiKeys = false;
             this.picPerson.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -328,7 +328,7 @@ namespace DMS.UI.Dormitories
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(14, 224);
+            this.btnClose.Location = new System.Drawing.Point(11, 224);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 29);
             this.btnClose.TabIndex = 6;
@@ -338,7 +338,7 @@ namespace DMS.UI.Dormitories
             // btnSMS
             // 
             this.btnSMS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSMS.Location = new System.Drawing.Point(95, 224);
+            this.btnSMS.Location = new System.Drawing.Point(92, 224);
             this.btnSMS.Name = "btnSMS";
             this.btnSMS.Size = new System.Drawing.Size(108, 29);
             this.btnSMS.TabIndex = 5;
@@ -348,7 +348,7 @@ namespace DMS.UI.Dormitories
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(507, 198);
+            this.labelControl4.Location = new System.Drawing.Point(504, 198);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(27, 13);
             this.labelControl4.TabIndex = 1;
@@ -357,7 +357,7 @@ namespace DMS.UI.Dormitories
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(507, 172);
+            this.labelControl2.Location = new System.Drawing.Point(504, 172);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(18, 13);
             this.labelControl2.TabIndex = 1;
@@ -366,7 +366,7 @@ namespace DMS.UI.Dormitories
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(507, 42);
+            this.labelControl1.Location = new System.Drawing.Point(504, 42);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(35, 13);
             this.labelControl1.TabIndex = 1;
@@ -375,7 +375,7 @@ namespace DMS.UI.Dormitories
             // cbxStudentList
             // 
             this.cbxStudentList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxStudentList.Location = new System.Drawing.Point(139, 39);
+            this.cbxStudentList.Location = new System.Drawing.Point(136, 39);
             this.cbxStudentList.Name = "cbxStudentList";
             this.cbxStudentList.Parmida_ActivePlusMultiKeys = false;
             this.cbxStudentList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -486,7 +486,7 @@ namespace DMS.UI.Dormitories
             // cbxTrafficType
             // 
             this.cbxTrafficType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxTrafficType.Location = new System.Drawing.Point(361, 169);
+            this.cbxTrafficType.Location = new System.Drawing.Point(358, 169);
             this.cbxTrafficType.Name = "cbxTrafficType";
             this.cbxTrafficType.Parmida_ActivePlusMultiKeys = false;
             this.cbxTrafficType.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -503,6 +503,7 @@ namespace DMS.UI.Dormitories
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.cbxTrafficType, conditionValidationRule2);
+            this.cbxTrafficType.EditValueChanged += new System.EventHandler(this.cbxTrafficType_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -564,7 +565,7 @@ namespace DMS.UI.Dormitories
             // cbxMagsad
             // 
             this.cbxMagsad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxMagsad.Location = new System.Drawing.Point(361, 195);
+            this.cbxMagsad.Location = new System.Drawing.Point(358, 195);
             this.cbxMagsad.Name = "cbxMagsad";
             this.cbxMagsad.Parmida_ActivePlusMultiKeys = false;
             this.cbxMagsad.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -581,6 +582,7 @@ namespace DMS.UI.Dormitories
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.cbxMagsad, conditionValidationRule3);
+            this.cbxMagsad.EditValueChanged += new System.EventHandler(this.cbxMagsad_EditValueChanged);
             // 
             // gridView1
             // 
@@ -651,6 +653,7 @@ namespace DMS.UI.Dormitories
             this.Name = "TradodForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ثبت تردد";
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -671,7 +674,6 @@ namespace DMS.UI.Dormitories
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMagsad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

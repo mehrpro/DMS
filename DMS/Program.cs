@@ -25,9 +25,8 @@ namespace DMS
             Application.Run(frm);
             if (frm.DialogResult == DialogResult.OK)
             {
-                if (frm.AccList.Any())
+                if (PublicValues.AccessLists.Any())
                 {
-                    PublicValues.AccessLists = frm.AccList;
                     var mainForm = container.GetInstance<MainForm>();
                     mainForm.MainContainer = container;
                     mainForm.ShowDialog();

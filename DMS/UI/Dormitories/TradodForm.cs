@@ -20,6 +20,8 @@ namespace DMS.UI.Dormitories
         private readonly ISmsService _smsService;
         private BackgroundWorker _backgroundWorker;
         private Student _selectStudent;
+        private TrafficType _selectTardod;
+        private Destination _selectMagsad;
 
         public TradodForm(ITradodService tradodService
             , ITrafficTypeService trafficTypeService, IStudentService studentService, IDestinationService destinationService, ISmsService smsService)
@@ -31,6 +33,7 @@ namespace DMS.UI.Dormitories
             _smsService = smsService;
             InitializeComponent();
             cbxStudentList.Properties.DisplayMember = "FullName";
+            cbxStudentList.Properties.ValueMember = "StudentID";
             cbxTrafficType.Properties.DisplayMember = "TrafficTypeTitle";
             cbxMagsad.Properties.DisplayMember = "DestinationTitle";
             cbxStudentList.Properties.DataSource = Task.Run(async () => await _studentService.StudentList()).Result;
@@ -54,6 +57,7 @@ namespace DMS.UI.Dormitories
         private void BackgroundWorkerOnRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             marqueeProgressBarControl1.Visible = false;
+            cbxStudentList.EditValue = 0;
             //if (e.Cancelled == true)
             //{
             //    resultLabel.Text = "Canceled!";
@@ -72,20 +76,60 @@ namespace DMS.UI.Dormitories
         {
             BackgroundWorker worker = sender as BackgroundWorker;
             worker.ReportProgress(10);
-            var content = $" خروج {cbxStudentList.Text} به مقصد {cbxTrafficType.Text} {cbxMagsad.Text} ثبت گردید";
+            var time = PublicValues.Convert_PersianCalender(DateTime.Now);
+            var content = $" خروج {cbxStudentList.Text} به مقصد {cbxTrafficType.Text} {cbxMagsad.Text} در {time} ثبت گردید";
             var result = Send(Convert.ToInt64(_selectStudent.FatherTel), new string[] { content });
             if (result.Success)
+            {
                 XtraMessageBox.Show(result.ErrorMessage, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var newTradod = new Tradod();
+                newTradod.StudentID_FK = _selectStudent.StudentID;
+                newTradod.TrfficTypeID_FK = _selectTardod.ID;
+                newTradod.DestinationID_FK = _selectMagsad.ID;
+                newTradod.OutTime = DateTime.Now;
+                newTradod.InCommingTime = DateTime.Now;
+                newTradod.IsActive = true;
+                newTradod.IsDelete = false;
+                newTradod.UserID_FK = PublicValues.UserId;
+                newTradod.SendSMS1 = true;
+                newTradod.ReciverNumber1 = _selectStudent.FatherTel;
+                newTradod.Delivery1 = result.ResultCode;
+                newTradod.SendSMS2 = false;
+                newTradod.ReciverNumber2 = "null";
+                newTradod.Delivery2 = "null";
+                var resultSave = _tradodService.Add(newTradod);
+                PublicValues.Message(resultSave);
+                
+            }
             else
             {
                 if (worker.CancellationPending) e.Cancel = true;
                 var result2 = Send(Convert.ToInt64(_selectStudent.OtherTel), new string[] { content });
                 if (result2.Success)
+                {
                     XtraMessageBox.Show(result.ErrorMessage, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var newTradod = new Tradod();
+                    newTradod.StudentID_FK = _selectStudent.StudentID;
+                    newTradod.TrfficTypeID_FK = _selectTardod.ID;
+                    newTradod.DestinationID_FK = _selectMagsad.ID;
+                    newTradod.OutTime = DateTime.Now;
+                    newTradod.InCommingTime = default;
+                    newTradod.IsActive = true;
+                    newTradod.IsDelete = false;
+                    newTradod.UserID_FK = PublicValues.UserId;
+                    newTradod.SendSMS1 = false;
+                    newTradod.ReciverNumber1 = "Error";
+                    newTradod.Delivery1 = "Error";
+                    newTradod.SendSMS2 = true;
+                    newTradod.ReciverNumber2 = _selectStudent.OtherTel;
+                    newTradod.Delivery2 = result2.ResultCode;
+                    var resultSave = _tradodService.Add(newTradod);
+                    PublicValues.Message(resultSave);
+                    
+                }
                 else
                     e.Cancel = true;
             }
-
         }
 
         private ResultMessage Send(long mobile, string[] contentStrings)
@@ -143,6 +187,17 @@ namespace DMS.UI.Dormitories
             }
             else
                 PublicValues.ErrorValidate(Text);
+        }
+
+        private void cbxTrafficType_EditValueChanged(object sender, EventArgs e)
+        {
+             _selectTardod = (TrafficType)cbxTrafficType.GetSelectedDataRow();
+
+        }
+
+        private void cbxMagsad_EditValueChanged(object sender, EventArgs e)
+        {
+            _selectMagsad = (Destination)cbxMagsad.GetSelectedDataRow();
         }
     }
 }

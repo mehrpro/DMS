@@ -14,9 +14,9 @@ namespace DMS
     {
         private readonly IApplicationUserService _applicationUserService;
         private readonly IElementUserService _elementUserService;
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
 
-        public IEnumerable<ElementUser> AccList { get; set; }
+        //public IEnumerable<ElementUser> AccList { get; set; }
 
         public LoginForm(IApplicationUserService applicationUserService , IElementUserService elementUserService)
         {
@@ -40,7 +40,8 @@ namespace DMS
             {
                 if (result.IsActive && result.UserID > 0)
                 {
-                    AccList = _elementUserService.GetCleamByUserId(result.UserID);
+                    PublicValues.UserId = result.UserID;
+                    PublicValues.AccessLists = _elementUserService.GetCleamByUserId(result.UserID);
                     DialogResult = DialogResult.OK;
                     Close();
                 }

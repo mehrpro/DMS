@@ -11,6 +11,10 @@ namespace DMS.Configuration
             HasKey(x => x.ID);
             Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.DestinationTitle).IsRequired().HasMaxLength(100);
+            HasMany(x=>x.Tradods)
+                .WithRequired(x=>x.Destination)
+                .HasForeignKey(x=>x.DestinationID_FK)
+                .WillCascadeOnDelete(false);
         }
     }
 }
