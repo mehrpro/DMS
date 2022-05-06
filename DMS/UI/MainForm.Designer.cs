@@ -246,6 +246,7 @@ namespace DMS.UI
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.munMain)).EndInit();
             this.ResumeLayout(false);
 

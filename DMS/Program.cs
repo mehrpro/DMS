@@ -1,8 +1,10 @@
 ﻿using DMS.UI;
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace DMS
 {
@@ -23,9 +25,17 @@ namespace DMS
             Application.Run(frm);
             if (frm.DialogResult == DialogResult.OK)
             {
-                var mainForm = container.GetInstance<MainForm>();
-                mainForm.MainContainer = container;
-                mainForm.ShowDialog();
+                if (frm.AccList.Any())
+                {
+                    var mainForm = container.GetInstance<MainForm>();
+                    mainForm.AccessLists = frm.AccList;
+                    mainForm.MainContainer = container;
+                    mainForm.ShowDialog();
+                }
+                else
+                {
+                    XtraMessageBox.Show(PublicValues.AccessError, "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
                 Environment.Exit(0);

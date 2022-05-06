@@ -77,6 +77,7 @@ namespace DMS.UI.Administrator
             this.btnSave.Size = new System.Drawing.Size(68, 29);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbxUserList
             // 

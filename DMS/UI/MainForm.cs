@@ -15,33 +15,75 @@ namespace DMS.UI
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
         private StructureMap.Container _mainContainer;
-
+        private IEnumerable<ElementUser> _accessLists;
+        public IEnumerable<ElementUser> AccessLists
+        {
+            get => _accessLists;
+            set => _accessLists = value;
+        }
         public StructureMap.Container MainContainer
         {
             get => _mainContainer;
             set => _mainContainer = value;
         }
 
-        public MainForm(IUnitOfWork unitOfWork)
+        public MainForm()
         {
-            _unitOfWork = unitOfWork;
+            //_unitOfWork = unitOfWork;
             InitializeComponent();
+            //if (AccessLists.Any())
+            //{
+            //    DisableMenu();
+            //}
+            //else
+            //{
+            //    Environment.Exit(1);
+            //}
         }
 
+
+        private void DisableMenu()
+        {
+            
+            foreach (var item in munMain.Elements.ToList())
+            {
+                item.Visible = false;
+                foreach (var itemElement in item.Elements)
+                {
+                    itemElement.Visible = false;
+                }
+            }
+
+            var grp = _accessLists.Where(x => x.IsActive).GroupBy(x => x.AccordionElement.AccTag).Select(x => x.First()).ToList();
+            foreach (var elementUser in grp)
+            {
+                var find = munMain.Elements.FirstOrDefault(x => x.Tag.ToString() == elementUser.AccordionElement.AccTag);
+                if (find != null)
+                {
+                    find.Visible = true;
+                    var list = munMain.Elements.Where(x => x.Tag.ToString() ==find.Tag.ToString());
+                    foreach (var user in _accessLists.Where(x=>x.AccordionElement.AccTag == elementUser.AccordionElement.AccTag && x.IsActive))
+                    {
+                        var findItem = list.FirstOrDefault(x => x.Elements.Element.Tag.ToString() == user.AccordionElement.EleTag);
+                        if (findItem != null)
+                        {
+                            findItem.Visible = true;
+                        }
+                    }
+                }
+
+            }
+
+        }
 
 
         private void mnuDormitoryForm_Click(object sender, EventArgs e)
         {
-            //foreach (var x in this.MdiChildren) x.Close();
             var frm = _mainContainer.GetInstance<DormitoryForm>();
-            //frm.ControlBox = false;
-            //frm.Dock = DockStyle.Fill;
-            //frm.WindowState = FormWindowState.Maximized;
             frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             frm.StartPosition = FormStartPosition.CenterScreen;
-            //frm.MdiParent = this;
             frm.ShowDialog();
         }
 
@@ -161,24 +203,24 @@ namespace DMS.UI
 
         private void btnMenuBuilder_Click(object sender, EventArgs e)
         {
-            var mu = munMain.Elements.ToArray();
-            var master = new List<AccordionControl>();
-            foreach (var accordionControlElement in mu)
-            {
-                var item = accordionControlElement.Text;
-                foreach (var element in accordionControlElement.Elements)
-                {
-                    _unitOfWork.AccordionElement.Add(new AccordionElement()
-                    {
-                        AccTag = accordionControlElement.Tag.ToString(),
-                        AccStr = accordionControlElement.Text.Trim(),
-                        EleStr = element.Text.Trim(),
-                        EleTag = element.Tag.ToString()
-                    });
-                }
+            //var mu = munMain.Elements.ToArray();
+            //var master = new List<AccordionControl>();
+            //foreach (var accordionControlElement in mu)
+            //{
+            //    var item = accordionControlElement.Text;
+            //    foreach (var element in accordionControlElement.Elements)
+            //    {
+            //        _unitOfWork.AccordionElement.Add(new AccordionElement()
+            //        {
+            //            AccTag = accordionControlElement.Tag.ToString(),
+            //            AccStr = accordionControlElement.Text.Trim(),
+            //            EleStr = element.Text.Trim(),
+            //            EleTag = element.Tag.ToString()
+            //        });
+            //    }
 
-            }
-            _unitOfWork.Commit();
+            //}
+            //_unitOfWork.Commit();
 
 
         }
@@ -188,6 +230,18 @@ namespace DMS.UI
             var frm = _mainContainer.GetInstance<AccessForm>();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (AccessLists.Any())
+            {
+                DisableMenu();
+            }
+            else
+            {
+                Environment.Exit(1);
+            }
         }
     }
 }

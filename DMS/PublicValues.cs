@@ -11,7 +11,8 @@ namespace DMS
 {
     public static class PublicValues
     {
-        public static string LoginError = "نام کاربری یا رمز عبور معتبر نمی باشد";
+        public static string LoginError = @"نام کاربری یا رمز عبور معتبر نمی باشد";
+        public static string AccessError = @"برای این کاربر هیچ مجوزی صادر نشده است";
 
         public static void ErrorValidate(string formText)
         {

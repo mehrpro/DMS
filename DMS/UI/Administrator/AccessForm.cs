@@ -21,6 +21,7 @@ namespace DMS.UI.Administrator
         private readonly IApplicationUserService _applicationUserService;
         private readonly IElementUserService _elementUserService;
         private readonly IAccordionElementService _accordionElementService;
+        private ApplicationUser _selectUser;
 
         public AccessForm(IApplicationUserService applicationUserService, IElementUserService elementUserService,
             IAccordionElementService accordionElementService)
@@ -53,22 +54,22 @@ namespace DMS.UI.Administrator
             TreeListNode treeListNodeParent = null;
             var cleamList = _elementUserService.GetCleamByUserId(userId);
             var getGroup = _accordionElementService.GetGroup();
-            foreach (var item in getGroup.GroupBy(x=>x.AccTag).Select(x=>x.First()))
+            var groupList = getGroup.GroupBy(x => x.AccTag).Select(x => x.First()).ToList();
+            foreach (var item in groupList)
             {
                 var app = treeListAccess.AppendNode(new object[] { item.AccStr },
                     treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, item.AccTag);
-                foreach (var menuItem in getGroup.Where(x=>x.AccTag == item.AccTag))
+                var itemGroup = getGroup.Where(x => x.AccTag == item.AccTag);
+                foreach (var menuItem in itemGroup)
                 {
-                    var child = treeListAccess.AppendNode(new object[] { menuItem.EleStr }, app.Id, menuItem.EleTag);
+                    var child = treeListAccess.AppendNode(new object[] { menuItem.EleStr }, app.Id, menuItem.ID);
                     if (cleamList.Count() > 0)
                     {
-                        var isdelete = cleamList.SingleOrDefault(x => x.AccordionElement.EleTag == menuItem.EleTag).IsActive;
-                        child.Checked = isdelete == null ? false : !isdelete;
+                        var isdelete = cleamList.SingleOrDefault(x => x.AccordionElement.EleTag == menuItem.EleTag);
+                        child.Checked = isdelete == null ? false : isdelete.IsActive;
                     }
                     else
-                    {
                         child.Checked = false;
-                    }
                 }
             }
             treeListAccess.EndUnboundLoad();
@@ -83,12 +84,34 @@ namespace DMS.UI.Administrator
 
         private void cbxUserList_EditValueChanged(object sender, EventArgs e)
         {
-            var selectUser = (ApplicationUser)cbxUserList.GetSelectedDataRow();
-            if (selectUser == null)
+            _selectUser = (ApplicationUser)cbxUserList.GetSelectedDataRow();
+            if (_selectUser == null)
             {
                 return;
             }
-            CreateTreeList(selectUser.UserID);
+            CreateTreeList(_selectUser.UserID);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var newCleam = new List<ElementUser>();
+            var grp = treeListAccess.Nodes.ToList();
+            foreach (var group in grp)
+            {
+                var itm = group.Nodes.ToList();
+                foreach (var item in itm )
+                {
+                    var elementUser = new ElementUser();
+                    elementUser.UserID_FK = _selectUser.UserID;
+                    elementUser.AccordionID_FK =Convert.ToInt32( item.Tag);
+                    elementUser.IsActive = Convert.ToBoolean(item.CheckState);
+                    newCleam.Add(elementUser);
+                }
+            }
+
+            var result = _elementUserService.AddOrUpdateCleam(newCleam);
+            PublicValues.Message(result);
+             CreateTreeList(_selectUser.UserID);
         }
     }
 }

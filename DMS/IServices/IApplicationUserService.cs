@@ -12,6 +12,7 @@ namespace DMS.IServices
         Task<IEnumerable<AccessTable>> GetAccessList();
         Task<bool> AddUser(ApplicationUser model);
         Task<bool> UpdateUser(ApplicationUser model);
+        ApplicationUser? Login(string usr, string pass);
     }
 
     public class ApplicationUserService : IApplicationUserService
@@ -59,6 +60,14 @@ namespace DMS.IServices
             {
                 return false;
             }
+        }
+
+        public ApplicationUser? Login(string usr, string pass)
+        {
+            var enPas = PublicValues.Base64Encode(pass);
+            var result = Task.Run(async ()=>  await _unitOfWork.ApplicationUser
+                    .FirstOrDefaultAsync(x => x.Username == usr && x.Password == enPas)).Result;
+            return result ?? null;
         }
     }
 }

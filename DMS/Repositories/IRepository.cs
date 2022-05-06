@@ -16,6 +16,7 @@ namespace DMS.Repositories
         Task<IEnumerable<TEntity>> FindAllByCondition(Expression<Func<TEntity, bool>> predicate);
         Task<int> CountAsyncByCondition(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
+        TEntity? SingleDefault(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
 
         void Add(TEntity entity);
@@ -33,6 +34,11 @@ namespace DMS.Repositories
         public Repository(DbContext context)
         {
             Context = context;
+        }
+
+        public TEntity SingleDefault(Expression<Func<TEntity, bool>> predicate)
+        {
+            return Context.Set<TEntity>().SingleOrDefault(predicate);
         }
 
         public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
@@ -96,9 +102,9 @@ namespace DMS.Repositories
             return await Context.Set<TEntity>().CountAsync(predicate);
         }
 
-        public Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
+        public async Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            return Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
+            return await Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
         }
 
 
