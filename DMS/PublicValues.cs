@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DMS.Entities;
 
 namespace DMS
 {
@@ -13,7 +14,7 @@ namespace DMS
     {
         public static string LoginError = @"نام کاربری یا رمز عبور معتبر نمی باشد";
         public static string AccessError = @"برای این کاربر هیچ مجوزی صادر نشده است";
-
+        public static IEnumerable<ElementUser> AccessLists { get; set; }
         public static void ErrorValidate(string formText)
         {
             XtraMessageBox.Show(@"مقادریر فرم را درست وارد کنید", formText, MessageBoxButtons.OK, MessageBoxIcon.Error);

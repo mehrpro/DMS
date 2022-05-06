@@ -68,6 +68,7 @@ namespace DMS.UI.Administrator
             this.btnClose.Size = new System.Drawing.Size(68, 29);
             this.btnClose.TabIndex = 12;
             this.btnClose.Text = "انصراف";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -237,7 +238,7 @@ namespace DMS.UI.Administrator
             this.MinimumSize = new System.Drawing.Size(503, 515);
             this.Name = "AccessForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "AccessForm";
+            this.Text = "مجوز کاربران";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

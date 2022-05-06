@@ -23,6 +23,8 @@ namespace DMS
             _applicationUserService = applicationUserService;
             _elementUserService = elementUserService;
             InitializeComponent();
+            txtUsername.Text = "administrator";
+            txtPassword.Text = "123456789";
 
         }
 
@@ -33,7 +35,6 @@ namespace DMS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             var result =  _applicationUserService.Login(txtUsername.Text.Trim(), txtPassword.Text.Trim());
             if (result != null)
             {
@@ -53,6 +54,16 @@ namespace DMS
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            txtUsername.SelectAll();
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            txtPassword.SelectAll();
         }
     }
 }

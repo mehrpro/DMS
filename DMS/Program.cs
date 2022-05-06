@@ -27,8 +27,8 @@ namespace DMS
             {
                 if (frm.AccList.Any())
                 {
+                    PublicValues.AccessLists = frm.AccList;
                     var mainForm = container.GetInstance<MainForm>();
-                    mainForm.AccessLists = frm.AccList;
                     mainForm.MainContainer = container;
                     mainForm.ShowDialog();
                 }

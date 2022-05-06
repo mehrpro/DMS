@@ -113,5 +113,10 @@ namespace DMS.UI.Administrator
             PublicValues.Message(result);
              CreateTreeList(_selectUser.UserID);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

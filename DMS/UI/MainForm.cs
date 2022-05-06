@@ -4,7 +4,9 @@ using DMS.UI.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.Utils.Extensions;
 using DevExpress.XtraBars.Navigation;
 using DMS.Entities;
 using DMS.Repositories;
@@ -18,11 +20,7 @@ namespace DMS.UI
         //private readonly IUnitOfWork _unitOfWork;
         private StructureMap.Container _mainContainer;
         private IEnumerable<ElementUser> _accessLists;
-        public IEnumerable<ElementUser> AccessLists
-        {
-            get => _accessLists;
-            set => _accessLists = value;
-        }
+
         public StructureMap.Container MainContainer
         {
             get => _mainContainer;
@@ -33,14 +31,16 @@ namespace DMS.UI
         {
             //_unitOfWork = unitOfWork;
             InitializeComponent();
-            //if (AccessLists.Any())
-            //{
-            //    DisableMenu();
-            //}
-            //else
-            //{
-            //    Environment.Exit(1);
-            //}
+            _accessLists = PublicValues.AccessLists;
+            if (_accessLists.Any())
+            {
+                DisableMenu();
+                //munMain.Elements[0].Expanded = true;
+            }
+            else
+            {
+                Environment.Exit(1);
+            }
         }
 
 
@@ -63,10 +63,10 @@ namespace DMS.UI
                 if (find != null)
                 {
                     find.Visible = true;
-                    var list = munMain.Elements.Where(x => x.Tag.ToString() ==find.Tag.ToString());
+                    var list = munMain.Elements.Where(x => x.Tag.ToString() ==find.Tag.ToString()).ToList();
                     foreach (var user in _accessLists.Where(x=>x.AccordionElement.AccTag == elementUser.AccordionElement.AccTag && x.IsActive))
                     {
-                        var findItem = list.FirstOrDefault(x => x.Elements.Element.Tag.ToString() == user.AccordionElement.EleTag);
+                        var findItem = list[0].Elements.FirstOrDefault(x => x.Tag.ToString() == user.AccordionElement.EleTag);
                         if (findItem != null)
                         {
                             findItem.Visible = true;
@@ -75,6 +75,8 @@ namespace DMS.UI
                 }
 
             }
+
+            munMain.Elements.First(x => x.IsVisible).Expanded = true;
 
         }
 
@@ -234,14 +236,7 @@ namespace DMS.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (AccessLists.Any())
-            {
-                DisableMenu();
-            }
-            else
-            {
-                Environment.Exit(1);
-            }
+  
         }
     }
 }
