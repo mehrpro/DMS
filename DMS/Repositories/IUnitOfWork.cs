@@ -26,6 +26,8 @@ namespace DMS.Repositories
         IElementUserRep ElementUser { get; }
         IAccordionElementRep AccordionElement { get; }
         IAccessTableRep AccessTable { get; }
+        IAppointmentRep Appointment { get; }
+        IResourceRep Resource { get; }
         int Commit();
     }
 
@@ -51,6 +53,8 @@ namespace DMS.Repositories
         private IAccordionElementRep _accordionElementRep;
         private IElementUserRep _elementUserRep;
         private IAccessTableRep _accessTable;
+        private IAppointmentRep _appointmentRep;
+        private IResourceRep _resourceRep;
         private bool _disposed;
 
 
@@ -79,6 +83,8 @@ namespace DMS.Repositories
         public IAccordionElementRep AccordionElement => _accordionElementRep ??= new AccordionElementRep(_context);
         public IElementUserRep ElementUser => _elementUserRep ??= new ElementUserRep(_context);
         public IAccessTableRep AccessTable => _accessTable ??= new AccessTableRep(_context);
+        public IAppointmentRep Appointment => _appointmentRep ??= new AppointmentRep(_context);
+        public IResourceRep Resource => _resourceRep ??= new ResourceRep(_context);
         public int Commit()
         {
             return _context.SaveChanges();

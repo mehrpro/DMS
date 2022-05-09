@@ -32,6 +32,8 @@ namespace DMS.Entities
             modelBuilder.Configurations.Add(new ElementUserConfigure());
             modelBuilder.Configurations.Add(new AccordionElementConfigure());
             modelBuilder.Configurations.Add(new AccessTableConfigure());
+            modelBuilder.Configurations.Add(new AppointmentConfigure());
+            modelBuilder.Configurations.Add(new ResourceConfigure());
         }
 
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
@@ -52,6 +54,8 @@ namespace DMS.Entities
         public virtual DbSet<AccordionElement> AccordionElements { get; set; }
         public virtual DbSet<ElementUser> ElementUsers { get; set; }
         public virtual DbSet<AccessTable> AccessTables { get; set; }
+        public virtual DbSet<Appointment> Appointments { get; set; }
+        public virtual DbSet<Resource> Resources { get; set; }
 
 
     }

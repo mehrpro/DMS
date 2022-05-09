@@ -15,6 +15,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +67,9 @@
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Extensions, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -82,6 +100,7 @@
     <Compile Include="Configuration\AccessTableConfigure.cs" />
     <Compile Include="Configuration\AccordionElementConfigure.cs" />
     <Compile Include="Configuration\ApplicationUserConfigure.cs" />
+    <Compile Include="Configuration\AppointmentConfigure.cs" />
     <Compile Include="Configuration\CreditWarningConfigure.cs" />
     <Compile Include="Configuration\DestinationConfigure.cs" />
     <Compile Include="Configuration\DormitoryConfigure.cs" />
@@ -90,6 +109,7 @@
     <Compile Include="Configuration\PanelInfoConfigure.cs" />
     <Compile Include="Configuration\RegisterRoomConfigure.cs" />
     <Compile Include="Configuration\RegisterTagConfigure.cs" />
+    <Compile Include="Configuration\ResourceConfigure.cs" />
     <Compile Include="Configuration\RoomConfigure.cs" />
     <Compile Include="Configuration\StudentConfigure.cs" />
     <Compile Include="Configuration\StudyConfigure.cs" />
@@ -106,6 +126,7 @@
     <Compile Include="Entities\AccordionElement.cs" />
     <Compile Include="Entities\ApplicationDbContext.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\Appointment.cs" />
     <Compile Include="Entities\CreditWarning.cs" />
     <Compile Include="Entities\Destination.cs" />
     <Compile Include="Entities\Dormitory.cs" />
@@ -114,6 +135,7 @@
     <Compile Include="Entities\PanelInfo.cs" />
     <Compile Include="Entities\RegisterRoom.cs" />
     <Compile Include="Entities\RegisterTag.cs" />
+    <Compile Include="Entities\Resource.cs" />
     <Compile Include="Entities\Room.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Study.cs" />
@@ -123,6 +145,7 @@
     <Compile Include="Entities\TrafficType.cs" />
     <Compile Include="IServices\IAccordionElementService.cs" />
     <Compile Include="IServices\IApplicationUserService.cs" />
+    <Compile Include="IServices\IAppointmentService.cs" />
     <Compile Include="IServices\IDestinationService.cs" />
     <Compile Include="IServices\IDormitoryService.cs" />
     <Compile Include="IServices\IEducationalCenterService.cs" />
@@ -130,6 +153,7 @@
     <Compile Include="IServices\IFieldOfStudyService.cs" />
     <Compile Include="IServices\IRegisterRoomService.cs" />
     <Compile Include="IServices\IRegisterTagService.cs" />
+    <Compile Include="IServices\IResourceService.cs" />
     <Compile Include="IServices\IRoomService.cs" />
     <Compile Include="IServices\ISmsService.cs" />
     <Compile Include="IServices\IStudentService.cs" />
@@ -156,6 +180,14 @@
     <Compile Include="Migrations\202205061815291_update3.designer.cs">
       <DependentUpon>202205061815291_update3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205091500374_update8.cs" />
+    <Compile Include="Migrations\202205091500374_update8.designer.cs">
+      <DependentUpon>202205091500374_update8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205091503391_update9.cs" />
+    <Compile Include="Migrations\202205091503391_update9.designer.cs">
+      <DependentUpon>202205091503391_update9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,6 +195,7 @@
     <Compile Include="Repositories\IAccessTablesRep.cs" />
     <Compile Include="Repositories\IAccordionElementRep.cs" />
     <Compile Include="Repositories\IApplicationUserRep.cs" />
+    <Compile Include="Repositories\IAppointmentRep.cs" />
     <Compile Include="Repositories\ICreditWarningRep.cs" />
     <Compile Include="Repositories\IDestinationRep.cs" />
     <Compile Include="Repositories\IDormitoryRep.cs" />
@@ -172,6 +205,7 @@
     <Compile Include="Repositories\IRegisterRoomRep.cs" />
     <Compile Include="Repositories\IRegisterTagRep.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IResourceRep.cs" />
     <Compile Include="Repositories\IRoomRep.cs" />
     <Compile Include="Repositories\IStudentRep.cs" />
     <Compile Include="Repositories\IStudyRep.cs" />
@@ -192,6 +226,12 @@
     </Compile>
     <Compile Include="UI\Administrator\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dormitories\DashbordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dormitories\DashbordForm.Designer.cs">
+      <DependentUpon>DashbordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Dormitories\DormitoryForm.cs">
       <SubType>Form</SubType>
@@ -277,6 +317,12 @@
     <EmbeddedResource Include="Migrations\202205061815291_update3.resx">
       <DependentUpon>202205061815291_update3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091500374_update8.resx">
+      <DependentUpon>202205091500374_update8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205091503391_update9.resx">
+      <DependentUpon>202205091503391_update9.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -292,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Administrator\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dormitories\DashbordForm.resx">
+      <DependentUpon>DashbordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dormitories\DormitoryForm.resx">
       <DependentUpon>DormitoryForm.cs</DependentUpon>
@@ -376,6 +425,18 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -38,6 +38,8 @@ namespace DMS
             For<IAccordionElementService>().Use<AccordionElementService>();
             For<IElementUserService>().Use<ElementUserService>();
             For<IApplicationUserService>().Use<ApplicationUserService>();
+            For<IAppointmentService>().Use<AppointmentService>();
+            For<IResourceService>().Use<ResourceService>();
 
 
         }
