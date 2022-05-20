@@ -154,7 +154,39 @@ namespace DMS.Migrations
                 IsActive = true,
             });
 
+            context.AccordionElements.AddOrUpdate(
+                new AccordionElement { ID = 1, AccTag = "grpSystemManagment", AccStr = "مدیریت سیستم", EleTag = "itmUser", EleStr = "کاربران" },
+                new AccordionElement { ID = 2, AccTag = "grpSystemManagment", AccStr = "مدیریت سیستم", EleTag = "itmUserAccess", EleStr = "مجوز کاربران" },
+                new AccordionElement { ID = 3, AccTag = "grpSystemManagment", AccStr = "مدیریت سیستم", EleTag = "itmSMS", EleStr = "سامانه پیام کوتاه" },
+                new AccordionElement { ID = 4, AccTag = "grpSystemManagment", AccStr = "مدیریت سیستم", EleTag = "itmMenuBuilder", EleStr = "منو" },
+                new AccordionElement { ID = 5, AccTag = "grpDormitory", AccStr = "خوابگاه", EleTag = "itmDormitory", EleStr = "خوابگاه" },
+                new AccordionElement { ID = 6, AccTag = "grpDormitory", AccStr = "خوابگاه", EleTag = "itmRooms", EleStr = "اتاق" },
+                new AccordionElement { ID = 7, AccTag = "grpDormitory", AccStr = "خوابگاه", EleTag = "itmTrafficType", EleStr = "نوع تردد" },
+                new AccordionElement { ID = 8, AccTag = "grpDormitory", AccStr = "خوابگاه", EleTag = "itmRegisterRoom", EleStr = "مدیریت اتاق" },
+                new AccordionElement { ID = 9, AccTag = "grpDormitory", AccStr = "خوابگاه", EleTag = "itmTradod", EleStr = "ثبت تردد" },
+                new AccordionElement { ID = 10, AccTag = "grpTag", AccStr = "تگ کارت", EleTag = "itmTag", EleStr = "تگ کارت" },
+                new AccordionElement { ID = 11, AccTag = "grpTag", AccStr = "تگ کارت", EleTag = "itmRegidterTag", EleStr = "ثبت کارت" },
+                new AccordionElement { ID = 12, AccTag = "grpStudent", AccStr = "دانشجو", EleTag = "itmStudent", EleStr = "دانشجو" },
+                new AccordionElement { ID = 13, AccTag = "grpStudent", AccStr = "دانشجو", EleTag = "itmEducationalCenter", EleStr = "دانشگاه" },
+                new AccordionElement { ID = 14, AccTag = "grpStudent", AccStr = "دانشجو", EleTag = "itmStudy", EleStr = "رشته تحصیلی" }
+                );
 
+            context.ElementUsers.AddOrUpdate(
+                new ElementUser { ID = 1, UserID_FK = 1, AccordionID_FK = 1, IsActive = true },
+                new ElementUser { ID = 2, UserID_FK = 1, AccordionID_FK = 2, IsActive = true },
+                new ElementUser { ID = 3, UserID_FK = 1, AccordionID_FK = 3, IsActive = true },
+                new ElementUser { ID = 4, UserID_FK = 1, AccordionID_FK = 4, IsActive = true },
+                new ElementUser { ID = 5, UserID_FK = 1, AccordionID_FK = 5, IsActive = true },
+                new ElementUser { ID = 6, UserID_FK = 1, AccordionID_FK = 6, IsActive = true },
+                new ElementUser { ID = 7, UserID_FK = 1, AccordionID_FK = 7, IsActive = true },
+                new ElementUser { ID = 8, UserID_FK = 1, AccordionID_FK = 8, IsActive = true },
+                new ElementUser { ID = 9, UserID_FK = 1, AccordionID_FK = 9, IsActive = true },
+                new ElementUser { ID = 10, UserID_FK = 1, AccordionID_FK = 10, IsActive = true },
+                new ElementUser { ID = 11, UserID_FK = 1, AccordionID_FK = 11, IsActive = true },
+                new ElementUser { ID = 12, UserID_FK = 1, AccordionID_FK = 12, IsActive = true },
+                new ElementUser { ID = 13, UserID_FK = 1, AccordionID_FK = 13, IsActive = true },
+                new ElementUser { ID = 14, UserID_FK = 1, AccordionID_FK = 14, IsActive = true }
+            );
             base.Seed(context);
         }
     }
